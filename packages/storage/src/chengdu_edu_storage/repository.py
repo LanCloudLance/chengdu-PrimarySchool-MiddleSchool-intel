@@ -10,6 +10,7 @@ from chengdu_edu_core.enums import PolicyType, RecordType, SchoolLevel, SchoolTy
 from chengdu_edu_core.models import FieldChange as FieldChangeDTO
 from chengdu_edu_core.models import RawDocument as RawDocumentDTO
 from chengdu_edu_storage.orm import (
+    DataSource,
     District,
     EnrollmentPolicy,
     FieldChange,
@@ -31,6 +32,14 @@ class SchoolWithPolicies:
 class PolicyRepository:
     def __init__(self, session: AsyncSession):
         self.session = session
+
+    async def get_source(self, source_id: UUID) -> DataSource | None:
+        return await self.session.get(DataSource, source_id)
+
+    async def list_active_sources(self) -> list[DataSource]:
+        stmt = select(DataSource).where(DataSource.is_active.is_(True))
+        result = await self.session.execute(stmt)
+        return list(result.scalars().all())
 
     async def upsert_enrollment(
         self,
