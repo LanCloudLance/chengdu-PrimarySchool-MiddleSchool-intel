@@ -1,0 +1,29 @@
+{% if schools %}
+<p class="text-sm text-gray-500 mb-3">共 {{ total }} 所学校</p>
+<ul class="divide-y divide-gray-200 bg-white rounded-lg shadow">
+  {% for school, district_code in schools %}
+  <li class="px-4 py-3 hover:bg-gray-50">
+    <a href="/schools/{{ school.id }}" class="block">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="font-medium text-gray-900">{{ school.name }}</span>
+          {% if school.short_name %}
+          <span class="text-sm text-gray-500 ml-2">{{ school.short_name }}</span>
+          {% endif %}
+        </div>
+        <span class="text-xs text-gray-400">{{ district_code }}</span>
+      </div>
+      <div class="mt-1 text-sm text-gray-500">
+        {{ school_type_labels.get(school.type, school.type) }}
+        · {{ school_level_labels.get(school.level, school.level) }}
+        {% if school.address %} · {{ school.address }}{% endif %}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% elif q or district or type or level %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">未找到匹配的学校，请调整搜索条件。</p>
+{% else %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">输入关键词或选择筛选条件开始搜索。</p>
+{% endif %}

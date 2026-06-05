@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}政府招生政策 - 成都教育情报{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold text-gray-900 mb-6">政府招生政策</h1>
+
+<div class="flex flex-wrap gap-2 mb-6">
+  {% for d in districts %}
+  <a
+    href="/policies/government?district={{ d.code }}"
+    class="px-3 py-1.5 text-sm rounded-full border {% if active_district == d.code %}bg-blue-600 text-white border-blue-600{% else %}bg-white text-gray-700 border-gray-300 hover:border-blue-400{% endif %}"
+  >
+    {{ d.name }}
+  </a>
+  {% endfor %}
+</div>
+
+{% if policies %}
+<p class="text-sm text-gray-500 mb-3">共 {{ total }} 条政策</p>
+<div class="space-y-3">
+  {% for policy in policies %}
+  <article class="bg-white rounded-lg shadow p-5">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="font-semibold text-gray-900">{{ policy.year }} 年招生政策</h2>
+      {% if policy.has_recent_changes %}
+      <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">近期有变更</span>
+      {% endif %}
+    </div>
+    {% if policy.fields %}
+    <dl class="text-sm space-y-1 mb-3">
+      {% for key, value in policy.fields.items() %}
+      <div><dt class="inline text-gray-500">{{ key }}:</dt> <dd class="inline">{{ value }}</dd></div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+    <div class="flex items-center gap-4 text-xs text-gray-400">
+      {% if policy.confidence %}
+      <span>置信度: {{ "%.0f"|format(policy.confidence * 100) }}%</span>
+      {% endif %}
+      {% if policy.fetched_at %}
+      <span>抓取时间: {{ policy.fetched_at.strftime("%Y-%m-%d") }}</span>
+      {% endif %}
+    </div>
+    {% if policy.source.url %}
+    <a href="{{ policy.source.url }}" target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline mt-2 inline-block">
+      查看官方来源 &rarr;
+    </a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">该区暂无政府招生政策数据。</p>
+{% endif %}
+{% endblock %}
