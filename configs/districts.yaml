@@ -1,4 +1,8 @@
 districts:
-  - name: 锦江区
-    code: jinjiang
-    level: core
+  - { name: 锦江区, code: jinjiang, level: core }
+  - { name: 青羊区, code: qingyang, level: core }
+  - { name: 武侯区, code: wuhou, level: core }
+  - { name: 成华区, code: chenghua, level: core }
+  - { name: 金牛区, code: jinniu, level: core }
+  - { name: 高新区, code: gaoxin, level: core }
+  - { name: 天府新区, code: tianfu, level: core }
