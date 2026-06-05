@@ -1,9 +1,57 @@
 sources:
   - name: 锦江区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdjx.gov.cn/
+    url: https://www.cdjx.gov.cn/  # replace with actual policy page URL
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: jinjiang
     rule_file: source_rules/jinjiang_gov.yaml
+    is_active: true
+  - name: 青羊区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdqingyang.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: qingyang
+    rule_file: source_rules/qingyang_gov.yaml
+    is_active: true
+  - name: 武侯区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdwh.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: wuhou
+    rule_file: source_rules/wuhou_gov.yaml
+    is_active: true
+  - name: 成华区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdchenghua.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: chenghua
+    rule_file: source_rules/chenghua_gov.yaml
+    is_active: true
+  - name: 金牛区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdjinniu.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: jinniu
+    rule_file: source_rules/jinniu_gov.yaml
+    is_active: true
+  - name: 高新区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdht.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: gaoxin
+    rule_file: source_rules/gaoxin_gov.yaml
+    is_active: true
+  - name: 天府新区教育局-招生政策
+    source_type: gov_website
+    url: https://www.tf.gov.cn/  # replace with actual policy page URL
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: tianfu
+    rule_file: source_rules/tianfu_gov.yaml
     is_active: true

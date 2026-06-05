@@ -83,6 +83,7 @@ class DataSource(Base):
     )
     school_id: Mapped[uuid.UUID | None] = mapped_column(UuidType, ForeignKey("schools.id"))
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    metadata_: Mapped[dict] = mapped_column("metadata", JsonType, default=dict)
 
 
 class RawDocument(Base):
