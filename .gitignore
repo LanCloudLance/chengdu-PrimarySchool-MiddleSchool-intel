@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.worktrees/
+data/raw/
+.playwright/
+htmlcov/
+.coverage
