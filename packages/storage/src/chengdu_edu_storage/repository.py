@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from uuid import UUID
 
@@ -11,9 +12,17 @@ from chengdu_edu_storage.orm import (
     District,
     EnrollmentPolicy,
     FieldChange,
+    PromotionPolicy,
     RecordVersion,
     School,
 )
+
+
+@dataclass
+class SchoolWithPolicies:
+    school: School
+    enrollment_policies: list[EnrollmentPolicy]
+    promotion_policies: list[PromotionPolicy]
 
 
 class PolicyRepository:
@@ -32,8 +41,15 @@ class PolicyRepository:
         confidence: float,
         existing_id: UUID | None = None,
     ) -> UUID:
+        """Insert or update an enrollment policy, tracking version history on change.
+
+        Commits the session on every write path (MVP behavior); callers should not
+        expect to roll back partial work within the same transaction after upsert.
+        """
         if existing_id:
             policy = await self.session.get(EnrollmentPolicy, existing_id)
+            if policy is None:
+                raise ValueError(f"Enrollment policy not found: {existing_id}")
             old_fields = dict(policy.fields)
             if old_fields == fields:
                 return existing_id
@@ -107,9 +123,38 @@ class PolicyRepository:
             stmt = stmt.where(School.level == level)
         if q:
             stmt = stmt.where(School.name.ilike(f"%{q}%"))
-        stmt = stmt.offset(offset).limit(limit)
+        stmt = stmt.order_by(School.name).offset(offset).limit(limit)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())
+
+    async def get_school_with_policies(
+        self, school_id: UUID
+    ) -> SchoolWithPolicies | None:
+        stmt = (
+            select(School, EnrollmentPolicy, PromotionPolicy)
+            .outerjoin(EnrollmentPolicy, EnrollmentPolicy.school_id == School.id)
+            .outerjoin(PromotionPolicy, PromotionPolicy.school_id == School.id)
+            .where(School.id == school_id)
+        )
+        result = await self.session.execute(stmt)
+        rows = result.all()
+        if not rows:
+            return None
+
+        school = rows[0][0]
+        enrollment_by_id: dict[UUID, EnrollmentPolicy] = {}
+        promotion_by_id: dict[UUID, PromotionPolicy] = {}
+        for _, enrollment, promotion in rows:
+            if enrollment is not None:
+                enrollment_by_id[enrollment.id] = enrollment
+            if promotion is not None:
+                promotion_by_id[promotion.id] = promotion
+
+        return SchoolWithPolicies(
+            school=school,
+            enrollment_policies=list(enrollment_by_id.values()),
+            promotion_policies=list(promotion_by_id.values()),
+        )
 
     def _add_version(
         self,

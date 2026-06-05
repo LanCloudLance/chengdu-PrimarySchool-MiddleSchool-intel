@@ -9,9 +9,18 @@ from chengdu_edu_core.enums import (
     ParserStrategy,
     PolicyType,
     RecordType,
+    SchoolLevel,
+    SchoolType,
     SourceType,
 )
-from chengdu_edu_storage.orm import DataSource, District, EnrollmentPolicy, RawDocument, RecordVersion
+from chengdu_edu_storage.orm import (
+    DataSource,
+    District,
+    EnrollmentPolicy,
+    RawDocument,
+    RecordVersion,
+    School,
+)
 from chengdu_edu_storage.repository import PolicyRepository
 
 
@@ -108,3 +117,135 @@ async def test_upsert_enrollment_creates_version_on_field_change(db_session):
     history = await repo.get_field_changes(RecordType.ENROLLMENT, policy_id)
     assert len(history) == 1
     assert history[0].field_path == "fields.enrollment_scope"
+
+
+@pytest.mark.asyncio
+async def test_upsert_enrollment_noop_when_fields_unchanged(db_session):
+    district_id, raw_doc_id = await _seed_fixtures(db_session)
+    repo = PolicyRepository(db_session)
+
+    policy_id = await repo.upsert_enrollment(
+        district_id=district_id,
+        school_id=None,
+        policy_type=PolicyType.GOV_POLICY,
+        year=2026,
+        fields={"enrollment_scope": "范围A"},
+        source_doc_id=raw_doc_id,
+        confidence=1.0,
+    )
+
+    await repo.upsert_enrollment(
+        district_id=district_id,
+        school_id=None,
+        policy_type=PolicyType.GOV_POLICY,
+        year=2026,
+        fields={"enrollment_scope": "范围A"},
+        source_doc_id=raw_doc_id,
+        confidence=1.0,
+        existing_id=policy_id,
+    )
+
+    policy = await db_session.get(EnrollmentPolicy, policy_id)
+    assert policy.current_version == 1
+
+    versions = (
+        await db_session.execute(
+            select(RecordVersion).where(
+                RecordVersion.record_type == RecordType.ENROLLMENT,
+                RecordVersion.record_id == policy_id,
+            )
+        )
+    ).scalars().all()
+    assert len(versions) == 1
+
+    history = await repo.get_field_changes(RecordType.ENROLLMENT, policy_id)
+    assert history == []
+
+
+@pytest.mark.asyncio
+async def test_upsert_enrollment_increments_version_and_values(db_session):
+    district_id, raw_doc_id = await _seed_fixtures(db_session)
+    repo = PolicyRepository(db_session)
+
+    policy_id = await repo.upsert_enrollment(
+        district_id=district_id,
+        school_id=None,
+        policy_type=PolicyType.GOV_POLICY,
+        year=2026,
+        fields={"enrollment_scope": "范围A"},
+        source_doc_id=raw_doc_id,
+        confidence=1.0,
+    )
+    await repo.upsert_enrollment(
+        district_id=district_id,
+        school_id=None,
+        policy_type=PolicyType.GOV_POLICY,
+        year=2026,
+        fields={"enrollment_scope": "范围B"},
+        source_doc_id=raw_doc_id,
+        confidence=1.0,
+        existing_id=policy_id,
+    )
+
+    policy = await db_session.get(EnrollmentPolicy, policy_id)
+    assert policy.current_version == 2
+
+    history = await repo.get_field_changes(RecordType.ENROLLMENT, policy_id)
+    assert len(history) == 1
+    assert history[0].field_path == "fields.enrollment_scope"
+    assert history[0].old_value == "范围A"
+    assert history[0].new_value == "范围B"
+
+
+async def _seed_schools(db_session):
+    district_jinjiang_id = uuid.uuid4()
+    district_wuhou_id = uuid.uuid4()
+
+    db_session.add_all(
+        [
+            District(
+                id=district_jinjiang_id,
+                name="锦江区",
+                code="jinjiang",
+                level=DistrictLevel.CORE,
+            ),
+            District(
+                id=district_wuhou_id,
+                name="武侯区",
+                code="wuhou",
+                level=DistrictLevel.CORE,
+            ),
+            School(
+                id=uuid.uuid4(),
+                name="成都七中实验学校",
+                district_id=district_jinjiang_id,
+                type=SchoolType.PUBLIC,
+                level=SchoolLevel.MIDDLE,
+            ),
+            School(
+                id=uuid.uuid4(),
+                name="锦江第一小学",
+                district_id=district_jinjiang_id,
+                type=SchoolType.PUBLIC,
+                level=SchoolLevel.PRIMARY,
+            ),
+            School(
+                id=uuid.uuid4(),
+                name="武侯实验中学",
+                district_id=district_wuhou_id,
+                type=SchoolType.PUBLIC,
+                level=SchoolLevel.MIDDLE,
+            ),
+        ]
+    )
+    await db_session.commit()
+
+
+@pytest.mark.asyncio
+async def test_search_schools_filters_by_district_and_query(db_session):
+    await _seed_schools(db_session)
+    repo = PolicyRepository(db_session)
+
+    results = await repo.search_schools(district_code="jinjiang", q="实验")
+    assert len(results) == 1
+    assert results[0].name == "成都七中实验学校"
