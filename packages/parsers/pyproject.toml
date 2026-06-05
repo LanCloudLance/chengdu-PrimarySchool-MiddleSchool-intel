@@ -6,6 +6,7 @@ dependencies = [
   "chengdu-edu-core",
   "pyyaml>=6.0",
   "beautifulsoup4>=4.12",
+  "openai>=1.0",
 ]
 
 [tool.uv.sources]
