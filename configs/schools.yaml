@@ -1,0 +1,33 @@
+schools:
+  - name: 成都市盐道街小学
+    short_name: 盐道街小学
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: "成都市锦江区盐道街28号"
+    source_urls:
+      website: "https://example.com/yandaojie"
+      enrollment: "https://example.com/yandaojie/zhaosheng"
+    notes: "MVP 样板条目，实施时替换为真实 URL"
+
+  - name: 成都市天涯石小学
+    short_name: 天涯石小学
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: "成都市锦江区天涯石街20号"
+    source_urls:
+      website: "https://example.com/tianyashi"
+      enrollment: "https://example.com/tianyashi/zhaosheng"
+    notes: "MVP 样板条目，实施时替换为真实 URL"
+
+  - name: 成都市七中育才学校
+    short_name: 七中育才
+    district_code: jinjiang
+    type: public
+    level: middle
+    address: "成都市锦江区双槐树街44号"
+    source_urls:
+      website: "https://example.com/qizhongyucai"
+      enrollment: "https://example.com/qizhongyucai/zhaosheng"
+    notes: "MVP 样板条目，实施时替换为真实 URL"
