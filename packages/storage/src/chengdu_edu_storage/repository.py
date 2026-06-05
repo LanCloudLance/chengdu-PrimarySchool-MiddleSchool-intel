@@ -8,11 +8,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from chengdu_edu_core.diff import compute_field_changes
 from chengdu_edu_core.enums import PolicyType, RecordType, SchoolLevel, SchoolType
 from chengdu_edu_core.models import FieldChange as FieldChangeDTO
+from chengdu_edu_core.models import RawDocument as RawDocumentDTO
 from chengdu_edu_storage.orm import (
     District,
     EnrollmentPolicy,
     FieldChange,
+    JobRun,
     PromotionPolicy,
+    RawDocument,
     RecordVersion,
     School,
 )
@@ -89,6 +92,52 @@ class PolicyRepository:
             self._add_version(RecordType.ENROLLMENT, policy.id, 1, fields, source_doc_id)
         await self.session.commit()
         return policy.id
+
+    async def get_latest_hash(self, source_id: UUID) -> str | None:
+        stmt = (
+            select(RawDocument.content_hash)
+            .where(RawDocument.source_id == source_id)
+            .order_by(RawDocument.fetched_at.desc())
+            .limit(1)
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def save_raw_document(self, raw: RawDocumentDTO) -> UUID:
+        doc = RawDocument(
+            source_id=raw.source_id,
+            content_hash=raw.content_hash,
+            raw_content=raw.raw_content,
+            raw_file_path=raw.raw_file_path,
+            fetched_at=raw.fetched_at,
+            http_status=raw.http_status,
+        )
+        self.session.add(doc)
+        await self.session.commit()
+        return doc.id
+
+    async def save_job_run(self, run: JobRun) -> JobRun:
+        self.session.add(run)
+        await self.session.commit()
+        await self.session.refresh(run)
+        return run
+
+    async def find_enrollment_id(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID | None,
+        policy_type: PolicyType,
+        year: int,
+    ) -> UUID | None:
+        stmt = select(EnrollmentPolicy.id).where(
+            EnrollmentPolicy.district_id == district_id,
+            EnrollmentPolicy.school_id == school_id,
+            EnrollmentPolicy.policy_type == policy_type,
+            EnrollmentPolicy.year == year,
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
 
     async def get_field_changes(
         self, record_type: RecordType, record_id: UUID

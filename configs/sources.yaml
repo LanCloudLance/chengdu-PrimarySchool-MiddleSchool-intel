@@ -1,0 +1,9 @@
+sources:
+  - name: 锦江区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdjx.gov.cn/
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: jinjiang
+    rule_file: source_rules/jinjiang_gov.yaml
+    is_active: true

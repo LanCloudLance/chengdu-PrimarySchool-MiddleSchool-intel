@@ -1,0 +1,4 @@
+districts:
+  - name: 锦江区
+    code: jinjiang
+    level: core

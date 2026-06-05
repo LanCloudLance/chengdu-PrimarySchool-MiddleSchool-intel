@@ -2,7 +2,19 @@
 name = "chengdu-edu-scheduler"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+  "chengdu-edu-core",
+  "chengdu-edu-storage",
+  "chengdu-edu-collectors",
+  "chengdu-edu-parsers",
+  "pyyaml>=6.0",
+]
+
+[tool.uv.sources]
+chengdu-edu-core = { workspace = true }
+chengdu-edu-storage = { workspace = true }
+chengdu-edu-collectors = { workspace = true }
+chengdu-edu-parsers = { workspace = true }
 
 [build-system]
 requires = ["hatchling"]
