@@ -8,11 +8,22 @@ from chengdu_edu_core.hashing import content_hash
 from chengdu_edu_core.models import RawDocument
 
 
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "zh-CN,zh;q=0.9",
+}
+
+
 class HttpCollector:
     source_type = "gov_website"
 
     async def collect(self, source) -> RawDocument:
-        async with httpx.AsyncClient(timeout=30.0, follow_redirects=True) as client:
+        async with httpx.AsyncClient(
+            timeout=30.0, follow_redirects=True, headers=DEFAULT_HEADERS
+        ) as client:
             for attempt in range(3):
                 try:
                     resp = await client.get(source.url)

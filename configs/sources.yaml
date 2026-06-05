@@ -1,57 +1,75 @@
+# P0 政府招生政策数据源
+# 说明：部分区政府官网对爬虫返回 412/超时，MVP 使用本地宝等可访问的 2025 细则转载页；
+#       原文链接仍保留在 source.url，后续可替换为官网直达地址。
 sources:
   - name: 锦江区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdjx.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025328/196219.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: jinjiang
-    rule_file: source_rules/jinjiang_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 青羊区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdqingyang.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025328/196220.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: qingyang
-    rule_file: source_rules/qingyang_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 武侯区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdwh.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025328/196222.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: wuhou
-    rule_file: source_rules/wuhou_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 成华区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdchenghua.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025331/196232.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: chenghua
-    rule_file: source_rules/chenghua_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 金牛区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdjinniu.gov.cn/  # replace with actual policy page URL
+    url: https://c.m.163.com/news/a/JROMBFA00514LQR4.html
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: jinniu
-    rule_file: source_rules/jinniu_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 高新区教育局-招生政策
     source_type: gov_website
-    url: https://www.cdht.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025331/196231.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: gaoxin
-    rule_file: source_rules/gaoxin_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
   - name: 天府新区教育局-招生政策
     source_type: gov_website
-    url: https://www.tf.gov.cn/  # replace with actual policy page URL
+    url: http://cd.bendibao.com/edu/2025328/196214.shtm
     parser_strategy: rule
     schedule: "0 0 1 * *"
     district_code: tianfu
-    rule_file: source_rules/tianfu_gov.yaml
+    rule_file: source_rules/_gov_policy_common.yaml
     is_active: true
+
+  - name: 成都市-招生入学服务平台
+    source_type: gov_website
+    url: https://yjrx.cdeduypt.cn/
+    parser_strategy: llm
+    schedule: "0 0 1 * *"
+    district_code: jinjiang
+    is_active: false
+    notes: "全市统一报名入口，暂禁用自动采集；供人工查阅"

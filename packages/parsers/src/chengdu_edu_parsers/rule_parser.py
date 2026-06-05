@@ -25,7 +25,15 @@ class RuleParser:
                 raise ValueError("rules_path or source.metadata_.rule_file is required")
             rules_path = rule_file
 
-        rules = yaml.safe_load(Path(rules_path).read_text(encoding="utf-8"))
+        path = Path(rules_path)
+        if not path.is_file():
+            # 相对项目根目录 configs/
+            root_candidate = Path(__file__).resolve().parents[4] / "configs" / rules_path
+            if root_candidate.is_file():
+                path = root_candidate
+            else:
+                path = Path("configs") / rules_path
+        rules = yaml.safe_load(path.read_text(encoding="utf-8"))
         return self.parse_content(
             raw.raw_content,
             rules,

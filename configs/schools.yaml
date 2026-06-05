@@ -1,33 +1,218 @@
+# 7 区代表性学校（MVP 种子数据，官网 URL 来自公开信息，招生页需后续核实）
 schools:
+  # 锦江区
   - name: 成都市盐道街小学
     short_name: 盐道街小学
     district_code: jinjiang
     type: public
     level: primary
-    address: "成都市锦江区盐道街28号"
+    address: 成都市锦江区盐道街28号
     source_urls:
-      website: "https://example.com/yandaojie"
-      enrollment: "https://example.com/yandaojie/zhaosheng"
-    notes: "MVP 样板条目，实施时替换为真实 URL"
+      website: http://www.ydjxx.com/
+    notes: 2025 公开信息
 
   - name: 成都市天涯石小学
     short_name: 天涯石小学
     district_code: jinjiang
     type: public
     level: primary
-    address: "成都市锦江区天涯石街20号"
+    address: 成都市锦江区天涯石街20号
     source_urls:
-      website: "https://example.com/tianyashi"
-      enrollment: "https://example.com/tianyashi/zhaosheng"
-    notes: "MVP 样板条目，实施时替换为真实 URL"
+      website: http://www.tysxx.com/
+    notes: 2025 公开信息
 
   - name: 成都市七中育才学校
     short_name: 七中育才
     district_code: jinjiang
     type: public
     level: middle
-    address: "成都市锦江区双槐树街44号"
+    address: 成都市锦江区双槐树街44号
     source_urls:
-      website: "https://example.com/qizhongyucai"
-      enrollment: "https://example.com/qizhongyucai/zhaosheng"
-    notes: "MVP 样板条目，实施时替换为真实 URL"
+      website: http://www.qzyucai.com/
+    notes: 2025 公开信息
+
+  # 青羊区
+  - name: 成都市实验小学
+    short_name: 实验小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区人民中路一段16号
+    source_urls:
+      website: http://www.cdsysxx.com/
+    notes: 2025 公开信息
+
+  - name: 成都市东城根街小学
+    short_name: 东城根街小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区东城根下街18号
+    source_urls:
+      website: http://www.cddgjxx.com/
+    notes: 2025 公开信息
+
+  - name: 成都市石室中学
+    short_name: 石室中学
+    district_code: qingyang
+    type: public
+    level: middle
+    address: 成都市青羊区文庙前街93号
+    source_urls:
+      website: http://www.cdshishi.net/
+    notes: 2025 公开信息
+
+  # 武侯区
+  - name: 成都市玉林小学
+    short_name: 玉林小学
+    district_code: wuhou
+    type: public
+    level: primary
+    address: 成都市武侯区玉林北路126号
+    source_urls:
+      website: http://www.yulinxx.com/
+    notes: 2025 公开信息
+
+  - name: 成都市龙江路小学
+    short_name: 龙江路小学
+    district_code: wuhou
+    type: public
+    level: primary
+    address: 成都市武侯区龙江路18号
+    source_urls:
+      website: http://www.ljlxx.cn/
+    notes: 2025 公开信息
+
+  - name: 成都市棕北中学
+    short_name: 棕北中学
+    district_code: wuhou
+    type: public
+    level: middle
+    address: 成都市武侯区科院路12号
+    source_urls:
+      website: http://www.zbzx.net/
+    notes: 2025 公开信息
+
+  # 成华区
+  - name: 成都市建设路小学
+    short_name: 建设路小学
+    district_code: chenghua
+    type: public
+    level: primary
+    address: 成都市成华区建设路54号
+    source_urls:
+      website: http://www.cdjslxx.com/
+    notes: 2025 公开信息
+
+  - name: 成都市双庆中学
+    short_name: 双庆中学
+    district_code: chenghua
+    type: public
+    level: middle
+    address: 成都市成华区双庆路1号
+    source_urls:
+      website: http://www.cdsqzx.com/
+    notes: 2025 公开信息
+
+  - name: 成都嘉祥外国语学校（成华校区）
+    short_name: 嘉祥成华
+    district_code: chenghua
+    type: private
+    level: nine_year
+    address: 成都市成华区熊猫大道533号
+    source_urls:
+      website: https://www.jiaxiangschool.com/
+    notes: 民办，招生以简章为准
+
+  # 金牛区
+  - name: 成都市人民北路小学
+    short_name: 人北小学
+    district_code: jinniu
+    type: public
+    level: primary
+    address: 成都市金牛区一环路北三段69号
+    source_urls:
+      website: http://www.cdrmbxx.com/
+    notes: 2025 公开信息
+
+  - name: 成都市七中万达学校
+    short_name: 七中万达
+    district_code: jinniu
+    type: public
+    level: middle
+    address: 成都市金牛区盛业路301号
+    source_urls:
+      website: http://www.qzwd.net/
+    notes: 2025 公开信息
+
+  - name: 成都市锦西外国语中学
+    short_name: 锦西外国语
+    district_code: jinniu
+    type: private
+    level: middle
+    address: 成都市金牛区抚琴西南路1号
+    source_urls:
+      website: http://www.jxfls.com/
+    notes: 民办
+
+  # 高新区
+  - name: 成都蒙彼利埃小学
+    short_name: 蒙小
+    district_code: gaoxin
+    type: public
+    level: primary
+    address: 成都市高新区盛邦街699号
+    source_urls:
+      website: http://www.cdmpl.cn/
+    notes: 2025 公开信息
+
+  - name: 四川省成都七中初中学校
+    short_name: 七中初中
+    district_code: gaoxin
+    type: public
+    level: middle
+    address: 成都市高新区天仁路388号
+    source_urls:
+      website: http://www.cdqzcz.net/
+    notes: 2025 公开信息
+
+  - name: 成都金苹果公学
+    short_name: 金苹果公学
+    district_code: gaoxin
+    type: private
+    level: primary
+    address: 成都市高新区祥龙一街99号
+    source_urls:
+      website: https://www.jinpingguo.com/
+    notes: 民办
+
+  # 天府新区
+  - name: 四川天府新区第一小学
+    short_name: 天府一小
+    district_code: tianfu
+    type: public
+    level: primary
+    address: 四川天府新区宁波路505号
+    source_urls:
+      website: http://www.tf1x.net/
+    notes: 2025 公开信息
+
+  - name: 四川天府新区第七中学
+    short_name: 天府七中
+    district_code: tianfu
+    type: public
+    level: middle
+    address: 四川天府新区宁波路799号
+    source_urls:
+      website: http://www.tf7z.net/
+    notes: 2025 公开信息
+
+  - name: 四川天府新区实外高级中学（附小）
+    short_name: 实外附小
+    district_code: tianfu
+    type: private
+    level: primary
+    address: 四川天府新区万安街道
+    source_urls:
+      website: https://www.scshiwai.com/
+    notes: 民办，以当年简章为准

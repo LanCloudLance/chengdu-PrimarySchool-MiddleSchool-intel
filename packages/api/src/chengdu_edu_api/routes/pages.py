@@ -76,9 +76,9 @@ async def index_page(
     }
 
     if request.headers.get("HX-Request") == "true":
-        return templates.TemplateResponse("school_results.html", context)
+        return templates.TemplateResponse(request, "school_results.html", context)
 
-    return templates.TemplateResponse("index.html", context)
+    return templates.TemplateResponse(request, "index.html", context)
 
 
 @router.get("/schools/{school_id}")
@@ -111,6 +111,7 @@ async def school_detail_page(
         changes = [FieldChangeOut.model_validate(change) for change in rows]
 
     return templates.TemplateResponse(
+        request,
         "school_detail.html",
         {
             "request": request,
@@ -151,6 +152,7 @@ async def gov_policies_page(
     items = await build_enrollment_policy_outs(session, policies)
 
     return templates.TemplateResponse(
+        request,
         "gov_policies.html",
         {
             "request": request,
