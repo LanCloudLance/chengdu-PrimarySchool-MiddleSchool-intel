@@ -182,16 +182,14 @@ def parse_ocr_table_boxes(
     return scopes
 
 
-def _resize_image(image: "Image.Image", *, max_side: int = 2000) -> "Image.Image":
-    """缩小超长划片长图（本地宝常见 800×10000+ 竖图）。"""
+def _resize_image(image: "Image.Image", *, max_width: int = 0) -> "Image.Image":
+    """按需缩放宽图（仅当宽度过大时），保留竖图原始分辨率以确保 OCR 可读性。"""
     from PIL import Image
 
-    width, height = image.size
-    longest = max(width, height)
-    if longest <= max_side:
+    if max_width <= 0 or image.size[0] <= max_width:
         return image
-    ratio = max_side / longest
-    new_size = (max(1, int(width * ratio)), max(1, int(height * ratio)))
+    ratio = max_width / image.size[0]
+    new_size = (max_width, max(1, int(image.size[1] * ratio)))
     return image.resize(new_size, Image.Resampling.LANCZOS)
 
 
