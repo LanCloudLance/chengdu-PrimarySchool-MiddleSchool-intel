@@ -1,0 +1,87 @@
+district_code: chenghua
+data_year: 2026
+notes: 从 configs/schools.yaml 提取的 chenghua 区学校（7 校）
+inventory_summary:
+  total: 7
+  listed: 7
+  enriched: 0
+  verified: 0
+schools:
+- name: 成都市建设路小学
+  short_name: 建设路小学
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区建设路54号
+  source_urls:
+    website: http://www.cdjslxx.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市双庆小学
+  short_name: 双庆小学
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区双庆路16号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市锦华小学
+  short_name: 锦华小学
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区经华北路60号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市北新实验小学
+  short_name: 北新实小
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区双水碾街道
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市双庆中学
+  short_name: 双庆中学
+  district_code: chenghua
+  type: public
+  level: middle
+  address: 成都市成华区双庆路1号
+  source_urls:
+    website: http://www.cdsqzx.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+- name: 成都列五中学
+  short_name: 列五中学
+  district_code: chenghua
+  type: public
+  level: middle
+  address: 成都市成华区双林路388号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+- name: 成都嘉祥外国语学校（成华校区）
+  short_name: 嘉祥成华
+  district_code: chenghua
+  type: private
+  level: nine_year
+  address: 成都市成华区熊猫大道533号
+  source_urls:
+    website: https://www.jiaxiangschool.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  notes: 民办，招生以2026简章为准

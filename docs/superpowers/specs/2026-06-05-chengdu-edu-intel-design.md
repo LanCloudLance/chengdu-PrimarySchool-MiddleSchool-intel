@@ -1,7 +1,7 @@
 # 成都学区招生情报系统 — 设计规格
 
 **日期：** 2026-06-05  
-**状态：** 已批准  
+**状态：** 已批准（2026-06-05 修订：新增 §5.6 学校主数据，实现阶段调整为 15 步）  
 **项目代号：** chengdu-edu-intel
 
 ---
@@ -301,13 +301,70 @@ class BaseCollector(Protocol):
 
 ### 5.2 MVP 数据源优先级
 
-| 优先级 | 来源 | 解析策略 |
-|--------|------|----------|
-| P0 | 7 区教育局官网招生政策 | rule |
-| P0 | 各区划片/学区公告 PDF | rule + LLM 辅助 |
-| P1 | 公办学校官网招生简章 | rule |
-| P1 | 民办学校官网招生页 | llm |
-| P2 | 公众号推文（人工种子 URL） | llm |
+| 优先级 | 来源 | 解析策略 | 前置条件 |
+|--------|------|----------|----------|
+| P0 | 7 区教育局官网招生政策 | rule | 7 区 `districts` 已 seed |
+| P0 | 各区划片/学区公告 PDF | rule + LLM 辅助 | 同上 |
+| P1 | 公办学校官网招生简章 | rule | **学校主数据**（`schools` 表 + 各校 URL） |
+| P1 | 民办学校官网招生页 | llm | **学校主数据** |
+| P2 | 公众号推文（人工种子 URL） | llm | 人工种子 URL |
+
+**P0 与 P1 的分工：**
+
+- **P0（按区域抓）** 不依赖完整学校清单；第 5 步 HttpCollector 等采集工具即可开始验证。
+- **P1（按学校抓）** 必须先完成 **§5.6 学校主数据**；否则采集器没有明确 URL 目标。
+- **家长按校名搜索**（API / Web）同样依赖 `schools` 表有数据，应在主数据导入之后上线查询功能。
+
+### 5.6 学校主数据（School Master Data）
+
+MVP 7 区（锦江、青羊、武侯、成华、金牛、高新、天府新区）的公办 + 民办小学/初中清单，是 P1 采集和家长查询的前置条件。
+
+#### 5.6.1 目标
+
+- 建立可维护的 `schools` 主数据：校名、所属区、类型、学段、地址、官网/招生页链接
+- 为 P1 数据源注册提供 `school_id` 与 URL
+- 可选：从 P0 划片 PDF 解析出的校名与人工清单交叉核对
+
+#### 5.6.2 数据来源（MVP）
+
+| 来源 | 方式 | 说明 |
+|------|------|------|
+| 教育局公布对口表 / 划片文件 | 人工整理 + 可选从 P0 解析补校名 | 权威但需核对年份 |
+| 各区学校名录 / 官网列表 | 人工采集 | 覆盖公办为主 |
+| 民办学校招生页 / 简章 | 人工采集 URL | 民办需单独找招生入口 |
+| 自动全网发现 | **不在 MVP** | 后续迭代 |
+
+#### 5.6.3 数据文件格式
+
+`configs/schools.yaml`（按区组织，便于人工维护）：
+
+```yaml
+schools:
+  - name: XX小学
+    short_name: XX小
+    district_code: jinjiang
+    type: public          # public | private
+    level: primary        # primary | middle | nine_year
+    address: "成都市锦江区..."
+    source_urls:
+      website: "https://..."
+      enrollment: "https://..."   # 招生页，P1 采集入口
+    notes: "2026 人工核实"
+```
+
+#### 5.6.4 导入流程
+
+1. **Task 9 完成后**：运行 `scripts/seed_districts.py`，写入 7 个 `districts`
+2. **Task 10**：维护 `configs/schools.yaml` → `scripts/import_schools.py` 批量 upsert 到 `schools`
+3. **（可选）** 有 `enrollment` URL 的学校，同步写入 `data_sources`（P1，`parser_strategy` 按公/民划分）
+4. **（可选）** 运行 P0 后，从 `district_mapping` 政策 fields 提取校名，与清单 diff，输出待核实列表
+
+#### 5.6.5 验收标准
+
+- 7 区均有学校记录（MVP 目标：每区至少覆盖主要公办 + 代表性民办，不要求 100% 完备）
+- 每条学校关联有效 `district_id`
+- 查询 API `GET /api/schools?q=` 能返回结果
+- P1 数据源可关联到 `school_id`
 
 ### 5.3 解析器
 
@@ -422,10 +479,12 @@ HTMX + Alpine.js + Tailwind，由 FastAPI 提供页面或 API 驱动渲染。
 
 ### 10.1 包含
 
-- 7 区数据源注册与 P0/P1 采集
+- 7 区 `districts` seed + **学校主数据整理与导入**（§5.6）
+- 7 区 P0 政府数据源注册与采集
+- P1 校级采集（依赖主数据，可分批增量）
 - 规则 + LLM 混合解析
 - 版本追踪与变更日志
-- 查询 API + 3 页 Web
+- 查询 API + 3 页 Web（依赖 `schools` 有数据）
 - 调度框架 + 手动触发
 - Docker Compose 本地部署
 
@@ -452,7 +511,26 @@ HTMX + Alpine.js + Tailwind，由 FastAPI 提供页面或 API 驱动渲染。
 
 ---
 
-## 12. 后续拆分方向
+## 12. 实现阶段（15 步）
+
+| 步 | 内容 | 依赖 |
+|----|------|------|
+| 1–3 | 脚手架、领域模型、ORM | — |
+| 4 | Storage Repository（版本追踪） | 2, 3 |
+| 5–7 | Collectors、RuleParser、LLMParser | 2 |
+| 8–9 | Pipeline + Scheduler；**Task 9 末 seed 7 区** | 4–7 |
+| **10** | **学校主数据（YAML + import_schools）** | 4, 9（districts） |
+| 11 | FastAPI 查询/管理 API | 4, 10 |
+| 12 | HTMX 查询 Web | 11 |
+| 13 | Seed P0 政府数据源 + 首次 P0 采集验证 | 8, 9 |
+| 14 | Docker Compose | 11–13 |
+| 15 | 端到端验收 | 全部 |
+
+**说明：** P0 可在 Task 10 之前用 Pipeline 试跑；**按校搜索与 P1 采集**必须在 Task 10 之后。
+
+---
+
+## 13. 后续拆分方向
 
 1. **chengdu-edu-collector** — 独立采集 worker（scheduler + collectors）
 2. **chengdu-edu-api** — 纯 API 服务（供多个前端消费）

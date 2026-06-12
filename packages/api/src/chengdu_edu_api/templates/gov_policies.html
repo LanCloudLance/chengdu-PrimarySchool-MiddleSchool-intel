@@ -30,7 +30,7 @@
     {% if policy.fields %}
     <dl class="text-sm space-y-1 mb-3">
       {% for key, value in policy.fields.items() %}
-      <div><dt class="inline text-gray-500">{{ key }}:</dt> <dd class="inline">{{ value }}</dd></div>
+      <div><dt class="inline text-gray-500">{{ field_labels.get(key, key) }}:</dt> <dd class="inline">{{ value or "—" }}</dd></div>
       {% endfor %}
     </dl>
     {% endif %}

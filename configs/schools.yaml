@@ -1,6 +1,11 @@
-# 7 区代表性学校（MVP 种子数据，官网 URL 来自公开信息，招生页需后续核实）
+# 7 区学校主数据（2026）
+# 来源：各区 2026 年 4 月登记点公告 / 招生政策公开信息；官网 URL 经 verify_data.py 校验。
+# 登记点学校 ≠ 划片就读学校，划片以 6 月 15 日 yjrx 平台公布为准。
+data_year: 2026
+default_verification_source: https://yjrx.cdeduypt.cn/
+
 schools:
-  # 锦江区
+  # ── 锦江区 ──
   - name: 成都市盐道街小学
     short_name: 盐道街小学
     district_code: jinjiang
@@ -9,7 +14,22 @@ schools:
     address: 成都市锦江区盐道街28号
     source_urls:
       website: http://www.ydjxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
+
+  - name: 成都市盐道街小学东区
+    short_name: 盐道街东
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: 成都市锦江区红星路四段928号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
 
   - name: 成都市天涯石小学
     short_name: 天涯石小学
@@ -19,7 +39,46 @@ schools:
     address: 成都市锦江区天涯石街20号
     source_urls:
       website: http://www.tysxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
+
+  - name: 成都市龙王庙正街小学
+    short_name: 龙王庙正街
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: 成都市锦江区龙王庙正街81号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
+
+  - name: 成都师范附属小学
+    short_name: 成师附小
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: 成都市锦江区书院西街53号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
+
+  - name: 成都市东光实验小学
+    short_name: 东光实小
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: 成都市锦江区东光街43号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207388.shtm
+    role: registration_point
 
   - name: 成都市七中育才学校
     short_name: 七中育才
@@ -29,9 +88,23 @@ schools:
     address: 成都市锦江区双槐树街44号
     source_urls:
       website: http://www.qzyucai.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206681.shtm
 
-  # 青羊区
+  - name: 四川师范大学附属实验学校
+    short_name: 川师附实
+    district_code: jinjiang
+    type: private
+    level: nine_year
+    address: 成都市锦江区静安路5号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206681.shtm
+    notes: 2026招生代码01047，以当年简章为准
+
+  # ── 青羊区 ──
   - name: 成都市实验小学
     short_name: 实验小学
     district_code: qingyang
@@ -40,7 +113,10 @@ schools:
     address: 成都市青羊区人民中路一段16号
     source_urls:
       website: http://www.cdsysxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
 
   - name: 成都市东城根街小学
     short_name: 东城根街小学
@@ -50,7 +126,58 @@ schools:
     address: 成都市青羊区东城根下街18号
     source_urls:
       website: http://www.cddgjxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
+
+  - name: 成都市草堂小学
+    short_name: 草堂小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区草堂北路5号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
+
+  - name: 成都市金沙小学
+    short_name: 金沙小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区金沙遗址路
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
+
+  - name: 成都市少城小学
+    short_name: 少城小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区少城路27号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
+
+  - name: 成都市胜西小学
+    short_name: 胜西小学
+    district_code: qingyang
+    type: public
+    level: primary
+    address: 成都市青羊区上翔街2号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    role: registration_point
 
   - name: 成都市石室中学
     short_name: 石室中学
@@ -60,40 +187,25 @@ schools:
     address: 成都市青羊区文庙前街93号
     source_urls:
       website: http://www.cdshishi.net/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206680.shtm
 
-  # 武侯区
-  - name: 成都市玉林小学
-    short_name: 玉林小学
-    district_code: wuhou
-    type: public
-    level: primary
-    address: 成都市武侯区玉林北路126号
-    source_urls:
-      website: http://www.yulinxx.com/
-    notes: 2025 公开信息
-
-  - name: 成都市龙江路小学
-    short_name: 龙江路小学
-    district_code: wuhou
-    type: public
-    level: primary
-    address: 成都市武侯区龙江路18号
-    source_urls:
-      website: http://www.ljlxx.cn/
-    notes: 2025 公开信息
-
-  - name: 成都市棕北中学
-    short_name: 棕北中学
-    district_code: wuhou
+  - name: 成都市树德中学
+    short_name: 树德中学
+    district_code: qingyang
     type: public
     level: middle
-    address: 成都市武侯区科院路12号
-    source_urls:
-      website: http://www.zbzx.net/
-    notes: 2025 公开信息
+    address: 成都市青羊区宁夏街树德巷
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206680.shtm
 
-  # 成华区
+  # ── 武侯区 ──
+  # 完整清单见 configs/districts/wuhou/schools.yaml（94 所，2026）
+
+  # ── 成华区 ──
   - name: 成都市建设路小学
     short_name: 建设路小学
     district_code: chenghua
@@ -102,7 +214,46 @@ schools:
     address: 成都市成华区建设路54号
     source_urls:
       website: http://www.cdjslxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+    role: registration_point
+
+  - name: 成都市双庆小学
+    short_name: 双庆小学
+    district_code: chenghua
+    type: public
+    level: primary
+    address: 成都市成华区双庆路16号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+    role: registration_point
+
+  - name: 成都市锦华小学
+    short_name: 锦华小学
+    district_code: chenghua
+    type: public
+    level: primary
+    address: 成都市成华区经华北路60号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+    role: registration_point
+
+  - name: 成都市北新实验小学
+    short_name: 北新实小
+    district_code: chenghua
+    type: public
+    level: primary
+    address: 成都市成华区双水碾街道
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+    role: registration_point
 
   - name: 成都市双庆中学
     short_name: 双庆中学
@@ -112,7 +263,20 @@ schools:
     address: 成都市成华区双庆路1号
     source_urls:
       website: http://www.cdsqzx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+
+  - name: 成都列五中学
+    short_name: 列五中学
+    district_code: chenghua
+    type: public
+    level: middle
+    address: 成都市成华区双林路388号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
 
   - name: 成都嘉祥外国语学校（成华校区）
     short_name: 嘉祥成华
@@ -122,9 +286,12 @@ schools:
     address: 成都市成华区熊猫大道533号
     source_urls:
       website: https://www.jiaxiangschool.com/
-    notes: 民办，招生以简章为准
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+    notes: 民办，招生以2026简章为准
 
-  # 金牛区
+  # ── 金牛区 ──
   - name: 成都市人民北路小学
     short_name: 人北小学
     district_code: jinniu
@@ -133,7 +300,46 @@ schools:
     address: 成都市金牛区一环路北三段69号
     source_urls:
       website: http://www.cdrmbxx.com/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+    role: registration_point
+
+  - name: 成都市茶店子小学
+    short_name: 茶店子小学
+    district_code: jinniu
+    type: public
+    level: primary
+    address: 成都市金牛区茶店子西街36号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+    role: registration_point
+
+  - name: 成都市回民小学
+    short_name: 回民小学
+    district_code: jinniu
+    type: public
+    level: primary
+    address: 成都市金牛区西屠场街33号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+    role: registration_point
+
+  - name: 成都市沙河源小学
+    short_name: 沙河源小学
+    district_code: jinniu
+    type: public
+    level: primary
+    address: 成都市金牛区沙河源街道
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+    role: registration_point
 
   - name: 成都市七中万达学校
     short_name: 七中万达
@@ -143,7 +349,20 @@ schools:
     address: 成都市金牛区盛业路301号
     source_urls:
       website: http://www.qzwd.net/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: https://daydaynews.cc/zh-hans/education/4285520.html
+
+  - name: 成都市第二十中学
+    short_name: 二十中
+    district_code: jinniu
+    type: public
+    level: middle
+    address: 成都市金牛区二环路北三段
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: https://daydaynews.cc/zh-hans/education/4285520.html
 
   - name: 成都市锦西外国语中学
     short_name: 锦西外国语
@@ -153,9 +372,11 @@ schools:
     address: 成都市金牛区抚琴西南路1号
     source_urls:
       website: http://www.jxfls.com/
-    notes: 民办
+    data_year: 2026
+    verified: false
+    verification_source: https://daydaynews.cc/zh-hans/education/4285520.html
 
-  # 高新区
+  # ── 高新区 ──
   - name: 成都蒙彼利埃小学
     short_name: 蒙小
     district_code: gaoxin
@@ -164,7 +385,34 @@ schools:
     address: 成都市高新区盛邦街699号
     source_urls:
       website: http://www.cdmpl.cn/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+    role: registration_point
+
+  - name: 成都师范银都紫菀小学
+    short_name: 银都紫菀
+    district_code: gaoxin
+    type: public
+    level: primary
+    address: 成都市高新区中和街道
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+    role: registration_point
+
+  - name: 成都泡桐树小学（天府校区）
+    short_name: 泡小天府
+    district_code: gaoxin
+    type: public
+    level: primary
+    address: 成都市高新区天府大道南段
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+    role: registration_point
 
   - name: 四川省成都七中初中学校
     short_name: 七中初中
@@ -174,7 +422,9 @@ schools:
     address: 成都市高新区天仁路388号
     source_urls:
       website: http://www.cdqzcz.net/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
 
   - name: 成都金苹果公学
     short_name: 金苹果公学
@@ -184,9 +434,11 @@ schools:
     address: 成都市高新区祥龙一街99号
     source_urls:
       website: https://www.jinpingguo.com/
-    notes: 民办
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
 
-  # 天府新区
+  # ── 天府新区 ──
   - name: 四川天府新区第一小学
     short_name: 天府一小
     district_code: tianfu
@@ -195,7 +447,34 @@ schools:
     address: 四川天府新区宁波路505号
     source_urls:
       website: http://www.tf1x.net/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+    role: registration_point
+
+  - name: 四川天府新区第七小学
+    short_name: 天府七小
+    district_code: tianfu
+    type: public
+    level: primary
+    address: 四川天府新区宁波路799号
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+    role: registration_point
+
+  - name: 四川天府新区华阳小学
+    short_name: 华阳小学
+    district_code: tianfu
+    type: public
+    level: primary
+    address: 四川天府新区华阳街道
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026424/207407_4.shtm
+    role: registration_point
 
   - name: 四川天府新区第七中学
     short_name: 天府七中
@@ -205,7 +484,20 @@ schools:
     address: 四川天府新区宁波路799号
     source_urls:
       website: http://www.tf7z.net/
-    notes: 2025 公开信息
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+
+  - name: 四川天府新区实验中学
+    short_name: 天府实验
+    district_code: tianfu
+    type: public
+    level: middle
+    address: 四川天府新区万安街道
+    source_urls: {}
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
 
   - name: 四川天府新区实外高级中学（附小）
     short_name: 实外附小
@@ -215,4 +507,7 @@ schools:
     address: 四川天府新区万安街道
     source_urls:
       website: https://www.scshiwai.com/
-    notes: 民办，以当年简章为准
+    data_year: 2026
+    verified: false
+    verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+    notes: 民办，以2026简章为准

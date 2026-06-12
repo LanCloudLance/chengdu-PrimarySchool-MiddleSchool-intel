@@ -45,6 +45,9 @@ async def seed_p0_sources() -> int:
             metadata: dict = {}
             if rule_file := entry.get("rule_file"):
                 metadata["rule_file"] = rule_file
+            for key in ("data_year", "registration_url", "fallback_url", "notes"):
+                if key in entry:
+                    metadata[key] = entry[key]
 
             session.add(
                 DataSource(

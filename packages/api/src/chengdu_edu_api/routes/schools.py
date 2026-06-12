@@ -5,9 +5,10 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from chengdu_edu_core.enums import RecordType, SchoolLevel, SchoolType
+from chengdu_edu_core.search_query import school_fuzzy_filter
 from chengdu_edu_api.dependencies import get_db_session
 from chengdu_edu_api.enrichment import (
-    build_enrollment_policy_outs,
+    resolve_school_enrollment_policies,
     build_promotion_policy_outs,
 )
 from chengdu_edu_api.schemas import (
@@ -37,8 +38,9 @@ def _school_filters(
         stmt = stmt.where(School.type == school_type)
     if level:
         stmt = stmt.where(School.level == level)
-    if q:
-        stmt = stmt.where(School.name.ilike(f"%{q}%"))
+    fuzzy = school_fuzzy_filter(q, School.name, School.short_name, School.address)
+    if fuzzy is not None:
+        stmt = stmt.where(fuzzy)
     return stmt
 
 
@@ -87,7 +89,11 @@ async def get_school(
     district = await session.get(District, data.school.district_id)
     district_code = district.code if district else ""
 
-    enrollment = await build_enrollment_policy_outs(session, data.enrollment_policies)
+    enrollment, _ = await resolve_school_enrollment_policies(
+        session,
+        district_id=data.school.district_id,
+        school_policies=data.enrollment_policies,
+    )
     promotion = await build_promotion_policy_outs(session, data.promotion_policies)
 
     return SchoolDetailOut(

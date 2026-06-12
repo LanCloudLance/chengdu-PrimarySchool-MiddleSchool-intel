@@ -1,0 +1,67 @@
+{
+  "scraped_at": "2026-06-07",
+  "district_code": "gaoxin",
+  "data_year": 2026,
+  "school_scopes": [
+    {
+      "school_name": "成都师范银都紫菀小学",
+      "enrollment_scope": "北至吉龙路，南至应龙路，西至锦韵路，东与锦江区交界。",
+      "source_excerpt": "成都师范银都紫菀小学\n北至吉龙路，南至应龙路，西至锦韵路，东与锦江区交界。",
+      "source_url": "http://m.cd.bendibao.com/edu/209029.shtm"
+    },
+    {
+      "school_name": "四川省教育科学研究院附属实验小学（成都高新区梓州小学）",
+      "enrollment_scope": "天府大道和老成仁路（锦韵路）以东，梓州大道以西，会龙大道以北，应龙路以南。",
+      "source_excerpt": "四川省教育科学研究院附属实验小学（成都高新区梓州小学）\n天府大道和老成仁路（锦韵路）以东，梓州大道以西，会龙大道以北，应龙路以南。",
+      "source_url": "http://m.cd.bendibao.com/edu/209029.shtm"
+    },
+    {
+      "school_name": "成都师范银都紫藤北区小学",
+      "enrollment_scope": "天府大道以东，梓州大道以西，天府新区界以北，会龙大道以南。",
+      "source_excerpt": "成都师范银都紫藤北区小学\n天府大道以东，梓州大道以西，天府新区界以北，会龙大道以南。",
+      "source_url": "http://m.cd.bendibao.com/edu/209029.shtm"
+    },
+    {
+      "school_name": "成都师范银都紫藤南区小学",
+      "enrollment_scope": "天府大道以东，梓州大道以西，天府新区界以北，会龙大道以南。",
+      "source_excerpt": "成都师范银都紫藤南区小学\n天府大道以东，梓州大道以西，天府新区界以北，会龙大道以南。",
+      "source_url": "http://m.cd.bendibao.com/edu/209029.shtm"
+    },
+    {
+      "school_name": "成都高新区银都紫藤初中东区学校",
+      "enrollment_scope": "应龙路以南，梓州大道以东，东、南与天府新区交界。",
+      "source_excerpt": "成都高新区银都紫藤初中东区学校\n应龙路以南，梓州大道以东，东、南与天府新区交界。",
+      "source_url": "http://m.cd.bendibao.com/edu/209029.shtm"
+    }
+  ],
+  "zone_blocks": [
+    {
+      "zone_label": "一、中和A片区范围",
+      "zone_boundary": "范围四至：锦韵路—吉龙路以南，会龙大道—新通大道以北，天府大道—锦韵路以东，锦江区、天府新区界以西",
+      "source_url": "http://m.cd.bendibao.com/edu/209025.shtm"
+    },
+    {
+      "zone_label": "二、中和B片区范围",
+      "zone_boundary": "范围四至：会龙大道—新通大道以南，天府新区界以北，天府大道以东，天府新区界以西",
+      "source_url": "http://m.cd.bendibao.com/edu/209025.shtm"
+    }
+  ],
+  "promotion_links": [],
+  "articles": [
+    {
+      "url": "http://m.cd.bendibao.com/edu/209029.shtm",
+      "kind": "school_scope",
+      "scopes": 5,
+      "zones": 0,
+      "promotions": 0
+    },
+    {
+      "url": "http://m.cd.bendibao.com/edu/209025.shtm",
+      "kind": "zone_list",
+      "scopes": 0,
+      "zones": 2,
+      "promotions": 0
+    }
+  ],
+  "errors": []
+}

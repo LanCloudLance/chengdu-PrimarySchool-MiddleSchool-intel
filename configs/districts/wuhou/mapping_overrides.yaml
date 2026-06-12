@@ -1,0 +1,108 @@
+# 人工校对划片覆盖（优先级高于 OCR / 自动解析）
+data_year: 2025
+overrides:
+  - school_name: 成都市弟维小学
+    enrollment_scope: >-
+      小税巷、国学巷、小天竺街（63号以后）、坛神巷、大悲巷、黉门街、黉门后街、临江西路、
+      人民南路三段（2号至22号，锦江大桥头至03部队，双号），桓侯巷、桓新巷、张爷庙、
+      浆洗街（浆洗街15号除外），洗面桥街（上街、下街）、洗面桥横街、洗面桥东一街、
+      洗面桥东二街、洗面桥巷，利民巷、放生池、金沙寺（街），肥猪市巷。
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 2024 HTML 一览表片号1；校正 OCR 污染
+
+  - school_name: 成都市红专西路小学
+    copy_scope_from: 成都市弟维小学
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 与弟维小学同址黉门街25号；划片沿用弟维片号1范围（待教育局核实是否合并）
+
+  - school_name: 成都市三河小学校
+    enrollment_scope: >-
+      三河村辖区（由成都市太平寺西区小学代招，户籍须在三河村辖区内）。
+      参考太平寺西区划片：成双大道北段（127号-文昌路）以南，华烨路、文盛路、招商路、
+      水厂路、五桂路、正兴路、红簇路、沈三路、雷家坡二路、雷家坡三路、夏家湾一路、
+      夏家湾二路；文昌路、进厂路、武侯大道文昌段、文昌东路、文昌西路；水岸花园AB区。
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 摘自2024一览表片号21太平寺西区第3点「三河村辖区（代招）」
+
+  - school_name: 成都市百草园小学校
+    copy_scope_from: 北京第二外国语学院成都附属小学
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 2018年更名北二外成都附小；inventory 保留旧校名，划片沿用2024表片号28
+
+  - school_name: 成都市新生路小学
+    copy_scope_from: 四川音乐学院附属实验小学
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 2005年联合更名音乐学院附小；inventory 保留旧校名，划片沿用2024表对应行
+
+  - school_name: 成都市洗面桥小学
+    copy_scope_from: 成都市弟维小学
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 洗面桥街片区在2024一览表弟维片号1范围内；独立校名未单列
+
+  - school_name: 四川大学附属实验小学西区
+    copy_scope_from: 四川大学附属实验小学分校
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 与附小分校同址大华街4号；划片沿用2024一览表片号8
+
+  - school_name: 成都市太平小学校
+    enrollment_scope: >-
+      佳灵路以西北，二环路西一段（至双楠路口）以西南，武侯大道双楠段以东南、成昆铁路西环线
+      （武侯大道至佳灵路之间路段）以东北，佳灵路（至铁路口）以西北之间区域。包括武侯大道双楠段双号,
+      佳灵路双号2号—28号（永丰汽配城）盛世路、盛丰路、永顺路、永顺街、永盛路、永盛街、永盛南街、
+      永盛北街、永盛东街（不含40号竹园小区）、红牌楼路、红牌楼一街、红牌楼二街、太平园东二街、
+      太平园东三街、太平园东四街、太平园东五街、太平园横一街、太平园横二街、太平园巷、太平园东路等。
+      2.原：核桃村2、3、5组未换迁户籍。
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 2023年8月停招；划片由明远书院学校承接（2024一览表片号20）
+
+  - school_name: 成都市龙江路小学武侯新城分校南区学校
+    copy_scope_from: 成都市龙江路小学武侯新城分校
+    mapping_status: reference
+    reference_year: 2024
+    intel_year: 2024
+    is_reference: true
+    source_page: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+    notes: 一校两区（南区双凤二路356号）；划片与武侯新城分校本部一致
+
+  - school_name: 成都市金兴北路小学
+    enrollment_scope: >-
+      1.江安河以东，永康路-智远大道以南，智远大道（金瓦路口-永康路口）、金川路-永康路以西，
+      金瓦路-智远大道以北区域。2.原：永康村、川西营村、陆坝村、白佛村等村未换迁户籍。
+    mapping_status: reference
+    reference_year: 2022
+    intel_year: 2022
+    is_reference: true
+    source_page: http://sc.sina.cn/news/b/2022-04-19/detail-imcwipii5039080.d.html
+    notes: 2024一览表无独立行；援引2022年教育局调整公告（机投桥片区调整后范围）

@@ -37,7 +37,9 @@ class Pipeline:
                 raise ValueError(f"source {source.id} has no district_id")
 
             policy_type = parsed.policy_type or PolicyType.GOV_POLICY
-            year = parsed.year or utcnow().year
+            meta = getattr(source, "metadata_", None) or {}
+            config_year = meta.get("data_year") if isinstance(meta, dict) else None
+            year = parsed.year or config_year or utcnow().year
             existing_id = await self.repo.find_enrollment_id(
                 district_id=source.district_id,
                 school_id=source.school_id,

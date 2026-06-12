@@ -61,10 +61,20 @@ class RuleParser:
                 if match:
                     fields[name] = match.group(1).strip()
 
+        resolved_year = year or _detect_policy_year(text)
+
         return ParseResult(
             fields=fields,
             confidence=1.0,
             needs_review=False,
             policy_type=policy_type,
-            year=year,
+            year=resolved_year,
         )
+
+
+def _detect_policy_year(text: str) -> int | None:
+    match = re.search(r"(20\d{2})年(?:义务教育|招生入学|幼升小|小一入学)", text)
+    if match:
+        return int(match.group(1))
+    years = {int(y) for y in re.findall(r"(20\d{2})", text)}
+    return max(years) if years else None

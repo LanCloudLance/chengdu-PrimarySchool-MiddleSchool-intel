@@ -37,7 +37,9 @@ class SchedulerRunner:
 
     async def trigger(self, scope: str, target_id: UUID | None = None) -> None:
         if scope == "all":
-            for source in self.sources:
+            for index, source in enumerate(self.sources):
+                if index > 0:
+                    await asyncio.sleep(15)
                 await self.pipeline.run_source(source)
         elif scope == "source" and target_id:
             source = await self.pipeline.repo.get_source(target_id)

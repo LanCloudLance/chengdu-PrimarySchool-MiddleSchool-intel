@@ -1,0 +1,76 @@
+district_code: tianfu
+data_year: 2026
+notes: 从 configs/schools.yaml 提取的 tianfu 区学校（6 校）
+inventory_summary:
+  total: 6
+  listed: 6
+  enriched: 0
+  verified: 0
+schools:
+- name: 四川天府新区第一小学
+  short_name: 天府一小
+  district_code: tianfu
+  type: public
+  level: primary
+  address: 四川天府新区宁波路505号
+  source_urls:
+    website: http://www.tf1x.net/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+  role: registration_point
+- name: 四川天府新区第七小学
+  short_name: 天府七小
+  district_code: tianfu
+  type: public
+  level: primary
+  address: 四川天府新区宁波路799号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+  role: registration_point
+- name: 四川天府新区华阳小学
+  short_name: 华阳小学
+  district_code: tianfu
+  type: public
+  level: primary
+  address: 四川天府新区华阳街道
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_4.shtm
+  role: registration_point
+- name: 四川天府新区第七中学
+  short_name: 天府七中
+  district_code: tianfu
+  type: public
+  level: middle
+  address: 四川天府新区宁波路799号
+  source_urls:
+    website: http://www.tf7z.net/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+- name: 四川天府新区实验中学
+  short_name: 天府实验
+  district_code: tianfu
+  type: public
+  level: middle
+  address: 四川天府新区万安街道
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+- name: 四川天府新区实外高级中学（附小）
+  short_name: 实外附小
+  district_code: tianfu
+  type: private
+  level: primary
+  address: 四川天府新区万安街道
+  source_urls:
+    website: https://www.scshiwai.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206657.shtm
+  notes: 民办，以2026简章为准

@@ -9,8 +9,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from chengdu_edu_core.enums import PolicyType, SchoolLevel, SchoolType
 from chengdu_edu_api.dependencies import get_db_session
 from chengdu_edu_api.enrichment import (
+    POLICY_FIELD_LABELS,
+    POLICY_TYPE_LABELS,
     build_enrollment_policy_outs,
     build_promotion_policy_outs,
+    resolve_school_enrollment_policies,
 )
 from chengdu_edu_api.routes.policies import _enrollment_filters
 from chengdu_edu_api.routes.schools import _school_filters
@@ -93,7 +96,11 @@ async def school_detail_page(
         raise HTTPException(status_code=404, detail="School not found")
 
     district = await session.get(District, data.school.district_id)
-    enrollment = await build_enrollment_policy_outs(session, data.enrollment_policies)
+    enrollment, enrollment_is_district = await resolve_school_enrollment_policies(
+        session,
+        district_id=data.school.district_id,
+        school_policies=data.enrollment_policies,
+    )
     promotion = await build_promotion_policy_outs(session, data.promotion_policies)
 
     record_ids = [p.id for p in data.enrollment_policies] + [
@@ -118,7 +125,10 @@ async def school_detail_page(
             "school": data.school,
             "district": district,
             "enrollment_policies": enrollment,
+            "enrollment_is_district": enrollment_is_district,
             "promotion_policies": promotion,
+            "field_labels": POLICY_FIELD_LABELS,
+            "policy_type_labels": POLICY_TYPE_LABELS,
             "changes": changes,
             "school_type_labels": SCHOOL_TYPE_LABELS,
             "school_level_labels": SCHOOL_LEVEL_LABELS,
@@ -161,5 +171,7 @@ async def gov_policies_page(
             "policies": items,
             "total": total,
             "year": year,
+            "field_labels": POLICY_FIELD_LABELS,
+            "policy_type_labels": POLICY_TYPE_LABELS,
         },
     )

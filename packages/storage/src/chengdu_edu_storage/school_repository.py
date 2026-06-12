@@ -4,6 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from chengdu_edu_core.enums import SchoolLevel, SchoolType
+from chengdu_edu_core.search_query import school_fuzzy_filter
 from chengdu_edu_storage.orm import District, School
 
 
@@ -22,6 +23,7 @@ class SchoolRepository:
         address: str | None = None,
         source_urls: dict | None = None,
         metadata: dict | None = None,
+        former_names: list[str] | None = None,
     ) -> UUID:
         stmt = select(School).where(
             School.district_id == district_id,
@@ -29,6 +31,17 @@ class SchoolRepository:
         )
         result = await self.session.execute(stmt)
         school = result.scalar_one_or_none()
+
+        if school is None and former_names:
+            for old_name in former_names:
+                legacy_stmt = select(School).where(
+                    School.district_id == district_id,
+                    School.name == old_name,
+                )
+                school = (await self.session.execute(legacy_stmt)).scalar_one_or_none()
+                if school is not None:
+                    school.name = name
+                    break
 
         urls = source_urls or {}
         meta = metadata or {}
@@ -74,11 +87,38 @@ class SchoolRepository:
             stmt = stmt.where(School.type == school_type)
         if level:
             stmt = stmt.where(School.level == level)
-        if q:
-            stmt = stmt.where(School.name.ilike(f"%{q}%"))
+        fuzzy = school_fuzzy_filter(q, School.name, School.short_name, School.address)
+        if fuzzy is not None:
+            stmt = stmt.where(fuzzy)
         stmt = stmt.order_by(School.name).offset(offset).limit(limit)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())
+
+    async def find_school_id(
+        self, *, district_id: UUID, name: str
+    ) -> UUID | None:
+        stmt = select(School.id).where(
+            School.district_id == district_id,
+            School.name == name,
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def prune_orphan_schools(
+        self, *, district_id: UUID, keep_names: set[str]
+    ) -> int:
+        """删除区内不在 keep_names 中的学校（用于清理历史重复导入）。"""
+        stmt = select(School).where(School.district_id == district_id)
+        schools = list((await self.session.execute(stmt)).scalars().all())
+        removed = 0
+        for school in schools:
+            if school.name in keep_names:
+                continue
+            await self.session.delete(school)
+            removed += 1
+        if removed:
+            await self.session.commit()
+        return removed
 
     async def get_district_code_map(self) -> dict[str, UUID]:
         result = await self.session.execute(select(District))

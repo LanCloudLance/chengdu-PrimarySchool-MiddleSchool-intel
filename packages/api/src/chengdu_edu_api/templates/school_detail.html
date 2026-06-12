@@ -48,12 +48,17 @@
 
 <section class="mb-6">
   <h2 class="text-lg font-semibold text-gray-900 mb-3">招生政策</h2>
+  {% if enrollment_is_district %}
+  <p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-3">
+    以下为<strong>{{ district.name if district else "本区" }}统一招生政策</strong>（区县级）。本校登记点信息见下方卡片（如有）。
+  </p>
+  {% endif %}
   {% if enrollment_policies %}
   <div class="space-y-3">
     {% for policy in enrollment_policies %}
     <div class="bg-white rounded-lg shadow p-4">
       <div class="flex items-center justify-between mb-2">
-        <span class="font-medium">{{ policy.year }} 年</span>
+        <span class="font-medium">{{ policy.year }} 年 · {{ policy_type_labels.get(policy.policy_type, policy.policy_type) }}</span>
         {% if policy.has_recent_changes %}
         <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">近期有变更</span>
         {% endif %}
@@ -61,7 +66,7 @@
       {% if policy.fields %}
       <dl class="text-sm space-y-1">
         {% for key, value in policy.fields.items() %}
-        <div><dt class="inline text-gray-500">{{ key }}:</dt> <dd class="inline">{{ value }}</dd></div>
+        <div><dt class="inline text-gray-500">{{ field_labels.get(key, key) }}:</dt> <dd class="inline">{{ value or "—" }}</dd></div>
         {% endfor %}
       </dl>
       {% endif %}
@@ -85,7 +90,7 @@
     {% for policy in promotion_policies %}
     <div class="bg-white rounded-lg shadow p-4">
       <div class="flex items-center justify-between mb-2">
-        <span class="font-medium">{{ policy.year }} 年</span>
+        <span class="font-medium">{{ policy.year }} 年 · 小升初/升学</span>
         {% if policy.has_recent_changes %}
         <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">近期有变更</span>
         {% endif %}
@@ -93,7 +98,7 @@
       {% if policy.fields %}
       <dl class="text-sm space-y-1">
         {% for key, value in policy.fields.items() %}
-        <div><dt class="inline text-gray-500">{{ key }}:</dt> <dd class="inline">{{ value }}</dd></div>
+        <div><dt class="inline text-gray-500">{{ field_labels.get(key, key) }}:</dt> <dd class="inline">{{ value or "—" }}</dd></div>
         {% endfor %}
       </dl>
       {% endif %}

@@ -1,0 +1,12 @@
+# 从区级招生政策正文提取小升初/升学通用规则（2026 成都常见表述）
+fields:
+  promotion_overview:
+    regex: '(小升初[^。\n]{10,300})'
+  district_mapping_note:
+    regex: '(6月\d{1,2}日[^。\n]{0,40}(?:公布|查看)[^。\n]{0,60}(?:划片|升学|对应区域)[^。\n]{10,200})'
+  lottery_note:
+    regex: '((?:电脑随机|摇号|多校划片)[^。\n]{10,200})'
+  direct_admission_note:
+    regex: '((?:直升|一贯制)[^。\n]{10,200})'
+  registration_platform:
+    regex: '(成都市义务教育招生入学服务平台[^。\n]{0,80})'

@@ -1,0 +1,65 @@
+district_code: gaoxin
+data_year: 2026
+notes: 从 configs/schools.yaml 提取的 gaoxin 区学校（5 校）
+inventory_summary:
+  total: 5
+  listed: 5
+  enriched: 0
+  verified: 0
+schools:
+- name: 成都蒙彼利埃小学
+  short_name: 蒙小
+  district_code: gaoxin
+  type: public
+  level: primary
+  address: 成都市高新区盛邦街699号
+  source_urls:
+    website: http://www.cdmpl.cn/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
+- name: 成都师范银都紫菀小学
+  short_name: 银都紫菀
+  district_code: gaoxin
+  type: public
+  level: primary
+  address: 成都市高新区中和街道
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+  role: registration_point
+- name: 成都泡桐树小学（天府校区）
+  short_name: 泡小天府
+  district_code: gaoxin
+  type: public
+  level: primary
+  address: 成都市高新区天府大道南段
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
+- name: 四川省成都七中初中学校
+  short_name: 七中初中
+  district_code: gaoxin
+  type: public
+  level: middle
+  address: 成都市高新区天仁路388号
+  source_urls:
+    website: http://www.cdqzcz.net/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+- name: 成都金苹果公学
+  short_name: 金苹果公学
+  district_code: gaoxin
+  type: private
+  level: primary
+  address: 成都市高新区祥龙一街99号
+  source_urls:
+    website: https://www.jinpingguo.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm

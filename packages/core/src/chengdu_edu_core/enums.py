@@ -45,3 +45,11 @@ class JobStatus(StrEnum):
     SUCCESS = "success"
     FAILED = "failed"
     SKIPPED = "skipped"
+
+
+class IntelType(StrEnum):
+    MAPPING = "mapping"
+    ENROLLMENT = "enrollment"
+    PROMOTION = "promotion"
+    GOV_ARTICLE = "gov_article"
+    MIRROR_PAGE = "mirror_page"

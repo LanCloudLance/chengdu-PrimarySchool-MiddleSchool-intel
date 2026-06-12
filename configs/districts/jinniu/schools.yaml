@@ -1,0 +1,86 @@
+district_code: jinniu
+data_year: 2026
+notes: 从 configs/schools.yaml 提取的 jinniu 区学校（7 校）
+inventory_summary:
+  total: 7
+  listed: 7
+  enriched: 0
+  verified: 0
+schools:
+- name: 成都市人民北路小学
+  short_name: 人北小学
+  district_code: jinniu
+  type: public
+  level: primary
+  address: 成都市金牛区一环路北三段69号
+  source_urls:
+    website: http://www.cdrmbxx.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+  role: registration_point
+- name: 成都市茶店子小学
+  short_name: 茶店子小学
+  district_code: jinniu
+  type: public
+  level: primary
+  address: 成都市金牛区茶店子西街36号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+  role: registration_point
+- name: 成都市回民小学
+  short_name: 回民小学
+  district_code: jinniu
+  type: public
+  level: primary
+  address: 成都市金牛区西屠场街33号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+  role: registration_point
+- name: 成都市沙河源小学
+  short_name: 沙河源小学
+  district_code: jinniu
+  type: public
+  level: primary
+  address: 成都市金牛区沙河源街道
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207409.shtm
+  role: registration_point
+- name: 成都市七中万达学校
+  short_name: 七中万达
+  district_code: jinniu
+  type: public
+  level: middle
+  address: 成都市金牛区盛业路301号
+  source_urls:
+    website: http://www.qzwd.net/
+  data_year: 2026
+  verified: false
+  verification_source: https://daydaynews.cc/zh-hans/education/4285520.html
+- name: 成都市第二十中学
+  short_name: 二十中
+  district_code: jinniu
+  type: public
+  level: middle
+  address: 成都市金牛区二环路北三段
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: https://daydaynews.cc/zh-hans/education/4285520.html
+- name: 成都市锦西外国语中学
+  short_name: 锦西外国语
+  district_code: jinniu
+  type: private
+  level: middle
+  address: 成都市金牛区抚琴西南路1号
+  source_urls:
+    website: http://www.jxfls.com/
+  data_year: 2026
+  verified: false
+  verification_source: https://daydaynews.cc/zh-hans/education/4285520.html

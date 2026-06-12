@@ -1,0 +1,53 @@
+# 各区划片/对口文章来源（本地宝 mobile 优先，避免桌面 captcha）
+# data_year：当前情报框架年份（P0 的 2026 yjrx 官方源后续再接入）
+data_year: 2025
+
+districts:
+  gaoxin:
+    mapping_urls:
+      - url: http://m.cd.bendibao.com/edu/209029.shtm
+        kind: school_scope
+        notes: 高新区中和片区第一批次各校划片范围
+      - url: http://m.cd.bendibao.com/edu/209025.shtm
+        kind: zone_list
+        notes: 中和A/B片区范围及学校名单
+    promotion_urls: []
+
+  jinjiang:
+    mapping_urls: []
+    promotion_urls: []
+
+  qingyang:
+    mapping_urls: []
+    promotion_urls: []
+
+  wuhou:
+    mapping_urls:
+      - url: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+        kind: school_scope
+        data_year: 2024
+        is_reference: true
+        notes: 2024年武侯区小学入学划片一览表（HTML 表格，作基底参考）
+      - url: http://cd.bendibao.com/edu/2025617/198872_7.shtm
+        kind: image_list
+        data_year: 2025
+        is_reference: true
+        notes: 2025年武侯区小学划片一览（正文为 PNG 图片，待 OCR/人工补全）
+      - url: http://m.cd.bendibao.com/edu/2025422/197052.shtm
+        kind: adjustment
+        data_year: 2025
+        is_reference: false
+        notes: 2025年西川悦湖/龙江路悦湖/川大附小明雅划片调整公告
+    promotion_urls: []
+
+  chenghua:
+    mapping_urls: []
+    promotion_urls: []
+
+  jinniu:
+    mapping_urls: []
+    promotion_urls: []
+
+  tianfu:
+    mapping_urls: []
+    promotion_urls: []

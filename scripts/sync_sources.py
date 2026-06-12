@@ -28,6 +28,9 @@ async def sync_sources() -> int:
             meta = dict(row.metadata_ or {})
             if rf := entry.get("rule_file"):
                 meta["rule_file"] = rf
+            for key in ("data_year", "registration_url", "fallback_url", "notes"):
+                if key in entry:
+                    meta[key] = entry[key]
             row.metadata_ = meta
             updated += 1
         await session.commit()

@@ -1,0 +1,802 @@
+data_year: 2026
+websites:
+  成都市玉林小学: http://www.yulinxx.com/
+  成都市玉林中学: http://www.yuzhong.net/
+  成都市龙江路小学: http://www.ljlxx.cn/
+  成都市龙江路小学（南区）: http://www.ljlxx.cn/
+  成都市棕北小学: http://www.zbxx.net/
+  成都市棕北中学: http://www.zbzx.net/
+  成都市洗面桥小学: http://www.xmqxx.com/
+  四川大学附属实验小学: http://www.scufrc.com/
+  成都市磨子桥小学: http://www.mzxx.net/
+  成都市磨子桥小学分校: http://www.mzxx.net/
+  成都市武侯计算机实验小学: http://www.jsjxx.net/
+  成都市沙堰小学: http://www.syxx.net/
+  成都市弟维小学: http://www.dwxx.net/
+  成都市科华中路小学: http://www.khzlxx.com/
+  成都市桐梓林小学: http://www.tzlxx.net/
+  成都市红牌楼小学: http://www.hplxx.net/
+  成都市红牌楼小学校: http://www.hplxx.net/
+  成都市明远书院学校: http://www.mysschool.com/
+  成都市武侯区金苹果龙南小学: https://www.jinpingguo.com/
+  成都市锦官新城小学: http://www.jgxcp.com/
+  北京第二外国语学院成都附属小学: http://www.bfsucdps.cn/
+  北京第二外国语学院成都附属中学: http://www.bfsucdms.cn/
+  成都西川中学: http://www.cdxczx.net/
+  成都市武侯区西川实验学校: http://www.cdxczx.net/
+  成都市第十二中学（四川大学附属中学）: http://www.scufz.edu.cn/
+  成都市第十二中学初中部: http://www.scufz.edu.cn/
+  成都石室双楠实验学校: http://www.cdsssn.com/
+  成都石室锦城外国语学校: http://www.cdssjc.com/
+  成都石室佳兴外国语学校: http://www.cdssjx.com/
+  成都武侯外国语学校: http://www.whfls.com/
+  成都市武侯实验中学: http://www.whsyjzx.com/
+  成都市武侯高级中学: http://www.whgz.cn/
+  成都市龙江路小学武侯新城分校: http://www.ljlwhxcfx.com/
+  成都市武侯区丹勋实验学校: http://www.dxsyxx.com/
+  成都市通江实验学校: http://www.tjsyxx.net/
+  成都市群星美术学校: http://www.qxmsxx.com/
+  成都市龙祥路小学: http://www.lxlxx.net/
+  成都市西北中学: http://www.cdxbzx.cn/
+  成都市武侯区领川外国语学校: https://cdciedu.com/school/16/90.html
+group_websites:
+- prefix: 四川大学附属实验小学
+  website: http://www.scufrc.com/
+  note: 川大附小集团
+- prefix: 四川大学附属中学
+  website: http://www.scufz.edu.cn/
+  note: 川大附中
+- prefix: 成都市龙江路小学
+  website: http://www.ljlxx.cn/
+  note: 龙江路小学集团
+- prefix: 龙江路小学
+  website: http://www.ljlxx.cn/
+  note: 龙江路小学集团
+- prefix: 成都市望江楼小学
+  website: http://www.scufrc.com/
+  note: 川大附小集团领办
+- prefix: 成都市棕北中学
+  website: http://www.zbzx.net/
+  note: 棕北教育集团
+- prefix: 棕北中学
+  website: http://www.zbzx.net/
+  note: 棕北教育集团
+- prefix: 成都市玉林小学
+  website: http://www.yulinxx.com/
+  note: 玉林小学集团
+- prefix: 成都市墨池书院
+  website: http://www.cdqz.net/
+  note: 成都七中领办
+- prefix: 成都市石室锦官
+  website: https://cdshishi.net/
+  note: 石室中学领办
+- prefix: 成都市第四十三
+  website: http://www.cdxbzx.cn/
+  note: 西北中学教育集团
+- prefix: 四川音乐学院附属
+  website: https://www.sccm.edu.cn/
+  note: 四川音乐学院
+no_website:
+  四川成都七中东方闻道网校:
+    reason: 七中合作网校，无独立官网
+    channel: 成都七中官网 http://www.cdqz.net/
+    researched_at: '2026-06-05'
+  成都凉井实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市凉井实验学校:
+    reason: 无独立官网（与成都凉井实验学校同址）
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市春晖学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市武侯区光明实验学校:
+    reason: 无独立官网
+    channel: 微信公众号「成都市武侯区光明实验学校」
+    researched_at: '2026-06-05'
+  成都市武侯区启明学校:
+    reason: 无独立官网
+    channel: 微信公众号「成都市武侯区启明学校」
+    researched_at: '2026-06-05'
+  成都市武侯区盐外芙蓉学校:
+    reason: 无独立官网
+    channel: 微信公众号「成都盐外芙蓉学校」
+    researched_at: '2026-06-05'
+  成都市武侯区育仁实验学校:
+    reason: 无独立官网
+    channel: 微信公众号「成都市武侯区育仁实验学校」
+    researched_at: '2026-06-05'
+  成都市武侯区西蜀实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市武侯区金辉实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市武侯区领创实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市第57实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市金花实验学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都金花光明学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市金花中学:
+    reason: 无独立官网
+    channel: 武侯区教育局/本地宝名录
+    researched_at: '2026-06-05'
+  成都市三河小学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市华兴小学:
+    reason: 无独立官网
+    channel: 微信公众号「成都市华兴小学」
+    researched_at: '2026-06-05'
+  成都市华西小学:
+    reason: 无独立官网
+    channel: 微信公众号「成都市华西小学」
+    researched_at: '2026-06-05'
+  成都市太平寺西区小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市太平小学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市新生路小学:
+    reason: 无独立官网（xslxx.com 反爬拦截）
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市晋阳小学:
+    reason: 无独立官网
+    channel: 微信公众号「成都市晋阳小学」
+    researched_at: '2026-06-05'
+  成都市机投小学:
+    reason: 无独立官网
+    channel: 智慧校园 APP / 武侯教育
+    researched_at: '2026-06-05'
+  成都市武侯实验中学附属小学:
+    reason: 无独立官网
+    channel: 武侯教育 / 电话 028-69367944
+    researched_at: '2026-06-05'
+  成都市武侯实验小学:
+    reason: 无独立官网
+    channel: 微信公众号「武侯实验小学」
+    researched_at: '2026-06-05'
+  成都市武侯科技园小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市武顺街小学:
+    reason: 无独立官网
+    channel: 武侯教育 / 中国网教育频道
+    researched_at: '2026-06-05'
+  成都市百草园小学校:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市簇桥小学校:
+    reason: 无独立官网
+    channel: 本地宝名录 / 电话 028-85010328
+    researched_at: '2026-06-05'
+  成都市红专西路小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市行知实验小学:
+    reason: 无独立官网
+    channel: 微信公众号「成都市行知实验小学官方」
+    researched_at: '2026-06-05'
+  成都市读者小学:
+    reason: 无独立官网
+    channel: 微信公众号「成都市读者小学」
+    researched_at: '2026-06-05'
+  成都市金兴北路小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市锦里小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+  成都市马家河小学:
+    reason: 无独立官网
+    channel: 微信公众号
+    researched_at: '2026-06-05'
+alternate_urls:
+  http://www.cdxczx.net/:
+  - &id001
+    url: https://cd.bendibao.com/wangdian/dian/5434796.shtm
+    source: bendibao
+  - &id005
+    url: https://cd.bendibao.com/wangdian/dian/5434419.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5434796.shtm
+    source: bendibao
+  https://cdciedu.com/school/16/90.html:
+  - &id002
+    url: https://cd.bendibao.com/wangdian/dian/5435226.shtm
+    source: bendibao
+  http://www.whfls.com/:
+  - &id003
+    url: https://cd.bendibao.com/wangdian/dian/5436468.shtm
+    source: bendibao
+  http://www.cdssjx.com/:
+  - &id004
+    url: https://cd.bendibao.com/wangdian/dian/5433985.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433985.shtm
+    source: bendibao
+  http://www.bfsucdms.cn/:
+  - &id006
+    url: https://cd.bendibao.com/wangdian/dian/5434793.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5435201.shtm
+    source: bendibao
+  http://www.scufz.edu.cn/:
+  - &id007
+    url: https://cd.bendibao.com/wangdian/dian/5433289.shtm
+    source: bendibao
+  - &id008
+    url: https://cd.bendibao.com/wangdian/dian/5434795.shtm
+    source: bendibao
+  - &id009
+    url: https://cd.bendibao.com/wangdian/dian/5432847.shtm
+    source: bendibao
+  - &id018
+    url: https://cd.bendibao.com/wangdian/dian/5435780.shtm
+    source: bendibao
+  - &id019
+    url: https://cd.bendibao.com/wangdian/dian/5435782.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5435782.shtm
+    source: bendibao
+  http://www.cdqz.net/:
+  - &id010
+    url: https://cd.bendibao.com/wangdian/dian/5868290.shtm
+    source: bendibao
+  http://www.zbzx.net/:
+  - &id011
+    url: https://cd.bendibao.com/wangdian/dian/5432720.shtm
+    source: bendibao
+  - &id012
+    url: https://cd.bendibao.com/wangdian/dian/5868305.shtm
+    source: bendibao
+  - &id013
+    url: https://cd.bendibao.com/wangdian/dian/5432915.shtm
+    source: bendibao
+  http://www.whsyjzx.com/:
+  - &id014
+    url: https://cd.bendibao.com/wangdian/dian/5433112.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433112.shtm
+    source: bendibao
+  http://www.whgz.cn/:
+  - &id015
+    url: https://cd.bendibao.com/wangdian/dian/5433101.shtm
+    source: bendibao
+  http://www.yuzhong.net/:
+  - &id016
+    url: https://m.cd.bendibao.com/wangdian/dian/5433548.shtm
+    source: bendibao
+  https://cdshishi.net/:
+  - &id017
+    url: https://cd.bendibao.com/wangdian/dian/5868265.shtm
+    source: bendibao
+  http://www.cdxbzx.cn/:
+  - &id020
+    url: https://cd.bendibao.com/wangdian/dian/5435211.shtm
+    source: bendibao
+  - &id021
+    url: https://cd.bendibao.com/wangdian/dian/5433255.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433090.shtm
+    source: bendibao
+  http://www.cdsssn.com/:
+  - &id022
+    url: https://cd.bendibao.com/wangdian/dian/5433888.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433888.shtm
+    source: bendibao
+  http://www.cdssjc.com/:
+  - &id023
+    url: https://cd.bendibao.com/wangdian/dian/5432986.shtm
+    source: bendibao
+  http://www.dxsyxx.com/:
+  - &id024
+    url: https://cd.bendibao.com/wangdian/dian/5435227.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5435227.shtm
+    source: bendibao
+  https://www.jinpingguo.com/:
+  - &id025
+    url: https://cd.bendibao.com/wangdian/dian/5435748.shtm
+    source: bendibao
+  http://www.qxmsxx.com/:
+  - &id026
+    url: https://cd.bendibao.com/wangdian/dian/5435228.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5435228.shtm
+    source: bendibao
+  http://www.tjsyxx.net/:
+  - &id027
+    url: https://cd.bendibao.com/wangdian/dian/5433983.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433983.shtm
+    source: bendibao
+  http://www.jgxcp.com/:
+  - &id028
+    url: https://cd.bendibao.com/wangdian/dian/5433982.shtm
+    source: bendibao
+  http://www.bfsucdps.cn/:
+  - &id029
+    url: https://cd.bendibao.com/wangdian/dian/5435751.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5435200.shtm
+    source: bendibao
+  http://www.scufrc.com/:
+  - &id030
+    url: https://cd.bendibao.com/wangdian/dian/5432822.shtm
+    source: bendibao
+  - &id031
+    url: https://cd.bendibao.com/wangdian/dian/5435749.shtm
+    source: bendibao
+  - &id032
+    url: https://cd.bendibao.com/wangdian/dian/5435763.shtm
+    source: bendibao
+  - &id033
+    url: https://cd.bendibao.com/wangdian/dian/5868267.shtm
+    source: bendibao
+  - &id034
+    url: https://cd.bendibao.com/wangdian/dian/5868304.shtm
+    source: bendibao
+  - &id035
+    url: https://cd.bendibao.com/wangdian/dian/5432920.shtm
+    source: bendibao
+  - &id036
+    url: https://cd.bendibao.com/wangdian/dian/5435750.shtm
+    source: bendibao
+  - &id037
+    url: https://cd.bendibao.com/wangdian/dian/5433885.shtm
+    source: bendibao
+  - &id040
+    url: https://cd.bendibao.com/wangdian/dian/5436422.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5432822.shtm
+    source: bendibao
+  https://www.sccm.edu.cn/:
+  - &id038
+    url: https://cd.bendibao.com/wangdian/dian/5868296.shtm
+    source: bendibao
+  http://www.mysschool.com/:
+  - &id039
+    url: https://cd.bendibao.com/wangdian/dian/5436424.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5436424.shtm
+    source: bendibao
+  http://www.tzlxx.net/:
+  - &id041
+    url: https://cd.bendibao.com/wangdian/dian/5433030.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/
+    source: bendibao
+  http://www.zbxx.net/:
+  - &id042
+    url: https://cd.bendibao.com/wangdian/dian/5432798.shtm
+    source: bendibao
+  http://www.jsjxx.net/:
+  - &id043
+    url: https://cd.bendibao.com/wangdian/dian/5433236.shtm
+    source: bendibao
+  http://www.syxx.net/:
+  - &id044
+    url: https://cd.bendibao.com/wangdian/dian/5435214.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/
+    source: bendibao
+  http://www.yulinxx.com/:
+  - &id045
+    url: https://cd.bendibao.com/wangdian/dian/5432890.shtm
+    source: bendibao
+  - &id046
+    url: https://cd.bendibao.com/wangdian/dian/5868268.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5432830.shtm
+    source: bendibao
+  http://www.mzxx.net/:
+  - &id047
+    url: https://cd.bendibao.com/wangdian/dian/5433239.shtm
+    source: bendibao
+  - &id048
+    url: https://cd.bendibao.com/wangdian/dian/5432953.shtm
+    source: bendibao
+  http://www.khzlxx.com/:
+  - &id049
+    url: https://cd.bendibao.com/wangdian/dian/5432949.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/93670.shtm
+    source: bendibao
+  http://www.hplxx.net/:
+  - &id050
+    url: https://cd.bendibao.com/wangdian/dian/5435200.shtm
+    source: bendibao
+  http://www.ljlxx.cn/:
+  - &id051
+    url: https://cd.bendibao.com/wangdian/dian/5432770.shtm
+    source: bendibao
+  - &id052
+    url: https://cd.bendibao.com/wangdian/dian/5433326.shtm
+    source: bendibao
+  - &id053
+    url: https://cd.bendibao.com/wangdian/dian/5432807.shtm
+    source: bendibao
+  - &id054
+    url: https://cd.bendibao.com/wangdian/dian/5868266.shtm
+    source: bendibao
+  - &id056
+    url: https://cd.bendibao.com/wangdian/dian/5436423.shtm
+    source: bendibao
+  - &id057
+    url: https://cd.bendibao.com/wangdian/dian/5868269.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5432806.shtm
+    source: bendibao
+  http://www.ljlwhxcfx.com/:
+  - &id055
+    url: https://cd.bendibao.com/wangdian/dian/5433887.shtm
+    source: bendibao
+  http://www.lxlxx.net/:
+  - &id058
+    url: https://cd.bendibao.com/wangdian/dian/5433209.shtm
+    source: bendibao
+  - url: https://m.cd.bendibao.com/wangdian/dian/5433209.shtm
+    source: bendibao
+alternate_by_name:
+  四川成都七中东方闻道网校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433989.shtm
+    source: bendibao
+  成都市凉井实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5435213.shtm
+    source: bendibao
+  成都市春晖学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433987.shtm
+    source: bendibao
+  成都市武侯区光明实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433979.shtm
+    source: bendibao
+  成都市武侯区启明学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5434794.shtm
+    source: bendibao
+  成都市武侯区盐外芙蓉学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5435212.shtm
+    source: bendibao
+  成都市武侯区育仁实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433988.shtm
+    source: bendibao
+  成都市武侯区西川实验学校:
+  - *id001
+  成都市武侯区西蜀实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433986.shtm
+    source: bendibao
+  成都市武侯区金辉实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433981.shtm
+    source: bendibao
+  成都市武侯区领创实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5868297.shtm
+    source: bendibao
+  成都市武侯区领川外国语学校:
+  - *id002
+  成都市第57实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433984.shtm
+    source: bendibao
+  成都市金花实验学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5434563.shtm
+    source: bendibao
+  成都武侯外国语学校:
+  - *id003
+  成都石室佳兴外国语学校:
+  - *id004
+  成都西川中学:
+  - *id005
+  成都金花光明学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5434562.shtm
+    source: bendibao
+  北京第二外国语学院成都附属中学:
+  - *id006
+  四川大学附属中学悦湖学校:
+  - *id007
+  四川大学附属中学新城分校:
+  - *id008
+  四川大学附属中学西区学校:
+  - *id009
+  成都市墨池书院中学:
+  - *id010
+  成都市棕北中学:
+  - *id011
+  成都市棕北中学悦湖学校:
+  - *id012
+  成都市棕北中学西区实验学校:
+  - *id013
+  成都市武侯实验中学:
+  - *id014
+  成都市武侯高级中学:
+  - *id015
+  成都市玉林中学:
+  - *id016
+  成都市石室锦官中学:
+  - *id017
+  成都市第十二中学初中部:
+  - *id018
+  成都市第十二中学（四川大学附属中学）:
+  - *id019
+  成都市第四十三中学校:
+  - *id020
+  成都市西北中学:
+  - *id021
+  成都市金花中学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433137.shtm
+    source: bendibao
+  成都石室双楠实验学校:
+  - *id022
+  成都石室锦城外国语学校:
+  - *id023
+  成都市武侯区丹勋实验学校:
+  - *id024
+  成都市武侯区金苹果龙南小学:
+  - *id025
+  成都市群星美术学校:
+  - *id026
+  成都市通江实验学校:
+  - *id027
+  成都市锦官新城小学:
+  - *id028
+  北京第二外国语学院成都附属小学:
+  - *id029
+  四川大学附属实验小学:
+  - *id030
+  四川大学附属实验小学分校:
+  - *id031
+  四川大学附属实验小学南区:
+  - *id032
+  四川大学附属实验小学明德学校:
+  - *id033
+  四川大学附属实验小学明雅学校:
+  - *id034
+  四川大学附属实验小学江安河分校:
+  - *id035
+  四川大学附属实验小学清水河分校:
+  - *id036
+  四川大学附属实验小学西区:
+  - *id037
+  四川音乐学院附属实验小学:
+  - *id038
+  成都市三河小学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433208.shtm
+    source: bendibao
+  成都市华兴小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433315.shtm
+    source: bendibao
+  成都市华西小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432999.shtm
+    source: bendibao
+  成都市太平寺西区小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432809.shtm
+    source: bendibao
+  成都市太平小学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433147.shtm
+    source: bendibao
+  成都市新生路小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433886.shtm
+    source: bendibao
+  成都市明远书院学校:
+  - *id039
+  成都市晋阳小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432963.shtm
+    source: bendibao
+  成都市望江楼小学:
+  - *id040
+  成都市机投小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433212.shtm
+    source: bendibao
+  成都市桐梓林小学:
+  - *id041
+  成都市棕北小学:
+  - *id042
+  成都市武侯实验中学附属小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432859.shtm
+    source: bendibao
+  成都市武侯实验小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432925.shtm
+    source: bendibao
+  成都市武侯科技园小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433321.shtm
+    source: bendibao
+  成都市武侯计算机实验小学:
+  - *id043
+  成都市武顺街小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433229.shtm
+    source: bendibao
+  成都市沙堰小学:
+  - *id044
+  成都市玉林小学:
+  - *id045
+  成都市玉林小学果堰分校:
+  - *id046
+  成都市百草园小学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5433192.shtm
+    source: bendibao
+  成都市磨子桥小学:
+  - *id047
+  成都市磨子桥小学分校:
+  - *id048
+  成都市科华中路小学:
+  - *id049
+  成都市簇桥小学校:
+  - url: https://cd.bendibao.com/wangdian/dian/5432827.shtm
+    source: bendibao
+  成都市红专西路小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433121.shtm
+    source: bendibao
+  成都市红牌楼小学校:
+  - *id050
+  成都市行知实验小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433092.shtm
+    source: bendibao
+  成都市读者小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5435759.shtm
+    source: bendibao
+  成都市金兴北路小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433106.shtm
+    source: bendibao
+  成都市锦里小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5433292.shtm
+    source: bendibao
+  成都市马家河小学:
+  - url: https://cd.bendibao.com/wangdian/dian/5432861.shtm
+    source: bendibao
+  成都市龙江路小学:
+  - *id051
+  成都市龙江路小学中粮祥云分校:
+  - *id052
+  成都市龙江路小学分校:
+  - *id053
+  成都市龙江路小学分校南区学校:
+  - *id054
+  成都市龙江路小学武侯新城分校:
+  - *id055
+  成都市龙江路小学武侯新城分校南区学校:
+  - *id056
+  成都市龙江路小学高翔分校:
+  - *id057
+  成都市龙祥路小学:
+  - *id058
+primary_mirrors:
+  http://www.ljlxx.cn/: https://m.cd.bendibao.com/wangdian/dian/5432806.shtm
+  http://www.scufrc.com/: https://m.cd.bendibao.com/wangdian/dian/5432822.shtm
+  http://www.scufz.edu.cn/: https://m.cd.bendibao.com/wangdian/dian/5435782.shtm
+  http://www.yulinxx.com/: https://m.cd.bendibao.com/wangdian/dian/5432830.shtm
+  http://www.yuzhong.net/: https://m.cd.bendibao.com/wangdian/dian/5433548.shtm
+  http://www.cdxbzx.cn/: https://m.cd.bendibao.com/wangdian/dian/5433090.shtm
+  http://www.bfsucdps.cn/: https://m.cd.bendibao.com/wangdian/dian/5435200.shtm
+  http://www.bfsucdms.cn/: https://m.cd.bendibao.com/wangdian/dian/5435201.shtm
+  http://www.cdsssn.com/: https://m.cd.bendibao.com/wangdian/dian/5433888.shtm
+  http://www.cdssjx.com/: https://m.cd.bendibao.com/wangdian/dian/5433985.shtm
+  http://www.lxlxx.net/: https://m.cd.bendibao.com/wangdian/dian/5433209.shtm
+  http://www.ljlwhxcfx.com/: https://cd.bendibao.com/wangdian/dian/5433887.shtm
+  http://www.mysschool.com/: https://m.cd.bendibao.com/wangdian/dian/5436424.shtm
+  http://www.whsyjzx.com/: https://m.cd.bendibao.com/wangdian/dian/5433112.shtm
+  http://www.khzlxx.com/: https://m.cd.bendibao.com/wangdian/dian/93670.shtm
+  http://www.dxsyxx.com/: https://m.cd.bendibao.com/wangdian/dian/5435227.shtm
+  http://www.tjsyxx.net/: https://m.cd.bendibao.com/wangdian/dian/5433983.shtm
+  http://www.qxmsxx.com/: https://m.cd.bendibao.com/wangdian/dian/5435228.shtm
+  http://www.cdxczx.net/: https://m.cd.bendibao.com/wangdian/dian/5434796.shtm
+  http://www.syxx.net/: https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/
+  http://www.tzlxx.net/: https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/
+verified_websites:
+- http://cd.bendibao.com/wangdian/dian/5432859.shtm
+- http://cd.bendibao.com/wangdian/dian/5433137.shtm
+- http://cd.bendibao.com/wangdian/dian/5433229.shtm
+- http://cd.bendibao.com/wangdian/dian/5434562.shtm
+- http://m.cd.bendibao.com/wangdian/dian/5433092.shtm
+- http://www.cdqz.net/
+- http://www.cdssjc.com/
+- http://www.cdxczx.net/
+- http://www.hplxx.net/
+- http://www.jgxcp.com/
+- http://www.jsjxx.net/
+- http://www.mzxx.net/
+- http://www.whfls.com/
+- http://www.whgz.cn/
+- http://www.xmqxx.com/
+- http://www.zbxx.net/
+- http://www.zbzx.net/
+- https://cd.bendibao.com/wangdian/dian/5432770.shtm
+- https://cd.bendibao.com/wangdian/dian/5432807.shtm
+- https://cd.bendibao.com/wangdian/dian/5432822.shtm
+- https://cd.bendibao.com/wangdian/dian/5432827.shtm
+- https://cd.bendibao.com/wangdian/dian/5432847.shtm
+- https://cd.bendibao.com/wangdian/dian/5432890.shtm
+- https://cd.bendibao.com/wangdian/dian/5432920.shtm
+- https://cd.bendibao.com/wangdian/dian/5432925.shtm
+- https://cd.bendibao.com/wangdian/dian/5432949.shtm
+- https://cd.bendibao.com/wangdian/dian/5432963.shtm
+- https://cd.bendibao.com/wangdian/dian/5433030.shtm
+- https://cd.bendibao.com/wangdian/dian/5433112.shtm
+- https://cd.bendibao.com/wangdian/dian/5433192.shtm
+- https://cd.bendibao.com/wangdian/dian/5433209.shtm
+- https://cd.bendibao.com/wangdian/dian/5433212.shtm
+- https://cd.bendibao.com/wangdian/dian/5433255.shtm
+- https://cd.bendibao.com/wangdian/dian/5433289.shtm
+- https://cd.bendibao.com/wangdian/dian/5433326.shtm
+- https://cd.bendibao.com/wangdian/dian/5433885.shtm
+- https://cd.bendibao.com/wangdian/dian/5433887.shtm
+- https://cd.bendibao.com/wangdian/dian/5433888.shtm
+- https://cd.bendibao.com/wangdian/dian/5433979.shtm
+- https://cd.bendibao.com/wangdian/dian/5433981.shtm
+- https://cd.bendibao.com/wangdian/dian/5433983.shtm
+- https://cd.bendibao.com/wangdian/dian/5433984.shtm
+- https://cd.bendibao.com/wangdian/dian/5433985.shtm
+- https://cd.bendibao.com/wangdian/dian/5433986.shtm
+- https://cd.bendibao.com/wangdian/dian/5433987.shtm
+- https://cd.bendibao.com/wangdian/dian/5433988.shtm
+- https://cd.bendibao.com/wangdian/dian/5433989.shtm
+- https://cd.bendibao.com/wangdian/dian/5434563.shtm
+- https://cd.bendibao.com/wangdian/dian/5434793.shtm
+- https://cd.bendibao.com/wangdian/dian/5434794.shtm
+- https://cd.bendibao.com/wangdian/dian/5434795.shtm
+- https://cd.bendibao.com/wangdian/dian/5435211.shtm
+- https://cd.bendibao.com/wangdian/dian/5435212.shtm
+- https://cd.bendibao.com/wangdian/dian/5435213.shtm
+- https://cd.bendibao.com/wangdian/dian/5435214.shtm
+- https://cd.bendibao.com/wangdian/dian/5435227.shtm
+- https://cd.bendibao.com/wangdian/dian/5435228.shtm
+- https://cd.bendibao.com/wangdian/dian/5435749.shtm
+- https://cd.bendibao.com/wangdian/dian/5435750.shtm
+- https://cd.bendibao.com/wangdian/dian/5435751.shtm
+- https://cd.bendibao.com/wangdian/dian/5435763.shtm
+- https://cd.bendibao.com/wangdian/dian/5435780.shtm
+- https://cd.bendibao.com/wangdian/dian/5435782.shtm
+- https://cd.bendibao.com/wangdian/dian/5436422.shtm
+- https://cd.bendibao.com/wangdian/dian/5436423.shtm
+- https://cd.bendibao.com/wangdian/dian/5436424.shtm
+- https://cd.bendibao.com/wangdian/dian/5868266.shtm
+- https://cd.bendibao.com/wangdian/dian/5868267.shtm
+- https://cd.bendibao.com/wangdian/dian/5868268.shtm
+- https://cd.bendibao.com/wangdian/dian/5868269.shtm
+- https://cd.bendibao.com/wangdian/dian/5868297.shtm
+- https://cd.bendibao.com/wangdian/dian/5868304.shtm
+- https://cdciedu.com/school/16/90.html
+- https://cdshishi.net/
+- https://m.cd.bendibao.com/wangdian/dian/5432809.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5432861.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5432999.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433106.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433121.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433147.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433208.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433292.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433315.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433321.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433548.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5433886.shtm
+- https://m.cd.bendibao.com/wangdian/dian/5435759.shtm
+- https://www.jinpingguo.com/
+- https://www.sccm.edu.cn/
+drop_duplicates:
+- 成都凉井实验学校
+- 成都市第四十三中学
+- 棕北中学西区实验学校

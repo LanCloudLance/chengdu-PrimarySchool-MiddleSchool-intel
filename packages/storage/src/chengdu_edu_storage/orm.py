@@ -18,6 +18,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 from chengdu_edu_core.enums import (
     DistrictLevel,
+    IntelType,
     JobStatus,
     ParserStrategy,
     PolicyType,
@@ -157,6 +158,25 @@ class FieldChange(Base):
     old_value: Mapped[str | None] = mapped_column(Text)
     new_value: Mapped[str | None] = mapped_column(Text)
     detected_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class IntelEntry(Base):
+    """采集情报库：原始内容与结构化字段本地持久化，门户/API 只读此库。"""
+
+    __tablename__ = "intel_entries"
+
+    id: Mapped[uuid.UUID] = mapped_column(UuidType, primary_key=True, default=uuid.uuid4)
+    district_id: Mapped[uuid.UUID] = mapped_column(UuidType, ForeignKey("districts.id"))
+    school_id: Mapped[uuid.UUID | None] = mapped_column(UuidType, ForeignKey("schools.id"))
+    intel_type: Mapped[IntelType] = mapped_column(_enum_column(IntelType, "intel_type"))
+    source_url: Mapped[str] = mapped_column(Text)
+    source_title: Mapped[str | None] = mapped_column(String(300))
+    content_hash: Mapped[str] = mapped_column(String(64))
+    raw_text: Mapped[str | None] = mapped_column(Text)
+    structured_fields: Mapped[dict] = mapped_column(JsonType, default=dict)
+    data_year: Mapped[int] = mapped_column(Integer)
+    collected_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    is_reference: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 class JobRun(Base):

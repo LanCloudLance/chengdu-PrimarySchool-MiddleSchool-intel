@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from chengdu_edu_core.diff import compute_field_changes
 from chengdu_edu_core.enums import PolicyType, RecordType, SchoolLevel, SchoolType
+from chengdu_edu_core.search_query import school_fuzzy_filter
 from chengdu_edu_core.models import FieldChange as FieldChangeDTO
 from chengdu_edu_core.models import RawDocument as RawDocumentDTO
 from chengdu_edu_storage.orm import (
@@ -102,6 +103,82 @@ class PolicyRepository:
         await self.session.commit()
         return policy.id
 
+    async def find_promotion_id(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID,
+        year: int,
+    ) -> UUID | None:
+        stmt = select(PromotionPolicy.id).where(
+            PromotionPolicy.district_id == district_id,
+            PromotionPolicy.school_id == school_id,
+            PromotionPolicy.year == year,
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def upsert_promotion(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID,
+        year: int,
+        fields: dict,
+        source_doc_id: UUID,
+        target_school_id: UUID | None = None,
+        existing_id: UUID | None = None,
+    ) -> UUID:
+        if existing_id:
+            policy = await self.session.get(PromotionPolicy, existing_id)
+            if policy is None:
+                raise ValueError(f"Promotion policy not found: {existing_id}")
+            old_fields = dict(policy.fields)
+            old_target = policy.target_school_id
+            target_changed = (
+                target_school_id is not None and target_school_id != old_target
+            ) or (target_school_id is None and old_target is not None)
+            if old_fields == fields and not target_changed:
+                return existing_id
+            changes = compute_field_changes(old_fields, fields)
+            policy.fields = fields
+            policy.current_version += 1
+            policy.source_doc_id = source_doc_id
+            if target_school_id is not None:
+                policy.target_school_id = target_school_id
+            elif target_changed:
+                policy.target_school_id = None
+            self._add_version(
+                RecordType.PROMOTION,
+                policy.id,
+                policy.current_version,
+                fields,
+                source_doc_id,
+            )
+            for change in changes:
+                self._add_field_change(
+                    RecordType.PROMOTION,
+                    policy.id,
+                    policy.current_version - 1,
+                    policy.current_version,
+                    change,
+                )
+        else:
+            policy = PromotionPolicy(
+                district_id=district_id,
+                school_id=school_id,
+                target_school_id=target_school_id,
+                year=year,
+                fields=fields,
+                source_doc_id=source_doc_id,
+                current_version=1,
+            )
+            self.session.add(policy)
+            await self.session.flush()
+            self._add_version(RecordType.PROMOTION, policy.id, 1, fields, source_doc_id)
+        await self.session.commit()
+        return policy.id
+
     async def get_latest_hash(self, source_id: UUID) -> str | None:
         stmt = (
             select(RawDocument.content_hash)
@@ -179,8 +256,9 @@ class PolicyRepository:
             stmt = stmt.where(School.type == school_type)
         if level:
             stmt = stmt.where(School.level == level)
-        if q:
-            stmt = stmt.where(School.name.ilike(f"%{q}%"))
+        fuzzy = school_fuzzy_filter(q, School.name, School.short_name, School.address)
+        if fuzzy is not None:
+            stmt = stmt.where(fuzzy)
         stmt = stmt.order_by(School.name).offset(offset).limit(limit)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())
