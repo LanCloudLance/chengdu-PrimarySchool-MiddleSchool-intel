@@ -18,5 +18,10 @@
   <main class="max-w-5xl mx-auto px-4 py-8">
     {% block content %}{% endblock %}
   </main>
+  <footer class="border-t border-gray-200 bg-white mt-8">
+    <div class="max-w-5xl mx-auto px-4 py-4 text-xs text-gray-500 leading-relaxed">
+      {{ disclaimer | default("本站信息摘自公开转载及教育局公告整理，仅供参考，不作为入学依据。划片与对口以教育局当年公布文件及成都市义务教育招生入学服务平台（yjrx）为准。", true) }}
+    </div>
+  </footer>
 </body>
 </html>

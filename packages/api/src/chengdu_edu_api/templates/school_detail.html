@@ -46,6 +46,39 @@
   {% endif %}
 </div>
 
+{% if mapping_policy %}
+<section class="mb-6">
+  <div class="bg-white rounded-lg shadow p-4 border-l-4 border-blue-500">
+    <div class="flex flex-wrap items-center gap-2 mb-2">
+      <h2 class="text-lg font-semibold text-gray-900">划片范围</h2>
+      {% if mapping_badge %}
+      <span class="text-xs px-2 py-0.5 rounded border {{ mapping_badge.badge_class }}">{{ mapping_badge.label }}</span>
+      {% endif %}
+      <span class="text-xs text-gray-500">{{ mapping_policy.year }} 年框架</span>
+    </div>
+    {% if mapping_provenance %}
+    <dl class="text-xs text-gray-600 mb-3 space-y-1">
+      {% for label, value in mapping_provenance %}
+      <div>
+        <dt class="inline font-medium">{{ label }}：</dt>
+        <dd class="inline break-all">
+          {% if label == '来源页面' and value.startswith('http') %}
+          <a href="{{ value }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline">{{ value }}</a>
+          {% else %}
+          {{ value }}
+          {% endif %}
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+    {% if mapping_policy.fields.get('enrollment_scope') %}
+    <p class="text-sm text-gray-800 whitespace-pre-wrap leading-relaxed">{{ mapping_policy.fields.enrollment_scope }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
 <section class="mb-6">
   <h2 class="text-lg font-semibold text-gray-900 mb-3">招生政策</h2>
   {% if enrollment_is_district %}
@@ -56,6 +89,7 @@
   {% if enrollment_policies %}
   <div class="space-y-3">
     {% for policy in enrollment_policies %}
+    {% if not mapping_policy or policy.id != mapping_policy.id %}
     <div class="bg-white rounded-lg shadow p-4">
       <div class="flex items-center justify-between mb-2">
         <span class="font-medium">{{ policy.year }} 年 · {{ policy_type_labels.get(policy.policy_type, policy.policy_type) }}</span>
@@ -76,6 +110,7 @@
       </a>
       {% endif %}
     </div>
+    {% endif %}
     {% endfor %}
   </div>
   {% else %}

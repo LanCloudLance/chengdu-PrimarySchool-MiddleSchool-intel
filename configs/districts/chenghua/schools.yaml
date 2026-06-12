@@ -2,41 +2,92 @@ district_code: chenghua
 data_year: 2026
 notes: 从 configs/schools.yaml 提取的 chenghua 区学校（7 校）
 inventory_summary:
-  total: 7
-  listed: 7
+  total: 41
+  listed: 41
   enriched: 0
   verified: 0
 schools:
-- name: 成都市建设路小学
-  short_name: 建设路小学
+- name: 四川交响乐团附属小学
+  short_name: 四川交响乐团附属小学
   district_code: chenghua
   type: public
   level: primary
-  address: 成都市成华区建设路54号
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都万汇学校
+  short_name: 成都万汇学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都列五中学
+  short_name: 列五中学
+  district_code: chenghua
+  type: public
+  level: middle
+  address: 成都市成华区双林路388号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+- name: 成都双语实验学校
+  short_name: 成都双语实验学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都双语实验学校和悦分校
+  short_name: 成都双语实验学校和悦分校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都嘉祥外国语学校（成华校区）
+  short_name: 嘉祥成华
+  district_code: chenghua
+  type: private
+  level: nine_year
+  address: 成都市成华区熊猫大道533号
   source_urls:
-    website: http://www.cdjslxx.com/
+    website: https://www.jiaxiangschool.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  notes: 民办，招生以2026简章为准
+- name: 成都大学附属实验小学
+  short_name: 成都大学附属实验小学
+  district_code: chenghua
+  type: public
+  level: primary
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
   role: registration_point
-- name: 成都市双庆小学
-  short_name: 双庆小学
+- name: 成都市二仙桥学校
+  short_name: 二仙桥学校
   district_code: chenghua
   type: public
   level: primary
-  address: 成都市成华区双庆路16号
-  source_urls: {}
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
   role: registration_point
-- name: 成都市锦华小学
-  short_name: 锦华小学
+- name: 成都市列五书池学校
+  short_name: 列五书池学校
   district_code: chenghua
   type: public
   level: primary
-  address: 成都市成华区经华北路60号
-  source_urls: {}
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
@@ -63,25 +114,282 @@ schools:
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
-- name: 成都列五中学
-  short_name: 列五中学
+- name: 成都市双庆小学
+  short_name: 双庆小学
   district_code: chenghua
   type: public
-  level: middle
-  address: 成都市成华区双林路388号
+  level: primary
+  address: 成都市成华区双庆路16号
   source_urls: {}
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
-- name: 成都嘉祥外国语学校（成华校区）
-  short_name: 嘉祥成华
+  role: registration_point
+- name: 成都市双庆小学校
+  short_name: 双庆小学校
   district_code: chenghua
-  type: private
-  level: nine_year
-  address: 成都市成华区熊猫大道533号
-  source_urls:
-    website: https://www.jiaxiangschool.com/
+  type: public
+  level: primary
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
-  notes: 民办，招生以2026简章为准
+  role: registration_point
+- name: 成都市双林小学
+  short_name: 双林小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市双林小学御风分校
+  short_name: 双林小学御风分校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市双水小学校
+  short_name: 双水小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市培华小学校
+  short_name: 培华小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市建设路小学
+  short_name: 建设路小学
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区建设路54号
+  source_urls:
+    website: http://www.cdjslxx.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市成华区华青学校
+  short_name: 成华区华青学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市成华区教育科学研究院附属小学
+  short_name: 成华区教育科学研究院附属
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市成华实验小学校
+  short_name: 成华实验小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市成华小学校
+  short_name: 成华小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市李家沱实验小学校
+  short_name: 李家沱实验小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市杨柳小学校
+  short_name: 杨柳小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市树德小学
+  short_name: 树德小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市海滨小学校
+  short_name: 海滨小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市熊猫路小学校
+  short_name: 熊猫路小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市电子科技大学附属实验小学
+  short_name: 电子科技大学附属实验小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市电子科技大学附属实验小学龙潭分校
+  short_name: 电子科技大学附属实验小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市石室小学
+  short_name: 石室小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市站东小学校
+  short_name: 站东小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市蓉城小学
+  short_name: 蓉城小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市蜀都小学校
+  short_name: 蜀都小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市锦华小学
+  short_name: 锦华小学
+  district_code: chenghua
+  type: public
+  level: primary
+  address: 成都市成华区经华北路60号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市锦城北湖小学校
+  short_name: 锦城北湖小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市锦官城小学
+  short_name: 锦官城小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市锦汇东城小学
+  short_name: 锦汇东城小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市龙成小学
+  short_name: 龙成小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都市龙潭小学校
+  short_name: 龙潭小学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都理工大学附属小学
+  short_name: 成都理工大学附属小学
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+- name: 成都英华学校
+  short_name: 成都英华学校
+  district_code: chenghua
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207397.shtm
+  role: registration_point
+sources:
+  registration_guide: http://cd.bendibao.com/edu/2026424/207397.shtm

@@ -1,7 +1,8 @@
 # 武侯区做透路线图 & 复制节奏
 
 > **原则**：武侯区作为**唯一样板区**做到「家长可查、来源可追溯、状态可解释」，再复制到其他 6 区。  
-> **配套**：操作步骤见 `.cursor/skills/chengdu-district-intel/SKILL.md`；进度回填见 `docs/PROJECT_PROGRESS.md` 第 7 节。
+> **配套**：操作步骤见 `.cursor/skills/chengdu-district-intel/SKILL.md`；进度回填见 `docs/PROJECT_PROGRESS.md` 第 7 节。  
+> **验收**：每项任务完成后跑 `.venv/bin/python scripts/verify_wuhou_all.py`（规则见 `.cursor/rules/chengdu-edu-verify-on-complete.mdc`）。
 
 ---
 
@@ -12,7 +13,7 @@
 | W1 | **W1-划片闭环** | 清 pending + OCR 提质 + overrides | pending = 0；每校有 source_page |
 | W2 | **W2-对口升学** | promotion 源 + 导入 + 推断白名单 | 公办小学对口说明覆盖 > 60% |
 | W3 | **W3-门户可读** | 搜索 + 状态展示 + 来源标注 | 划片/地址可搜；UI 显示 reference/verified/pending |
-| W4 | **W4-运营化** | 镜像 intel + 登记点 + 文档/ SKILL 定稿 | 镜像页入库；可复制到其他区 |
+| W4 | **W4-运营化** | 镜像 intel + 登记点 + 文档/ SKILL 定稿 | 镜像页入库；可复制到其他区 ✅ |
 
 **2026 招生季（P0）**：在 W4 之后、**2026-04** 前接入登记点公告，**2026-06-15** 前切换 yjrx 官方划片（单独开迭代，不阻塞 W1–W4）。
 
@@ -74,51 +75,75 @@ ORDER BY s.name;
 
 ---
 
-## W2 — 对口升学
+## W2 — 对口升学 ✅（2026-06-05）
 
-### W2.1 发现源
+### W2.1 发现源 ✅
 
-- 本地宝「武侯 小升初 对口 / 升学安排」文章
-- 填入 `configs/district_mapping_sources.yaml` → `promotion_urls`
+- `promotion_urls`：`199288`（2025 PNG）、`185963`（2024 reference）
+- 配置：`configs/district_mapping_sources.yaml`
 
-### W2.2 导入
+### W2.2 导入 ✅
 
 ```bash
-.venv/bin/python scripts/sync_intel_library.py --district wuhou  # 若 promotion 走 intel
-.venv/bin/python scripts/import_school_promotion_targets.py --district wuhou
+.venv/bin/python scripts/scrape_district_mapping.py --district wuhou --promotion-only
+.venv/bin/python scripts/import_school_promotion_targets.py --district wuhou  # 需 Docker DB
 ```
 
-### W2.3 品牌推断白名单
+- OCR：`packages/parsers/.../promotion_ocr.py`（升学对应区域 PNG 五列解析）
 
-- 文件：`configs/districts/wuhou/promotion_inference.yaml`（待建）
-- 仅允许：棕北、玉林、龙江路等**已核实**品牌对
-- 禁止：`武侯` 等 district 级 token（已在代码 stop_tokens）
+### W2.3 品牌推断白名单 ✅
 
-### W2.4 验收
+- `configs/districts/wuhou/promotion_inference.yaml`
+- `school_aliases.yaml` + 初中校名 alias（十二中、棕北科院/桐梓林等）
 
-- 公办小学中 `promotion` 有 `target_school_id` 或明确「多校划片/摇号」文案 > 60%
+### W2.4 验收 ✅
+
+| 检查项 | 结果 |
+|--------|------|
+| 公办小学对口覆盖 | dry-run **83.3%**（45/54，目标 >60%） |
+| promotion_links 入库 | scraped **54** 条（2025 OCR 合并后） |
+| 验收脚本 | `scripts/verify_wuhou_promotion.py` |
+| pytest | **34 passed** |
+
+```bash
+.venv/bin/python scripts/verify_wuhou_promotion.py
+```
 
 ---
 
-## W3 — 门户可读
+## W3 — 门户可读 ✅（2026-06-05）
 
-| 任务 | 位置 |
+| 任务 | 交付 |
 |------|------|
-| 划片/地址全文搜索 | `search_query.py` + API query param |
-| 详情页 mapping_status 徽章 | API fields + web 模板 |
-| 来源链展示 | source_page、reference_year、framework_year |
-| 免责声明 | 「转载仅供参考，以教育局/yjrx 为准」 |
+| 划片/地址全文搜索 | `scope_q` 参数（API + 门户搜索框） |
+| mapping_status 徽章 | 列表/详情页 `reference` / `verified` / `待官方` |
+| 来源链展示 | `framework_year` / `reference_year` / `source_page` |
+| 免责声明 | `base.html` 页脚 + `mapping_display.DISCLAIMER_TEXT` |
+
+```bash
+.venv/bin/python scripts/verify_wuhou_portal.py
+.venv/bin/python scripts/verify_wuhou_all.py
+```
 
 ---
 
-## W4 — 运营化 & 复制准备
+## W4 — 运营化 & 复制准备 ✅（2026-06-11）
 
-| 任务 | 说明 |
-|------|------|
-| 镜像页入 intel | `scraped_mirrors.json` → `intel_entries` MIRROR_PAGE |
-| 登记点地址 | 4 月 edu 公告 → registration_point 字段 |
-| SKILL 定稿 | 基于武侯踩坑更新 `.cursor/skills/.../SKILL.md` |
-| 复制锦江 | 第一个非武侯区，走完整 SKILL 一遍 |
+| 任务 | 说明 | 状态 |
+|------|------|------|
+| 镜像页入 intel | `sync_mirror_intel.py` → `intel_entries` MIRROR_PAGE；`--from-inventory` 免 captcha | ✅ manifest 73 条 |
+| 登记点地址 | `apply_registration_points.py` → `role: registration_point` | ✅ 武侯 54 校 |
+| SKILL 定稿 | `.cursor/skills/chengdu-district-intel/SKILL.md` 段 4 | ✅ |
+| 复制锦江 | `district_mapping_sources` + scrape + `expand_inventory_from_mapping` | ✅ 25 scopes / 28 校 |
+
+```bash
+.venv/bin/python scripts/apply_registration_points.py --district wuhou
+.venv/bin/python scripts/sync_mirror_intel.py --district wuhou --from-inventory
+.venv/bin/python scripts/scrape_district_mapping.py --district jinjiang
+.venv/bin/python scripts/expand_inventory_from_mapping.py --district jinjiang
+.venv/bin/python scripts/verify_wuhou_w4.py
+.venv/bin/python scripts/verify_wuhou_all.py
+```
 
 ---
 

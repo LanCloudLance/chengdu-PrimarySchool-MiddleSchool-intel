@@ -15,6 +15,13 @@ from chengdu_edu_api.enrichment import (
     build_promotion_policy_outs,
     resolve_school_enrollment_policies,
 )
+from chengdu_edu_api.mapping_display import (
+    DISCLAIMER_TEXT,
+    MAPPING_STATUS_META,
+    batch_district_mapping_summaries,
+    mapping_provenance_lines,
+    mapping_status_badge,
+)
 from chengdu_edu_api.routes.policies import _enrollment_filters
 from chengdu_edu_api.routes.schools import _school_filters
 from chengdu_edu_api.schemas import FieldChangeOut
@@ -50,32 +57,44 @@ async def index_page(
     type: SchoolType | None = None,
     level: SchoolLevel | None = None,
     q: str | None = None,
+    scope_q: str | None = None,
     offset: int = Query(default=0, ge=0),
     limit: int = Query(default=20, ge=1, le=100),
     session: AsyncSession = Depends(get_db_session),
 ):
     districts = await _load_districts(session)
     schools: list[tuple[School, str]] = []
+    mapping_summaries: dict = {}
     total = 0
 
-    if q or district or type or level:
-        base = _school_filters(district_code=district, school_type=type, level=level, q=q)
+    if q or scope_q or district or type or level:
+        base = _school_filters(
+            district_code=district, school_type=type, level=level, q=q, scope_q=scope_q
+        )
         count_stmt = select(func.count()).select_from(base.subquery())
         total = (await session.execute(count_stmt)).scalar_one()
         stmt = base.order_by(School.name).offset(offset).limit(limit)
         schools = list((await session.execute(stmt)).all())
+        mapping_summaries = await batch_district_mapping_summaries(
+            session, [s.id for s, _ in schools]
+        )
 
     context = {
         "request": request,
         "districts": districts,
         "schools": schools,
+        "mapping_summaries": mapping_summaries,
+        "mapping_status_meta": MAPPING_STATUS_META,
+        "mapping_status_badge": mapping_status_badge,
         "total": total,
         "q": q or "",
+        "scope_q": scope_q or "",
         "district": district or "",
         "type": type.value if type else "",
         "level": level.value if level else "",
         "school_type_labels": SCHOOL_TYPE_LABELS,
         "school_level_labels": SCHOOL_LEVEL_LABELS,
+        "disclaimer": DISCLAIMER_TEXT,
     }
 
     if request.headers.get("HX-Request") == "true":
@@ -117,6 +136,13 @@ async def school_detail_page(
         rows = list((await session.execute(stmt)).scalars().all())
         changes = [FieldChangeOut.model_validate(change) for change in rows]
 
+    mapping_policy = next(
+        (p for p in enrollment if p.policy_type == PolicyType.DISTRICT_MAPPING),
+        None,
+    )
+    mapping_fields = mapping_policy.fields if mapping_policy else {}
+    mapping_badge = mapping_status_badge(mapping_fields.get("mapping_status"))
+
     return templates.TemplateResponse(
         request,
         "school_detail.html",
@@ -127,11 +153,15 @@ async def school_detail_page(
             "enrollment_policies": enrollment,
             "enrollment_is_district": enrollment_is_district,
             "promotion_policies": promotion,
+            "mapping_policy": mapping_policy,
+            "mapping_badge": mapping_badge,
+            "mapping_provenance": mapping_provenance_lines(mapping_fields),
             "field_labels": POLICY_FIELD_LABELS,
             "policy_type_labels": POLICY_TYPE_LABELS,
             "changes": changes,
             "school_type_labels": SCHOOL_TYPE_LABELS,
             "school_level_labels": SCHOOL_LEVEL_LABELS,
+            "disclaimer": DISCLAIMER_TEXT,
         },
     )
 

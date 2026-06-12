@@ -2,19 +2,16 @@ district_code: qingyang
 data_year: 2026
 notes: 从 configs/schools.yaml 提取的 qingyang 区学校（8 校）
 inventory_summary:
-  total: 8
-  listed: 8
+  total: 36
+  listed: 36
   enriched: 0
   verified: 0
 schools:
-- name: 成都市实验小学
-  short_name: 实验小学
+- name: 成都市东坡小学
+  short_name: 东坡小学
   district_code: qingyang
   type: public
   level: primary
-  address: 成都市青羊区人民中路一段16号
-  source_urls:
-    website: http://www.cdsysxx.com/
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
@@ -31,24 +28,86 @@ schools:
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
   role: registration_point
-- name: 成都市草堂小学
-  short_name: 草堂小学
+- name: 成都市东城根街小学(ABC区)
+  short_name: 东城根街小学(ABC区)
   district_code: qingyang
   type: public
   level: primary
-  address: 成都市青羊区草堂北路5号
-  source_urls: {}
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
   role: registration_point
-- name: 成都市金沙小学
-  short_name: 金沙小学
+- name: 成都市双眼井小学
+  short_name: 双眼井小学
   district_code: qingyang
   type: public
   level: primary
-  address: 成都市青羊区金沙遗址路
-  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市同辉(国际)学校
+  short_name: 同辉(国际)学校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市回民小学
+  short_name: 回民小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市实验小学
+  short_name: 实验小学
+  district_code: qingyang
+  type: public
+  level: primary
+  address: 成都市青羊区人民中路一段16号
+  source_urls:
+    website: http://www.cdsysxx.com/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市实验小学文苑分校
+  short_name: 实验小学文苑分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市实验小学明道分校
+  short_name: 实验小学明道分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市实验小学西区分校
+  short_name: 实验小学西区分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市实验小学青华分校
+  short_name: 实验小学青华分校
+  district_code: qingyang
+  type: public
+  level: primary
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
@@ -64,13 +123,93 @@ schools:
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
   role: registration_point
-- name: 成都市胜西小学
-  short_name: 胜西小学
+- name: 成都市彩虹小学
+  short_name: 彩虹小学
   district_code: qingyang
   type: public
   level: primary
-  address: 成都市青羊区上翔街2号
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市文翁实验小学
+  short_name: 文翁实验小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市新华路小学
+  short_name: 新华路小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市树德中学
+  short_name: 树德中学
+  district_code: qingyang
+  type: public
+  level: middle
+  address: 成都市青羊区宁夏街树德巷
   source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026331/206680.shtm
+- name: 成都市泡桐树小学
+  short_name: 泡桐树小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市泡桐树小学境界分校
+  short_name: 泡桐树小学境界分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市泡桐树小学绿舟分校
+  short_name: 泡桐树小学绿舟分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市泡桐树小学西区分校
+  short_name: 泡桐树小学西区分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市浣花小学校
+  short_name: 浣花小学校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市清波小学校
+  short_name: 清波小学校
+  district_code: qingyang
+  type: public
+  level: primary
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
@@ -86,13 +225,128 @@ schools:
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026331/206680.shtm
-- name: 成都市树德中学
-  short_name: 树德中学
+- name: 成都市石室联合中学蜀华分校
+  short_name: 石室联合中学蜀华分校
   district_code: qingyang
   type: public
-  level: middle
-  address: 成都市青羊区宁夏街树德巷
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市石室联合成飞学校
+  short_name: 石室联合成飞学校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市胜西小学
+  short_name: 胜西小学
+  district_code: qingyang
+  type: public
+  level: primary
+  address: 成都市青羊区上翔街2号
   source_urls: {}
   data_year: 2026
   verified: false
-  verification_source: http://cd.bendibao.com/edu/2026331/206680.shtm
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市胜西小学文兴分校
+  short_name: 胜西小学文兴分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市花园(国际)小学
+  short_name: 花园(国际)小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市草堂小学
+  short_name: 草堂小学
+  district_code: qingyang
+  type: public
+  level: primary
+  address: 成都市青羊区草堂北路5号
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市草堂小学西区分校
+  short_name: 草堂小学西区分校
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市金沙小学
+  short_name: 金沙小学
+  district_code: qingyang
+  type: public
+  level: primary
+  address: 成都市青羊区金沙遗址路
+  source_urls: {}
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市金沙小学(ABCD区)
+  short_name: 金沙小学(ABCD区)
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市青羊区教育科学研究院附属实验学校
+  short_name: 青羊区教育科学研究院附属
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市青羊实验中学附属小学
+  short_name: 青羊实验中学附属小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 成都市鼓楼小学
+  short_name: 鼓楼小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+- name: 西南财经大学附属小学
+  short_name: 西南财经大学附属小学
+  district_code: qingyang
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+  role: registration_point
+sources:
+  registration_guide: http://cd.bendibao.com/edu/2026424/207407_3.shtm

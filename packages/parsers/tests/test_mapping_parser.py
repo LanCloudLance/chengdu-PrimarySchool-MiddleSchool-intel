@@ -4,7 +4,9 @@ from chengdu_edu_parsers.mapping_parser import (
     parse_mapping_adjustment_sections,
     parse_mapping_document,
     parse_promotion_links,
+    parse_road_name_scopes,
     parse_school_scopes,
+    parse_zone_school_list_scopes,
 )
 
 GAOXIN_SCOPE_SAMPLE = """
@@ -97,3 +99,36 @@ def test_parse_mapping_adjustment_sections():
     assert "成都市西川悦湖学校" in names
     assert "成都市龙江路小学悦湖学校" in names
     assert "四川大学附属实验小学明雅学校" in names
+
+
+ROAD_NAME_SAMPLE = """
+成都市泡桐树小学
+
+划片范围涉及道路名称：泡桐树街，商业街，实业街。
+"""
+
+
+def test_parse_road_name_scopes():
+    scopes = parse_road_name_scopes(ROAD_NAME_SAMPLE)
+    assert len(scopes) == 1
+    assert scopes[0].school_name == "成都市泡桐树小学"
+
+
+ZONE_SCHOOL_SAMPLE = """
+(一) A学区(华阳片区)
+梓州大道以西，沈阳路以北的区域。
+该学区学校(2所)
+四川天府新区第三小学
+四川天府新区第四小学
+(二) C学区
+通州路以西的区域。
+该学区学校(1所)
+四川天府新区第七小学
+"""
+
+
+def test_parse_zone_school_list_scopes():
+    scopes, zones = parse_zone_school_list_scopes(ZONE_SCHOOL_SAMPLE)
+    assert len(scopes) == 3
+    assert len(zones) >= 2
+    assert any("第三小学" in s.school_name for s in scopes)

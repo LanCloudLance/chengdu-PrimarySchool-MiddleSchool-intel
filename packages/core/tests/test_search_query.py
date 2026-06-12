@@ -1,4 +1,4 @@
-from chengdu_edu_core.search_query import _search_patterns
+from chengdu_edu_core.search_query import _search_patterns, search_patterns
 
 
 def test_search_patterns_normalize_city_prefix():
@@ -10,3 +10,8 @@ def test_search_patterns_normalize_city_prefix():
 def test_search_patterns_short_name_token():
     patterns = _search_patterns("棕北")
     assert "棕北" in patterns
+
+
+def test_search_patterns_street_scope():
+    patterns = search_patterns("玉林东路")
+    assert "玉林东路" in patterns

@@ -329,28 +329,40 @@ def parse_bendibao_mapping_tables(html: str) -> list[SchoolScope]:
     scopes: list[SchoolScope] = []
     seen: set[str] = set()
 
+    header_labels = {"服务范围", "小学名称", "片号", "划片范围（具体街道名称）"}
+
     for table in soup.select("table"):
         for tr in table.select("tr"):
             cells = [td.get_text(strip=True) for td in tr.select("td")]
-            if len(cells) < 3:
-                continue
-            scope = cells[-1]
-            if len(scope) < 12:
-                continue
-            if scope in ("服务范围", "小学名称", "片号"):
-                continue
-            if cells[0] in ("片号", "小学名称"):
+            if len(cells) < 2:
                 continue
 
-            start = 1 if cells[0].isdigit() else 0
-            name = _normalize_table_school_name(cells[start:-1])
+            if len(cells) == 2:
+                name_cell, scope = cells[0], cells[1]
+                if name_cell in header_labels or scope in header_labels:
+                    continue
+                if len(scope) < 12:
+                    continue
+                name = _normalize_table_school_name([name_cell])
+                zone_no = ""
+            else:
+                scope = cells[-1]
+                if len(scope) < 12:
+                    continue
+                if scope in header_labels:
+                    continue
+                if cells[0] in ("片号", "小学名称"):
+                    continue
+                start = 1 if cells[0].isdigit() else 0
+                name = _normalize_table_school_name(cells[start:-1])
+                zone_no = cells[0] if cells[0].isdigit() else ""
+
             if not name or name in seen:
                 continue
             if not re.search(r"[路街道巷村苑区号界至]", scope):
                 continue
 
             seen.add(name)
-            zone_no = cells[0] if cells[0].isdigit() else ""
             scopes.append(
                 SchoolScope(
                     school_name=name,
@@ -359,6 +371,104 @@ def parse_bendibao_mapping_tables(html: str) -> list[SchoolScope]:
                 )
             )
     return scopes
+
+
+_ROAD_NAME_SCOPE = re.compile(
+    r"^((?:成都市|成都|四川|西南财经)[^\n]{2,48}(?:小学|学校|实验学校|分校)"
+    r"(?:[（(][^）)]*[）)])?)"
+    r"(?:\s*\n+\([^)]+\))?"
+    r"\s*\n+划片范围涉及[^：:\n]*[：:]\s*"
+    r"([^\n]{8,800})",
+    re.MULTILINE,
+)
+_SCHOOL_LINE = re.compile(
+    r"^((?:四川天府新区|成都市|成都)[^\n]{2,80}(?:小学|学校|中学)"
+    r"(?:[（(][^）)]*[）)])?)\s*$"
+)
+_ZONE_HEADER_LINE = re.compile(r"^[（(][一二三四五六七八九十]+[）)]\s*.+学区")
+
+
+def parse_road_name_scopes(text: str) -> list[SchoolScope]:
+    """青羊区等「划片范围涉及道路名称」版式。"""
+    scopes: list[SchoolScope] = []
+    seen: set[str] = set()
+    for match in _ROAD_NAME_SCOPE.finditer(text):
+        name = match.group(1).strip()
+        scope = _clean_scope(match.group(2))
+        if len(scope) < 8 or name in seen:
+            continue
+        if not re.search(r"[路街道巷村苑区号界至以南以北以东以西]", scope):
+            continue
+        seen.add(name)
+        scopes.append(
+            SchoolScope(
+                school_name=name,
+                enrollment_scope=scope,
+                source_excerpt=f"{name}\n{scope[:120]}",
+            )
+        )
+    return scopes
+
+
+def _extract_zone_school_section(html: str) -> str:
+    soup = BeautifulSoup(html, "html.parser")
+    content = soup.select_one(".content") or soup.select_one(".article")
+    text = content.get_text("\n", strip=True) if content else extract_article_text(html)
+    start = text.find("(一)")
+    end = text.find("二、设置过渡区")
+    if start >= 0 and end > start:
+        return text[start:end]
+    return text
+
+
+def parse_zone_school_list_scopes(text: str) -> tuple[list[SchoolScope], list[dict[str, str]]]:
+    """天府新区等学区划分 + 学校名单版式。"""
+    scopes: list[SchoolScope] = []
+    zone_blocks: list[dict[str, str]] = []
+    seen: set[str] = set()
+    zone_label = ""
+    boundary = ""
+    mode = "seek"
+    boundary_lines: list[str] = []
+
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if _ZONE_HEADER_LINE.match(line):
+            if zone_label and boundary_lines:
+                boundary = _clean_scope("".join(boundary_lines))
+                zone_blocks.append({"zone_label": zone_label, "zone_boundary": boundary})
+            zone_label = line.strip("（()）")
+            boundary_lines = []
+            mode = "boundary"
+            continue
+        if line.startswith("该学区学校"):
+            boundary = _clean_scope("".join(boundary_lines))
+            if zone_label and len(boundary) >= 8:
+                zone_blocks.append({"zone_label": zone_label, "zone_boundary": boundary})
+            mode = "schools"
+            continue
+        if mode == "boundary":
+            boundary_lines.append(line)
+            continue
+        if mode == "schools":
+            sm = _SCHOOL_LINE.match(line)
+            if not sm or not zone_label or len(boundary) < 8:
+                continue
+            name = sm.group(1).strip()
+            if name in seen:
+                continue
+            seen.add(name)
+            scope = f"【{zone_label}】{boundary}"
+            scopes.append(
+                SchoolScope(
+                    school_name=name,
+                    enrollment_scope=scope[:800],
+                    source_excerpt=f"{zone_label} / {name}",
+                )
+            )
+    return scopes, zone_blocks
 
 
 def _merge_school_scopes(*groups: list[SchoolScope]) -> list[SchoolScope]:
@@ -374,16 +484,26 @@ def _merge_school_scopes(*groups: list[SchoolScope]) -> list[SchoolScope]:
 def parse_mapping_document(html: str, *, kind: str = "school_scope") -> MappingParseResult:
     text = extract_article_text(html)
     table_scopes = parse_bendibao_mapping_tables(html) if kind != "image_list" else []
-    text_scopes = parse_school_scopes(text)
+    zone_blocks = parse_zone_blocks(text)
+    text_scopes: list[SchoolScope] = []
     if kind == "adjustment":
         text_scopes = parse_mapping_adjustment_sections(text)
+    elif kind == "zone_school_list":
+        section = _extract_zone_school_section(html)
+        text_scopes, zone_blocks = parse_zone_school_list_scopes(section)
+    elif kind == "road_name_scope":
+        text_scopes = parse_road_name_scopes(text)
     elif kind == "school_scope":
         text_scopes = _merge_school_scopes(
-            text_scopes, parse_mapping_adjustment_sections(text)
+            parse_school_scopes(text),
+            parse_mapping_adjustment_sections(text),
+            parse_road_name_scopes(text),
         )
+    else:
+        text_scopes = parse_school_scopes(text)
     return MappingParseResult(
         school_scopes=_merge_school_scopes(table_scopes, text_scopes),
-        zone_blocks=parse_zone_blocks(text),
+        zone_blocks=zone_blocks,
         promotion_links=parse_promotion_links(text),
     )
 
@@ -394,6 +514,21 @@ _SCOPE_SOURCE_RANK = {
     "html": 2,
     "ocr": 3,
 }
+
+
+def merge_promotion_links(links: list[PromotionLink]) -> list[PromotionLink]:
+    """合并多源对口：同小学名保留 target 更多、含「多校划片」优先的一条。"""
+    best: dict[str, PromotionLink] = {}
+
+    def rank(link: PromotionLink) -> tuple:
+        lottery = 1 if "多校" in link.promotion_type or "摇号" in link.promotion_type else 0
+        return (-len(link.target_names), -lottery, -len(link.source_excerpt))
+
+    for link in links:
+        prev = best.get(link.primary_name)
+        if prev is None or rank(link) < rank(prev):
+            best[link.primary_name] = link
+    return list(best.values())
 
 
 def merge_scope_dicts(rows: list[dict]) -> list[dict]:

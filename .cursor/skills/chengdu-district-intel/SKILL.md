@@ -62,21 +62,57 @@ description: >-
 - 支持 `copy_scope_from` 从已解析校复制范围
 - pending 台账：`configs/districts/wuhou/mapping_pending.yaml`
 
+### 段 2.6 — 对口升学抓取（W2）
+
+1. 在 `district_mapping_sources.yaml` 配置 `promotion_urls`（`kind: promotion_table`）
+2. 抓取（PNG OCR，保留已有划片缓存）：
+
+```bash
+.venv/bin/python scripts/scrape_district_mapping.py --district {code} --promotion-only
+```
+
+3. 品牌推断白名单（武侯样板）：`configs/districts/{code}/promotion_inference.yaml`
+
 ### 段 3 — 政策入库
 
 ```bash
 .venv/bin/python scripts/import_district_mapping_policies.py --district {code}
-# 对口（配置 promotion_urls 后）：
 .venv/bin/python scripts/import_school_promotion_targets.py --district {code}
+```
+
+### 段 4 — W4 运营化（武侯样板 / 复制新区后）
+
+```bash
+# 登记点：4 月 edu 公告 URL → schools.yaml role=registration_point
+.venv/bin/python scripts/apply_registration_points.py --district {code}
+
+# 镜像页 → intel_entries（MIRROR_PAGE）；captcha 时用 inventory 缓存
+.venv/bin/python scripts/sync_mirror_intel.py --district {code} --from-inventory
+# Docker 可用时入库：
+.venv/bin/python scripts/sync_mirror_intel.py --district {code} --from-inventory  # 去掉 --manifest-only
+
+# 新区第一遍：划片抓取后补 inventory
+.venv/bin/python scripts/scrape_district_mapping.py --district {code}
+.venv/bin/python scripts/expand_inventory_from_mapping.py --district {code}
+.venv/bin/python scripts/import_schools.py
 ```
 
 ## 验收清单（必须通过）
 
-```bash
-# 武侯样板：专用验收脚本（dry-run + 可选 DB）
-.venv/bin/python scripts/verify_wuhou_mapping.py          # 无 Docker 可跑
-.venv/bin/python scripts/verify_wuhou_mapping.py --db       # 需 docker compose up -d
+**每项任务完成后必跑**（见 `.cursor/rules/chengdu-edu-verify-on-complete.mdc`）：
 
+```bash
+.venv/bin/python scripts/verify_wuhou_all.py
+# Docker 可用：.venv/bin/python scripts/verify_wuhou_all.py --db
+```
+
+分项脚本：
+
+```bash
+.venv/bin/python scripts/verify_wuhou_mapping.py      # W1
+.venv/bin/python scripts/verify_wuhou_promotion.py    # W2
+.venv/bin/python scripts/verify_wuhou_portal.py       # W3
+.venv/bin/python scripts/verify_wuhou_w4.py           # W4
 .venv/bin/python -m pytest -q
 
 docker compose exec -T db psql -U edu -d chengdu_edu -c "
@@ -93,6 +129,7 @@ GROUP BY 1;"
 | pending（公办小学） | ≤ 3 | ≤ 30% 公办小学 |
 | intel mapping 条数 | ≥ 2 | ≥ 1 |
 | pytest | 全绿 | 全绿 |
+| W3 门户 | `verify_wuhou_portal.py` PASS | scope_q + 免责声明（复制模板） |
 
 ## 武侯区特规
 

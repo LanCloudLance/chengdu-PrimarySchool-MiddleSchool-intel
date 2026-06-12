@@ -2,6 +2,7 @@
 
 > **文档用途**：记录已交付能力、当前数据状态、管线入口与已知缺口。  
 > **维护方式**：每次迭代完成后，在文末「更新记录」追加一节（使用固定模板）。  
+> **项目总览 / 新 Agent 接手**：根目录 [`README.md`](../README.md)  
 > **关联文档**：`docs/WUHOU_ROADMAP.md`（武侯推进节奏）、`.cursor/skills/chengdu-district-intel/SKILL.md`（复制到其他区的操作技能）
 
 | 字段 | 值 |
@@ -10,7 +11,7 @@
 | 工作分支 | `feat/chengdu-edu-intel-mvp` |
 | 框架数据年 | **2025**（2026 yjrx 官方源刻意后置） |
 | 样板区 | **武侯区（wuhou）** |
-| 最后更新 | 2026-06-05（W1.4 验收） |
+| 最后更新 | 2026-06-11（七区划片首遍 + 全量验收） |
 
 ---
 
@@ -35,7 +36,7 @@
 | 7 区 `districts` seed | ✅ | jinjiang / qingyang / wuhou / chenghua / jinniu / gaoxin / tianfu |
 | 领域枚举与 hashing / diff | ✅ | `packages/core` |
 | ORM + Alembic 迁移 | ✅ | `packages/storage/alembic` |
-| pytest 基线 | ✅ | 当前 **32 passed** |
+| pytest 基线 | ✅ | 当前 **39 passed** |
 
 ### Phase B — 学校主数据（Inventory）✅（武侯深化中）
 
@@ -77,36 +78,44 @@
 | `198872_7.shtm` | image_list | 2025 | PNG 长图，OCR 试点 |
 | `197052.shtm` | adjustment | 2025 | 2025 调整公告，verified |
 
-### Phase E — 升学对口（promotion）🔶
+### Phase E — 升学对口（promotion）✅（武侯 2025 框架）
 
 | 项 | 状态 | 说明 |
 |----|------|------|
 | 对口文本解析 | ✅ | `parse_promotion_links`、`infer_group_promotion_links` |
-| `import_school_promotion_targets.py` | ✅ | 脚本就绪 |
-| 武侯 promotion_urls 配置 | ❌ | `district_mapping_sources.yaml` 中为空 |
-| 武侯 DB 对口 FK 覆盖 | 🔶 | 仅少量（棕北、玉林等推断），未系统导入 |
+| 升学 PNG OCR | ✅ | `promotion_ocr.py`（片号/小学/初中/备注五列） |
+| `import_school_promotion_targets.py` | ✅ | OCR + 白名单推断 + 九年一贯制 |
+| 武侯 promotion_urls | ✅ | 2025 `199288` + 2024 `185963` reference |
+| `promotion_inference.yaml` | ✅ | 品牌词白名单（棕北/玉林/龙江路等） |
+| 武侯 dry-run 对口覆盖 | ✅ | **45/54 公办小学（83%）** |
+| 武侯 DB 对口 FK | 🔶 | 待 Docker 启动后 `import_school_promotion_targets` |
 
-### 门户与 API 🔶
+### 门户与 API ✅（W3 武侯样板）
 
 | 项 | 状态 | 说明 |
 |----|------|------|
-| FastAPI schools 路由 | ✅ | 基础查询 |
+| FastAPI schools 路由 | ✅ | 基础查询 + `scope_q` 划片搜索 |
 | 校名/地址模糊搜索 | ✅ | `search_query.py` |
-| 划片正文/街道搜索 | ❌ | 未做 |
-| 政策状态徽章 UI | ❌ | 未做 |
-| HTMX Web 完整度 | 🔶 | 随 API 演进 |
+| 划片正文/街道搜索 | ✅ | `scope_q` → `district_mapping.enrollment_scope` |
+| 政策状态徽章 UI | ✅ | reference / verified / 待官方 |
+| 来源链 + 免责声明 | ✅ | `mapping_display.py` + 页脚 |
+| HTMX Web 完整度 | 🔶 | 搜索/详情可用；W4 运营化继续 |
 
 ---
 
-## 3. 武侯区当前数据快照（2026-06-07）
+## 3. 武侯区当前数据快照（2026-06-05）
 
 ```
-inventory schools (wuhou)     : 96
-district_mapping policies 2025  : 56
-intel_entries (mapping)       : 3
+inventory schools (wuhou)       : 96
+district_mapping (dry-run)      : 56 mapped, unmatched 0, pending 0
+promotion_links (scraped)       : 54
+promotion 公办小学覆盖 (dry-run): 85.2% (46/54)
 mapping_scraped merged scopes   : 48
-pytest                          : 32 passed
+pytest                          : 36 passed
+verify_wuhou_all                : W1 + W2 + W3 PASS
 ```
+
+> 项目接手总览见根目录 [`README.md`](../README.md)。
 
 | mapping_status | 数量（W1.3 后预期） | 含义 |
 |----------------|------|------|
@@ -130,7 +139,8 @@ pytest                          : 32 passed
 | `configs/districts/wuhou/school_aliases.yaml` | 划片/公告校名 → 标准校名 |
 | `configs/districts/wuhou/mapping_overrides.yaml` | 人工划片覆盖（更名/停招/一校两区） |
 | `configs/districts/wuhou/mapping_pending.yaml` | W1 pending 台账（10/10 done） |
-| `configs/districts/wuhou/mapping_scraped.json` | sync 镜像缓存 |
+| `configs/districts/wuhou/promotion_inference.yaml` | W2 品牌推断白名单 |
+| `configs/districts/wuhou/mapping_scraped.json` | sync 镜像缓存（含 `promotion_links`） |
 
 ### 管线（推荐顺序）
 
@@ -148,10 +158,13 @@ packages/storage/../../.venv/bin/alembic -c packages/storage/alembic.ini upgrade
 # 3. 划片入库
 .venv/bin/python scripts/import_district_mapping_policies.py --district wuhou
 
-# 4. 验收
-.venv/bin/python scripts/verify_wuhou_mapping.py        # dry-run（无 Docker）
-.venv/bin/python scripts/verify_wuhou_mapping.py --db   # DB 核对
-.venv/bin/python -m pytest -q
+# 3.5 对口升学（W2）
+.venv/bin/python scripts/scrape_district_mapping.py --district wuhou --promotion-only
+.venv/bin/python scripts/import_school_promotion_targets.py --district wuhou
+
+# 4. 验收（任务完成必跑）
+.venv/bin/python scripts/verify_wuhou_all.py
+.venv/bin/python scripts/verify_wuhou_all.py --db   # 可选，需 Docker + import
 ```
 
 ### 代码包
@@ -172,9 +185,9 @@ packages/storage/../../.venv/bin/alembic -c packages/storage/alembic.ini upgrade
 | P0 | 2026 yjrx 官方划片 | 6 月 15 日前后接入 gov + 平台源 |
 | P1 | ~~pending 补全~~ | **W1.4 完成**；dry-run 53/53；DB 待 Docker 重启后 `--db` 补验 |
 | P1 | OCR 质量 | 分校/跨行单元格；约 17/46 校来自 OCR |
-| P2 | 升学对口 | promotion_urls + 系统导入 |
+| P2 | ~~升学对口~~ | **W2 完成**；DB import 待 Docker |
 | P3 | 其他 6 区复制 | 参照 SKILL 与武侯样板 |
-| P4 | 划片全文搜索 / UI 状态 | 门户体验 |
+| P4 | ~~划片全文搜索 / UI 状态~~ | **W3 完成** |
 
 ---
 
@@ -184,7 +197,8 @@ packages/storage/../../.venv/bin/alembic -c packages/storage/alembic.ini upgrade
 |----|--------------|------|
 | wuhou | 3 | 2025 框架完整 |
 | gaoxin | 2 | 有 URL，未按 2025 框架验收 |
-| jinjiang / qingyang / chenghua / jinniu / tianfu | 0 | 待复制 |
+| jinjiang | 1 | 2025 HTML 划片首遍（25 scopes / 28 校） |
+| qingyang / chenghua / jinniu / tianfu | 0 | 待复制 |
 
 ---
 
@@ -393,6 +407,241 @@ docker compose up -d
 .venv/bin/python scripts/sync_intel_library.py --district wuhou --ocr
 .venv/bin/python scripts/import_district_mapping_policies.py --district wuhou
 .venv/bin/python scripts/verify_wuhou_mapping.py --db
+```
+
+---
+
+### [2026-06-05] W2 — 对口升学闭环
+
+**执行人 / 会话**：W2 迭代
+
+**本次目标**
+- 配置 promotion 源、OCR 解析升学 PNG、白名单推断、验收 >60% 公办小学对口覆盖
+
+**交付**
+- [x] `promotion_urls`：2025 `199288` + 2024 `185963`
+- [x] `promotion_ocr.py`：升学对应区域五列 OCR + 续页识别
+- [x] `promotion_inference.yaml` + 初中校名 `school_aliases.yaml` 扩展
+- [x] `scrape_district_mapping.py --promotion-only` 合并 `promotion_links`
+- [x] `import_school_promotion_targets.py`：白名单推断 + 九年一贯制
+- [x] `verify_wuhou_promotion.py` dry-run **PASS**（83.3%）
+- [x] pytest **34 passed**
+
+**数据变化（武侯）**
+
+| 指标 | 前 | 后 |
+|------|----|----|
+| promotion_links（scraped） | 0 | **54** |
+| 公办小学对口覆盖（dry-run） | ~6%（推断 3 校） | **83.3%（45/54）** |
+| 多校划片/摇号标注 | 0 | **45 校** |
+| promotion 有 FK（DB） | 未验收 | 待 Docker import |
+
+**未覆盖 9 校（预期）**：停招/更名/无独立片（太平、新生路、洗面桥、红专西路、三河、望江楼、读者、金兴北路等）— 可 W2.5 overrides 补
+
+**未做 / 下一跳（W3）**
+- [x] 见 W3 节
+
+---
+
+### [2026-06-05] W3 — 门户可读
+
+**执行人 / 会话**：W3 迭代
+
+**本次目标**
+- 划片/街道搜索、mapping_status 徽章、来源链、免责声明
+
+**交付**
+- [x] `scope_q`：API `GET /api/schools` + 门户双搜索框
+- [x] `mapping_display.py`：徽章、来源链、免责声明文案
+- [x] 详情页划片卡片（状态徽章 + provenance + 正文）
+- [x] 列表页划片状态徽章
+- [x] `verify_wuhou_portal.py`；`verify_wuhou_all.py` 纳入 W3
+- [x] pytest **36 passed**
+
+**验证命令**
+```bash
+.venv/bin/python scripts/verify_wuhou_portal.py
+.venv/bin/python scripts/verify_wuhou_all.py
+```
+
+**未做 / 下一跳（W4）**
+- [x] 见 W4 节
+
+---
+
+### [2026-06-11] W4 — 运营化 + 锦江首遍复制
+
+**执行人 / 会话**：feat/chengdu-edu-intel-mvp / W4 迭代
+
+**本次目标**
+- 镜像页入 intel（MIRROR_PAGE）
+- 4 月 edu 登记点标记
+- 锦江划片首遍复制（SKILL 段 1–4）
+
+**交付**
+- [x] `sync_mirror_intel.py`（`--from-inventory` 防 captcha）+ `mirror_intel_manifest.json` 73 条
+- [x] `apply_registration_points.py`：武侯 54 公办小学 `registration_point`
+- [x] `expand_inventory_from_mapping.py` + 锦江 `mapping_urls`（198845 HTML 两列表）
+- [x] `parse_bendibao_mapping_tables` 支持锦江两列表格
+- [x] `verify_wuhou_w4.py`；`verify_wuhou_all.py` 纳入 W4
+- [x] pytest **37 passed**
+
+**数据变化**
+
+| 指标 | 前 | 后 |
+|------|----|----|
+| mirror intel manifest | 无 | **73** |
+| 武侯 registration_point | 0（candidate 59） | **54** |
+| 锦江 scopes | 0 | **25** |
+| 锦江 inventory | 8 | **28** |
+| pytest | 36 | **37** |
+
+**未做 / 下一跳**
+- [x] Docker 补验 → 见下节
+- [ ] 锦江 promotion OCR / aliases / pending 深化
+- [ ] 复制青羊
+
+**验证命令**
+```bash
+.venv/bin/python scripts/apply_registration_points.py --district wuhou
+.venv/bin/python scripts/sync_mirror_intel.py --district wuhou --from-inventory
+.venv/bin/python scripts/scrape_district_mapping.py --district jinjiang
+.venv/bin/python scripts/expand_inventory_from_mapping.py --district jinjiang
+.venv/bin/python scripts/verify_wuhou_all.py
+```
+
+---
+
+### [2026-06-11] DB 补验 — mirror intel 入库 + 全量 --db
+
+**执行人 / 会话**：W4 下一跳 / DB 补验
+
+**本次目标**
+- Docker DB 启动后完成武侯/锦江 import 与 `verify_wuhou_all.py --db`
+
+**交付**
+- [x] `sync_mirror_intel.py --from-inventory` 可写入 DB（修复 manifest-only 早退）
+- [x] `import_schools` 198 校；武侯 mapping 56 + 锦江 26；mirror_page intel **73**
+- [x] `verify_wuhou_all.py --db`：**W1–W4 + pytest 全 PASS**
+
+**DB 快照（武侯 mapping）**
+
+| mapping_status | 数量 |
+|----------------|------|
+| reference | 52 |
+| verified | 4 |
+| pending | 0 |
+
+**验证命令**
+```bash
+docker compose up -d db
+.venv/bin/alembic -c packages/storage/alembic.ini upgrade head
+.venv/bin/python scripts/import_schools.py
+.venv/bin/python scripts/import_district_mapping_policies.py --district wuhou --district jinjiang
+.venv/bin/python scripts/import_school_enrollment_policies.py --district wuhou
+.venv/bin/python scripts/sync_mirror_intel.py --district wuhou --from-inventory
+.venv/bin/python scripts/verify_wuhou_all.py --db
+```
+
+**未做 / 下一跳**
+- [x] 复制青羊 → 见下节七区首遍
+- [ ] 锦江 promotion OCR / aliases
+
+---
+
+### [2026-06-11] 七区划片首遍 — bootstrap + verify_all_districts
+
+**执行人 / 会话**：feat/chengdu-edu-intel-mvp / 七区跑通 + 留痕交接
+
+**本次目标**
+- 配置青羊/成华/高新/天府 mapping 源；批量 scrape → expand → DB import
+- `verify_all_districts.py` + 纳入 `verify_wuhou_all.py`；全量 `--db` 自我验证
+- 交接文档 `docs/HANDOFF.md`
+
+**交付**
+- [x] 解析器：`parse_road_name_scopes`（青羊）、`parse_zone_school_list_scopes`（天府）
+- [x] `configs/district_mapping_sources.yaml` 五区 URL + 金牛缺口说明
+- [x] `scripts/bootstrap_all_core_districts.py` 一键管线
+- [x] `scripts/verify_all_districts.py`（七区 filesystem + 可选 DB）
+- [x] 修复：`verify_all_districts` 单 event loop DB；`verify_wuhou_w4` manifest 幂等验收
+- [x] `docs/HANDOFF.md`
+- [x] pytest **39 passed**；`verify_wuhou_all.py --db` **ALL PASS**
+
+**数据变化（七区首遍）**
+
+| 区 | inventory | scopes | DB mapping（非 pending） |
+|----|-----------|--------|--------------------------|
+| jinjiang | 28 | 25 | 25 |
+| qingyang | 36 | 32 | 32 |
+| wuhou | 96 | 48 | 56 |
+| chenghua | 41 | 36 | 36 |
+| jinniu | 7 | 0 | 0（待源） |
+| gaoxin | 9 | 5 | 5 |
+| tianfu | 41 | 38 | 38 |
+
+**未做 / 下一跳**
+- [ ] 金牛划片源（bendibao 198847 正文缺失）
+- [ ] 高新区全区划片补全
+- [ ] 锦江 promotion OCR / aliases
+- [ ] `sync_intel_library --all-core` 补六区 intel mapping 行
+
+**验证命令**
+```bash
+.venv/bin/python scripts/bootstrap_all_core_districts.py
+.venv/bin/python scripts/verify_all_districts.py --db
+.venv/bin/python scripts/verify_wuhou_all.py --db
+```
+
+**交接**：详见 [`docs/HANDOFF.md`](HANDOFF.md)
+
+---
+
+### [2026-06-12] 七区深度对齐 — verify_district_parity 验收
+
+**执行人 / 会话**：feat/chengdu-edu-intel-mvp / 深度管线
+
+**本次目标**
+- 按武侯 W1–W4 能力对齐七区：划片 / intel / 登记点 / 入库 / 镜像全链路
+- 新增 `verify_district_parity.py` 同级验收脚本
+- OCR 分块 + 超时机制（防止大长图卡死）
+
+**交付**
+- [x] `scripts/bootstrap_district_parity.py`（深度管线入口，支持 `--district` 单区）
+- [x] `scripts/verify_district_parity.py`（武侯同级验收：filesystem + DB）
+- [x] `scripts/seed_inventory_from_global.py`（global schools seed 合并进分区 inventory）
+- [x] OCR 分块（`_ocr_image_tiled`）+ 30s 超时（`_ocr_with_timeout`）
+- [x] `sync_intel_library.py` 不再误清空已有 `mapping_scraped.json`
+- [x] `scrape_district_mapping.py --ocr` 支持 image_list OCR
+- [x] `verify_wuhou_mapping.py` dry_run 考虑 alias（pending 5→0）
+- [x] 金牛/高新 OCR 仍超时，文档化缺口
+
+**数据变化（七区深度对齐）**
+
+| 区 | inventory | scopes | DB mapping（非 pending） | intel_mapping |
+|----|-----------|--------|--------------------------|---------------|
+| jinjiang | 28 | 25 | 25 | 1 |
+| qingyang | 36 | 32 | 32 | 1 |
+| wuhou | 101 | 47 | 56 | 3 |
+| chenghua | 41 | 36 | 36 | 1 |
+| jinniu | 7 | 0 | 0 | 0（OCR 超时） |
+| gaoxin | 9 | 5 | 5 | 3 |
+| tianfu | 41 | 38 | 38 | 1 |
+
+**验收结论**
+```bash
+.venv/bin/python scripts/verify_district_parity.py --db
+# 5/7 PASS; jinniu/gaoxin FAIL (OCR 不可用)
+```
+
+**未做 / 下一跳**
+- [ ] 金牛/高新 OCR 手动补划片（或换非 image_list 源）
+- [ ] 锦江 promotion OCR
+- [ ] 全六区 mirror intel（需 `scraped_mirrors.json`）
+
+**验证命令**
+```bash
+.venv/bin/python scripts/bootstrap_district_parity.py
+.venv/bin/python scripts/verify_district_parity.py --db
 ```
 
 ---

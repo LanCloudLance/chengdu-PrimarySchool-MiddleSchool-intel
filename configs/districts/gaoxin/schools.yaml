@@ -2,19 +2,27 @@ district_code: gaoxin
 data_year: 2026
 notes: 从 configs/schools.yaml 提取的 gaoxin 区学校（5 校）
 inventory_summary:
-  total: 5
-  listed: 5
+  total: 9
+  listed: 9
   enriched: 0
   verified: 0
 schools:
-- name: 成都蒙彼利埃小学
-  short_name: 蒙小
+- name: 四川省成都七中初中学校
+  short_name: 七中初中
+  district_code: gaoxin
+  type: public
+  level: middle
+  address: 成都市高新区天仁路388号
+  source_urls:
+    website: http://www.cdqzcz.net/
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+- name: 四川省教育科学研究院附属实验小学（成都高新区梓州小学）
+  short_name: 四川省教育科学研究院附属
   district_code: gaoxin
   type: public
   level: primary
-  address: 成都市高新区盛邦街699号
-  source_urls:
-    website: http://www.cdmpl.cn/
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
@@ -28,7 +36,25 @@ schools:
   source_urls: {}
   data_year: 2026
   verified: false
-  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
+- name: 成都师范银都紫藤北区小学
+  short_name: 成都师范银都紫藤北区小学
+  district_code: gaoxin
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
+- name: 成都师范银都紫藤南区小学
+  short_name: 成都师范银都紫藤南区小学
+  district_code: gaoxin
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
   role: registration_point
 - name: 成都泡桐树小学（天府校区）
   short_name: 泡小天府
@@ -41,17 +67,18 @@ schools:
   verified: false
   verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
   role: registration_point
-- name: 四川省成都七中初中学校
-  short_name: 七中初中
+- name: 成都蒙彼利埃小学
+  short_name: 蒙小
   district_code: gaoxin
   type: public
-  level: middle
-  address: 成都市高新区天仁路388号
+  level: primary
+  address: 成都市高新区盛邦街699号
   source_urls:
-    website: http://www.cdqzcz.net/
+    website: http://www.cdmpl.cn/
   data_year: 2026
   verified: false
-  verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
 - name: 成都金苹果公学
   short_name: 金苹果公学
   district_code: gaoxin
@@ -63,3 +90,14 @@ schools:
   data_year: 2026
   verified: false
   verification_source: http://cd.bendibao.com/edu/202641/206690.shtm
+- name: 成都高新区银都紫藤初中东区学校
+  short_name: 成都高新区银都紫藤初中东
+  district_code: gaoxin
+  type: public
+  level: primary
+  data_year: 2026
+  verified: false
+  verification_source: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+  role: registration_point
+sources:
+  registration_guide: http://cd.bendibao.com/edu/2026424/207407_2.shtm

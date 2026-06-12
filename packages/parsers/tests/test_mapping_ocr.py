@@ -1,4 +1,5 @@
 from chengdu_edu_parsers.mapping_ocr import (
+    _is_mapping_table_header,
     extract_mapping_image_urls,
     parse_ocr_table_boxes,
 )
@@ -23,6 +24,11 @@ def test_parse_ocr_table_boxes_simple_row():
     assert len(scopes) == 1
     assert scopes[0].school_name == "成都市弟维小学"
     assert "小税巷" in scopes[0].enrollment_scope
+
+
+def test_is_mapping_table_header_accepts_jinniu_and_rejects_subsidy():
+    assert _is_mapping_table_header(["2025年成都市金牛区小学入学划片范围一览表", "成都市茶店子小学"])
+    assert not _is_mapping_table_header(["四川国家补贴领取时间为每日8:00"])
 
 
 def test_parse_ocr_table_boxes_split_name_prefix():

@@ -38,6 +38,10 @@ class SchoolSummary(BaseModel):
     type: SchoolType
     level: SchoolLevel
     address: str | None = None
+    mapping_status: str | None = None
+    framework_year: int | None = None
+    reference_year: int | None = None
+    source_page: str | None = None
 
 
 class PaginatedSchools(BaseModel):

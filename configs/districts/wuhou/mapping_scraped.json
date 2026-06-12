@@ -1,23 +1,25 @@
 {
-  "scraped_at": "2026-06-07",
+  "scraped_at": "2026-06-12",
   "district_code": "wuhou",
   "data_year": 2025,
   "school_scopes": [
     {
       "school_name": "成都市弟维小学",
-      "enrollment_scope": "洗街（浆洗街15号除外），洗面桥街（上街、下街），洗面桥横街，洗面桥东一街，洗面桥东二街，洗面桥巷，利民巷，放生池，金沙寺（街），肥猪市巷。小学路，中学路，金陵路，金陵横路，电信路，电信后街，电信南街，小天东街，小天南街，小天西街，小天北街，小天中街，九如村，公行道，玉华村，人民南路三段西侧（成都师范",
-      "source_excerpt": "OCR片号1 成都市弟维小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "小税巷、国学巷、小天竺街（63号以后）、坛神巷、大悲巷、黉门街、黉门后街、临江西路、人民南路三段（2号至22号，锦江大桥头至03部队，双号），桓侯巷、桓新巷、张爷庙、浆洗街（浆洗街15号除外），洗面桥街（上街、下街）、洗面桥横街、洗面桥东一街、洗面桥东二街、洗面桥巷，利民巷、放生池、金沙寺（街），肥猪市巷。",
+      "source_excerpt": "片号1 成都市弟维小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯计算机实验小学",
-      "enrollment_scope": "学院至一环路口），人民南路四段西侧（一环路口至玉林东路路口），一环路南三段、四段北侧（跳伞塔口至西南民族大学，含西南民放大学）。玉林北路-玉林中路-玉林南路以东，人民南路四段以西，一环路南三段（武侯段）以南，二环路南三段（武侯段）以北区域。包括：玉林东街，玉林东路，玉林西街，玉林南街，玉林南路（单号），玉林北路（单号），玉林北街，玉林北巷，玉林1-10巷，玉林横街，玉林横巷，玉洁巷，二环路南三段1、3、5、7、9号，玉寿巷，玉洁东街，玉通巷，倪家桥路，玉洁中街，玉洁西街，一环路南三段（武侯段双号），人民南路四段（双号），玉林中路（单号），玉林街等。大学路2、4、6、8、10、12号，光明路，十七巷，临江路8、9、16、36、38、41、52、60、61号，人民南路三段3号，南",
-      "source_excerpt": "OCR片号2 成都市武侯计算机实验小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "小学路、中学路、金陵路、金陵横路、电信路、电信后街、电信南街，小天东街、小天南街、小天西街、小天北街、小天中街，九如村、公行道、玉华村、人民南路三段西侧（成都师范学院至一环路口）、人民南路四段西侧（一环路口至玉林东路路口），一环路南三段、四段北侧（跳伞塔口至西南民族大学，含西南民族大学）。",
+      "source_excerpt": "片号2 成都市武侯计算机实验小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市玉林小学",
@@ -25,7 +27,8 @@
       "source_excerpt": "片号3 成都市玉林小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学",
@@ -33,15 +36,17 @@
       "source_excerpt": "成都市龙江路小学\n大学路2、4、6、8、10、12号，光明路、十七巷，临江路 8、9、16、36、38、41、52、60、61号，人民南路三段 3 号，南虹路、临江中路，华西医大校区宿舍、四川省寄生虫研究所宿舍、成都市商行职工宿舍、四川省国税局宿舍、成都汽车",
       "source_url": "http://m.cd.bendibao.com/edu/2025422/197052.shtm",
       "intel_year": 2025,
-      "is_reference": false
+      "is_reference": false,
+      "scope_source": "adjustment"
     },
     {
       "school_name": "成都市华西小学",
-      "enrollment_scope": "号），林荫街，林荫中街，人民南路三段（小天竺街至一环路口东侧），新南支路，新南路（西侧双号），南台路，十七街，十四南街，临江路1号、2号、7号，四维村。新生路，民主路，群众路，法云庵，十二南街，十二中街，十二北街，龙江路，致民东路，红瓦寺，共和村，太平南街，太平南新街，太平橘街，太平巷，望江路（望江路29号、望江路93号除外），白塔村，白塔巷，和睦村，史家巷，锦江村，培",
-      "source_excerpt": "OCR片号5 成都市华西小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "一环路南二段（单号）、胜利村、胜利新村、旅游村、小天竺街（人民南路三段以东）、大学路（除2、4、6、8、10、12号）、林荫街、林荫中街、人民南路三段（小天竺街至一环路口东侧），新南支路、新南路（西侧双号）、南台路、十七街、十四南街，临江路1号、2号、7号、四维村等。",
+      "source_excerpt": "片号5 成都市华西小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川音乐学院附属实验小学",
@@ -49,7 +54,8 @@
       "source_excerpt": "片号6 四川音乐学院附属实验小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学",
@@ -57,7 +63,8 @@
       "source_excerpt": "片号7 四川大学附属实验小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学分校",
@@ -65,15 +72,17 @@
       "source_excerpt": "片号8 四川大学附属实验小学分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市棕北小学",
-      "enrollment_scope": "科院街（不含科院街2号附1号），棕竹街，盛隆街，人民南路四段21、23、25号，人民南路四段24、28、34、36号，二环路南二段，棕南正街，棕南西街，棕南东街。武侯祠大街（89号以后部分，不含89号），武侯祠东街，蜀汉街，蜀汉东街，省交通厅宿舍，一环路南四段北侧（双号，西南民院以西，不含西南民院），体院路，大石东一巷，大石东二巷等街道，一环路西一段内侧（大石路口至高升桥路口1-19成都市龙江路小学分校号单号）、27号、31号（天朗锦邸）、65号、67号、69号；大石南路-七道堰街以东，燃灯寺东街以南，一环路西一段（燃灯寺东街口-高升桥路口）以西，高升桥路以北区域。包括：一环路西一段外侧2-8号，高升桥路2-10号双号，七道堰街1-12号（含单双号）、33号，燃灯寺东街等。武侯祠大街1-89号，凉水井街，倒桑树街，染靛街，建国巷，",
-      "source_excerpt": "OCR片号6 成都市棕北小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "锦、绣、棕、竹四苑，领事馆路、锦绣街、锦苑巷、锦绣路、科院街（不含科院街2号附1号）、棕竹街、盛隆街，人民南路四段21、23、25号，人民南路四段24、28、34、36号，二环路南二段，棕南正街、棕南西街、棕南东街。",
+      "source_excerpt": "片号9 成都市棕北小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学分校",
@@ -81,47 +90,53 @@
       "source_excerpt": "片号10 成都市龙江路小学分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市锦里小学",
-      "enrollment_scope": "武侯祠横街，南浦西路，南浦东路，南浦中路，浆洗街15号，通祠路。一环路南二段（双号），人民南路四段（一环路口至领事馆路口东侧1-17号单号），成科西一路，成科西二路，成科西路，",
-      "source_excerpt": "OCR片号11 成都市锦里小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "武侯祠大街1－89号、凉水井街、倒桑树、染靛街、建国巷、武侯祠横街、南浦西路、南浦东路、南浦中路、浆洗街15号、通祠路等。",
+      "source_excerpt": "片号11 成都市锦里小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市磨子桥小学",
-      "enrollment_scope": "磨子巷，棕菀巷，科华北路，成科北路，成科路，科华巷，磨子街，科院街2号附1号。武晋路以东（晋吉西二街口至武侯大道双楠段），晋吉西二街晋吉东二街（含晋吉东二街236号）-吉福北路-吉福路以南，中环路武阳大道段以西（吉福路口至武候大道双楠段），武侯大道双楠段以北（中环路武阳大道路口至武晋路）区域。包括：中央花园四期，中央花园四期新域市别墅（N区、R区、M区、",
-      "source_excerpt": "OCR片号12 成都市磨子桥小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "一环路南二段（双号）、人民南路四段（一环路口至领事馆路口东侧1-17号单号）、成科西一路、成科西二路、成科西路、磨子巷、棕苑巷、科华北路、成科北路、成科路、科华巷、磨子街、科院街2号附1号。",
+      "source_excerpt": "片号12 成都市磨子桥小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市磨子桥小学分校",
-      "enrollment_scope": "Z区），吉福新苑，吉绿苑，交大花园广厦小区，蓝光金楠府，梧桐小区，顺江苑，武侯别墅，园中园（东苑、南苑、西苑、北苑），红运花园（玉苑、瑞苑、吉苑、祥苑、怡苑、慧苑），云锦城市花园，交大庭院，邻里中央，吉春苑，中央花园（城市别墅），双楠锐派，晶楠天地，武侯别墅丽园：吉福庭苑，吉馨苑，吉静苑，云湖阳光，交大花园武侯小区，城楠映象，清风晓筑，晋阳新居，武候别墅馨园等。1.人民南路四段以东，二环路南二段以南，科华中路，科华南路以西，成昆铁路线以北区域。包括：科华中路双号，科华南路2-10号双号，长寿路，长寿南路，长寿苑东街，长寿苑西",
-      "source_excerpt": "OCR片号13 成都市磨子桥小学分校",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "武晋路以东（晋吉西二街口至武侯大道双楠段），晋吉西二街--晋吉东二街（含晋吉东二街236号）--吉福北路--吉福路以南，中环路武阳大道段以西（吉福路口至武侯大道双楠段），武侯大道双楠段以北（中环路武阳大道路口至武晋路）区域。包括：中央花园四期、中央花园四期新城市别墅（N区、R区、M区、Z区）、吉福新苑、吉绿苑、交大花园广厦小区、蓝光金楠府、梧桐小区、园中园（东苑、南苑、西苑、北苑）、红运花园（玉苑、瑞苑、吉苑、祥苑、怡苑、慧苑）、云锦城市花园、交大庭院、邻里中央、吉春苑、中央花园（城市别墅）、双楠锐派、晶楠天地、武侯别墅丽园、吉福庭苑、吉馨苑、吉静苑、云湖阳光、交大花园武侯小区、城楠映象、清风晓筑、晋阳新居、武侯别墅馨园等。",
+      "source_excerpt": "片号13 成都市磨子桥小学分校",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市科华中路小学",
-      "enrollment_scope": "街，长寿苑南街，长寿苑北街，航空路1-10号，航中街，火车南站东路15号、17号、34号，新希望路，中苑巷，棕树北街，棕树南街，棕树东街，棕树西街，人民南路四段（人南立交桥以南27-61号单号）等。2.原长寿村、棕树村、万仁小区等未换迁户籍。二环路南三段以南，人民南路四段以西，火车南站铁路线以北，新光路以东区域。包括：桐梓林东路，桐梓林中路，桐梓林北路，桐梓林南路，桐梓林路，桐凤路，桐叶路，桐喜街，",
-      "source_excerpt": "OCR片号14 成都市科华中路小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "人民南路四段以东，二环路南二段以南，科华中路、科华南路以西，成昆铁路线以北区域。包括：科华中路双号、科华南路2-10号双号、长寿路、长寿南路、长寿苑东街、长寿苑西街、长寿苑南街、长寿苑北街、航空路1-10号、航中街、火车南站东路15号、17号、34号、新希望路、中苑巷、棕树北街、棕树南街、棕树东街、棕树西街、人民南路四段（人南立交桥以南27-61号单号）等。2.原：长寿村、棕树村，万仁小区等未换迁户籍。",
+      "source_excerpt": "片号14 成都市科华中路小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市桐梓林小学",
-      "enrollment_scope": "火车南站西路，新光路（单号），火车南站铁路段（火车南站1号1幢、6幢、8幢），人民南路四段（人南立交桥以南双号）等。",
-      "source_excerpt": "OCR片号15 成都市桐梓林小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "enrollment_scope": "二环路南三段以南，人民南路四段以西，火车南站铁路线以北，新光路以东区域。包括：桐梓林东路、桐梓林中路、桐梓林北路、桐梓林南路、桐梓林路、桐凤路、桐叶路、桐喜街、火车南站西路、新光路（单号）、火车南站铁路段（火车南站1号1幢、6幢、8幢）、人民南路四段（人南立交桥以南双号）。",
+      "source_excerpt": "片号15 成都市桐梓林小学",
+      "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯实验小学",
@@ -129,7 +144,8 @@
       "source_excerpt": "片号16 成都市武侯实验小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都石室双楠实验学校",
@@ -137,7 +153,8 @@
       "source_excerpt": "片号17 成都石室双楠实验学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市晋阳小学",
@@ -145,7 +162,8 @@
       "source_excerpt": "片号18 成都市晋阳小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市红牌楼小学校",
@@ -153,7 +171,8 @@
       "source_excerpt": "片号19 成都市红牌楼小学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市明远书院学校",
@@ -161,7 +180,8 @@
       "source_excerpt": "片号20 成都市明远书院学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市太平寺西区小学",
@@ -169,7 +189,8 @@
       "source_excerpt": "片号21 成都市太平寺西区小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学清水河分校",
@@ -177,7 +198,8 @@
       "source_excerpt": "片号22 四川大学附属实验小学清水河分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市棕北中学西区实验学校",
@@ -185,7 +207,8 @@
       "source_excerpt": "片号23 成都市棕北中学西区实验学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市簇桥小学校",
@@ -193,7 +216,8 @@
       "source_excerpt": "片号24 成都市簇桥小学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯实验中学附属小学",
@@ -201,7 +225,8 @@
       "source_excerpt": "片号25 成都市武侯实验中学附属小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市马家河小学",
@@ -209,7 +234,8 @@
       "source_excerpt": "片号26 成都市马家河小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "北京第二外国语学院成都附属小学北区学校",
@@ -217,7 +243,8 @@
       "source_excerpt": "片号27 北京第二外国语学院成都附属小学北区学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "北京第二外国语学院成都附属小学",
@@ -225,7 +252,8 @@
       "source_excerpt": "片号28 北京第二外国语学院成都附属小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯科技园小学",
@@ -233,7 +261,8 @@
       "source_excerpt": "片号29 成都市武侯科技园小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武顺街小学",
@@ -241,7 +270,8 @@
       "source_excerpt": "片号30 成都市武顺街小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学江安河分校",
@@ -249,7 +279,8 @@
       "source_excerpt": "片号31 四川大学附属实验小学江安河分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学明雅学校",
@@ -257,7 +288,8 @@
       "source_excerpt": "四川大学附属实验小学明雅学校\n江安河以东，永康路(江安河—智远大道路口)以南，智远大道(永康路口——金瓦路口)以西，金瓦路(智远大道—江安河)以北区域。原：永康村、川西营村、陆坝村等村户籍及白佛村的未换迁户籍。包括：金兴北路、金瓦路、草金路北段、金川路、永康路(至白佛村",
       "source_url": "http://m.cd.bendibao.com/edu/2025422/197052.shtm",
       "intel_year": 2025,
-      "is_reference": false
+      "is_reference": false,
+      "scope_source": "adjustment"
     },
     {
       "school_name": "成都市机投小学校",
@@ -265,7 +297,8 @@
       "source_excerpt": "片号33 成都市机投小学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学悦湖学校",
@@ -273,7 +306,8 @@
       "source_excerpt": "成都市龙江路小学悦湖学校\n智远大道(永康路口-青羊区界)以东，青羊区界以南、武青北路(永康路口-机九路口)—机九路—万柳路以西，永康路(武青北路口—智远大道路口)以北区域。包括：原半边街村未换迁户籍，半边街新居(含白佛村已拆迁安置到新居社区的户籍儿童)、金双楠、嘉楠",
       "source_url": "http://m.cd.bendibao.com/edu/2025422/197052.shtm",
       "intel_year": 2025,
-      "is_reference": false
+      "is_reference": false,
+      "scope_source": "adjustment"
     },
     {
       "school_name": "成都市龙祥路小学",
@@ -281,7 +315,8 @@
       "source_excerpt": "片号35 成都市龙祥路小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学武侯新城分校",
@@ -289,7 +324,8 @@
       "source_excerpt": "片号36 成都市龙江路小学武侯新城分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学中粮祥云分校",
@@ -297,7 +333,8 @@
       "source_excerpt": "片号37 成都市龙江路小学中粮祥云分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯区教科院附属小学",
@@ -305,7 +342,8 @@
       "source_excerpt": "片号38 成都市武侯区教科院附属小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学南区学校",
@@ -313,7 +351,8 @@
       "source_excerpt": "片号39 四川大学附属实验小学南区学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市读者小学",
@@ -321,7 +360,8 @@
       "source_excerpt": "片号40 成都市读者小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "四川大学附属实验小学明德学校",
@@ -329,7 +369,8 @@
       "source_excerpt": "片号41 四川大学附属实验小学明德学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学分校南区学校",
@@ -337,7 +378,8 @@
       "source_excerpt": "片号42 成都市龙江路小学分校南区学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市望江楼小学",
@@ -345,7 +387,8 @@
       "source_excerpt": "片号43 成都市望江楼小学",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市龙江路小学高翔分校",
@@ -353,7 +396,8 @@
       "source_excerpt": "片号44 成都市龙江路小学高翔分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市玉林小学果堰分校",
@@ -361,7 +405,8 @@
       "source_excerpt": "片号45 成都市玉林小学果堰分校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市武侯区特殊教育学校",
@@ -369,15 +414,8 @@
       "source_excerpt": "片号46 成都市武侯区特殊教育学校",
       "source_url": "https://m.cd.bendibao.com/edu/2024428/182983_8.shtm",
       "intel_year": 2024,
-      "is_reference": true
-    },
-    {
-      "school_name": "成都市附属实验小学",
-      "enrollment_scope": "根路（望江路1号），与文里（望江路15号），老马路，一环路南一段（除24号）：致民路，临江东路，十五巷，十四街，十五街，十四巷，新南路（东侧单号），江天路，丝管路，丝竹路。望江路29号，望江路93号，共和路，红瓦寺街18号，一环路南四川大学附属实验小学一段24号，郭家桥南街，郭家桥西街，郭家桥北街，郭家桥正街，二环路南一段（单号），科华街3、4号。二环路西一段以西，龙腾东路-龙腾中路（龙腾路二环路口-龙华北路路口）以南，龙华北路以东，逸都路以北区域（不含：四川大学附属实验小学龙腾中路1、3号，白兰地小区）。包括：二环路西一段55、59号，龙腾东路1、3、7号，大华街2、4、6、8、9、10号，情融路2号，置信路2、8、57号，云影路1号、2号，天乐街1、2号等。锦、绣、棕、竹四苑，领事馆路，锦绣街，锦苑巷，锦绣路，",
-      "source_excerpt": "OCR 成都市附属实验小学",
-      "source_url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
-      "intel_year": 2025,
-      "is_reference": true
+      "is_reference": true,
+      "scope_source": "html"
     },
     {
       "school_name": "成都市西川悦湖学校",
@@ -385,7 +423,8 @@
       "source_excerpt": "成都市西川悦湖学校\n江安河以东，青羊区界以南，智远大道(永康路口-青羊区界)以西，永康路(智远大道路口-双流区界)以北区域。",
       "source_url": "http://m.cd.bendibao.com/edu/2025422/197052.shtm",
       "intel_year": 2025,
-      "is_reference": false
+      "is_reference": false,
+      "scope_source": "adjustment"
     }
   ],
   "zone_blocks": [],
@@ -401,14 +440,10 @@
     {
       "url": "http://m.cd.bendibao.com/edu/2025617/198872_7.shtm",
       "kind": "image_list",
-      "scopes": 11,
+      "scopes": 0,
       "zones": 0,
       "data_year": 2025,
-      "is_reference": true,
-      "ocr": {
-        "ocr_lines": 123,
-        "ocr_errors": []
-      }
+      "is_reference": true
     },
     {
       "url": "http://m.cd.bendibao.com/edu/2025422/197052.shtm",

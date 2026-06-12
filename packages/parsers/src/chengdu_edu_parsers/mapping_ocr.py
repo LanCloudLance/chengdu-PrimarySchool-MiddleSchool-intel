@@ -46,14 +46,21 @@ def extract_mapping_image_urls(html: str) -> list[str]:
     return found
 
 
+_OCR_ENGINE = None
+
+
 def _load_rapid_ocr():
+    global _OCR_ENGINE
+    if _OCR_ENGINE is not None:
+        return _OCR_ENGINE
     try:
         from rapidocr_onnxruntime import RapidOCR
     except ImportError as exc:
         raise RuntimeError(
             "rapidocr-onnxruntime 未安装；请执行: uv pip install rapidocr-onnxruntime pillow"
         ) from exc
-    return RapidOCR()
+    _OCR_ENGINE = RapidOCR()
+    return _OCR_ENGINE
 
 
 def ocr_image_bytes(image_bytes: bytes, *, min_confidence: float = 0.5) -> list[tuple[list, str, float]]:
@@ -175,19 +182,105 @@ def parse_ocr_table_boxes(
     return scopes
 
 
+def _resize_image(image: "Image.Image", *, max_side: int = 2000) -> "Image.Image":
+    """缩小超长划片长图（本地宝常见 800×10000+ 竖图）。"""
+    from PIL import Image
+
+    width, height = image.size
+    longest = max(width, height)
+    if longest <= max_side:
+        return image
+    ratio = max_side / longest
+    new_size = (max(1, int(width * ratio)), max(1, int(height * ratio)))
+    return image.resize(new_size, Image.Resampling.LANCZOS)
+
+
+def _ocr_with_timeout(image_bytes: bytes, timeout: int = 30) -> list[tuple]:
+    """带超时的 OCR 调用，防止单张图片卡死。"""
+    import sys
+    
+    # Windows 不支持 SIGALRM
+    if sys.platform == "win32":
+        return ocr_image_bytes(image_bytes)
+    
+    import signal
+    
+    def handler(signum, frame):
+        raise TimeoutError(f"OCR timeout after {timeout}s")
+    
+    old_handler = signal.signal(signal.SIGALRM, handler)
+    signal.alarm(timeout)
+    try:
+        return ocr_image_bytes(image_bytes)
+    except TimeoutError:
+        return []
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old_handler)
+
+
+def _ocr_image_tiled(image: "Image.Image", *, tile_height: int = 1200, overlap: int = 100) -> list[tuple]:
+    """竖向分块 OCR，逐块释放内存，避免整图一次性推理。"""
+    import gc
+
+    from PIL import Image
+
+    width, height = image.size
+    if height <= tile_height:
+        buf = BytesIO()
+        image.save(buf, format="PNG", optimize=True)
+        return _ocr_with_timeout(buf.getvalue())
+
+    merged: list[tuple] = []
+    y = 0
+    while y < height:
+        bottom = min(y + tile_height, height)
+        crop = image.crop((0, y, width, bottom))
+        buf = BytesIO()
+        crop.save(buf, format="PNG", optimize=True)
+        for box, text, conf in _ocr_with_timeout(buf.getvalue()):
+            shifted = [[pt[0], pt[1] + y] for pt in box]
+            merged.append((shifted, text, conf))
+        del crop, buf
+        gc.collect()
+        if bottom >= height:
+            break
+        y = bottom - overlap
+    return merged
+
+
 def ocr_mapping_image(image_bytes: bytes) -> OcrMappingResult:
     """对单张划片长图执行 OCR 并解析为 school_scopes。"""
     from PIL import Image
 
-    image = Image.open(BytesIO(image_bytes))
+    image = _resize_image(Image.open(BytesIO(image_bytes)))
     width = image.size[0]
-    boxes = ocr_image_bytes(image_bytes)
+    boxes = _ocr_image_tiled(image)
     lines = [text for _box, text, _conf in boxes]
     scopes = parse_ocr_table_boxes(boxes, image_width=width) if boxes else []
     return OcrMappingResult(ocr_lines=lines, school_scopes=scopes)
 
 
+def _is_mapping_table_header(lines: list[str]) -> bool:
+    """过滤广告/无关长图，保留各区划片一览表 OCR 结果。"""
+    if not lines:
+        return False
+    header = "".join(lines[:30])
+    if any(
+        bad in header
+        for bad in ("国家补贴", "以旧换新", "云闪付", "消费券", "下载指南")
+    ):
+        return False
+    if "划片" in header or "一览表" in header or "入学范围" in header or "学区" in header:
+        return True
+    district_markers = ("武侯", "金牛", "锦江", "青羊", "成华", "高新", "天府", "双流", "郫都")
+    if any(m in header for m in district_markers) and len(lines) >= 8:
+        return True
+    return len(lines) >= 20 and ("小学" in header or "学校" in header)
+
+
 def _is_wuhou_mapping_header(lines: list[str]) -> bool:
+    """兼容旧调用：武侯划片页眉。"""
     header = "".join(lines[:20])
     return "武侯" in header and ("划片" in header or "一览表" in header)
 
@@ -214,13 +307,16 @@ def ocr_mapping_html(html: str, *, client=None) -> OcrMappingResult:
         seen_names: set[str] = set()
         for url in urls:
             try:
+                if url.lower().endswith((".jpg", ".jpeg", ".webp")):
+                    continue
                 resp = client.get(url)
                 resp.raise_for_status()
                 if len(resp.content) < 200_000:
                     continue
                 partial = ocr_mapping_image(resp.content)
-                if partial.ocr_lines and not _is_wuhou_mapping_header(partial.ocr_lines):
-                    continue
+                if not partial.school_scopes and partial.ocr_lines:
+                    if not _is_mapping_table_header(partial.ocr_lines):
+                        continue
                 result.ocr_lines.extend(partial.ocr_lines)
                 for scope in partial.school_scopes:
                     if scope.school_name in seen_names:

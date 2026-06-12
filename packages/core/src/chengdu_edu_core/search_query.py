@@ -1,4 +1,4 @@
-"""门户学校模糊搜索条件构建。"""
+"""门户学校模糊搜索条件构建（校名/地址 + 划片正文）。"""
 from __future__ import annotations
 
 import re
@@ -6,6 +6,11 @@ import re
 from sqlalchemy import ColumnElement, or_
 
 from chengdu_edu_core.school_names import normalize_school_name
+
+
+def search_patterns(q: str) -> list[str]:
+    """对外暴露的搜索词展开（校名、划片街道等共用）。"""
+    return _search_patterns(q)
 
 
 def _search_patterns(q: str) -> list[str]:
@@ -34,6 +39,12 @@ def _search_patterns(q: str) -> list[str]:
     for prefix in ("武侯区", "锦江区", "青羊区", "成华区", "金牛区", "高新区", "天府新区"):
         if text.startswith(prefix):
             add(text[len(prefix) :])
+
+    # 划片/地址常见片段：路、街、巷、号
+    if len(text) >= 2 and re.search(r"[路街道巷号苑小区]", text):
+        for token in re.split(r"[\s,，、/]+", text):
+            if len(token) >= 2 and re.search(r"[路街道巷号]", token):
+                add(token)
 
     return patterns
 

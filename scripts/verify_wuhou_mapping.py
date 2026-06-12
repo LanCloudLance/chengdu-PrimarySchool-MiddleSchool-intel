@@ -61,7 +61,13 @@ def dry_run_coverage(district_code: str = "wuhou") -> dict:
         if resolved and _is_valid_scope(resolved.get("enrollment_scope", "")):
             best[resolved["db_name"]] = resolved
 
-    pending = [n for n in public_primary if n not in best]
+    # Build canonical name set for pending check (resolves aliases)
+    canonical_public_primary = set()
+    for name in public_primary:
+        canonical = match_school_name(name, known, aliases=aliases)
+        canonical_public_primary.add(canonical or name)
+
+    pending = [n for n in public_primary if (match_school_name(n, known, aliases=aliases) or n) not in best]
     without_source = [
         n
         for n, row in best.items()

@@ -1,0 +1,28 @@
+# W2.3 品牌词推断白名单（仅允许已核实品牌对，禁止 district 级 token）
+# 用于 import_school_promotion_targets 过滤 infer_group_promotion_links 结果
+data_year: 2025
+notes: 无官方 OCR/文本对口时，仅以下品牌词可触发小学→初中同名推断
+
+allow_tokens:
+  - 棕北
+  - 玉林
+  - 龙江路
+  - 川大附
+  - 石室双楠
+  - 石室锦城
+  - 石室锦官
+  - 墨池
+  - 西北
+  - 金花
+  - 双楠
+  - 锦官
+
+# 显式禁止（冗余保护，代码内亦有 stop_tokens）
+deny_tokens:
+  - 武侯
+  - 实验
+  - 外国语
+  - 附属
+  - 学校
+  - 校区
+  - 分校

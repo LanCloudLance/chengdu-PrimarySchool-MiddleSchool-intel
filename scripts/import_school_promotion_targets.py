@@ -4,14 +4,16 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import yaml
 from sqlalchemy import select
 
 from chengdu_edu_core.enums import SchoolLevel
 from chengdu_edu_core.school_names import match_school_name
-from chengdu_edu_parsers.mapping_parser import PromotionLink, infer_group_promotion_links
+from chengdu_edu_parsers.mapping_parser import PromotionLink, infer_group_promotion_links, merge_promotion_links
 from chengdu_edu_storage.db import SessionLocal
 from chengdu_edu_storage.orm import DataSource, District, PromotionPolicy, RawDocument, School
 from chengdu_edu_storage.repository import PolicyRepository
@@ -26,6 +28,63 @@ CORE_DISTRICTS = (
     "gaoxin",
     "tianfu",
 )
+
+
+def load_school_aliases(district_code: str) -> dict[str, str]:
+    path = ROOT / "configs" / "districts" / district_code / "school_aliases.yaml"
+    if not path.is_file():
+        return {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return dict(data.get("aliases") or {})
+
+
+def load_promotion_inference(district_code: str) -> set[str]:
+    path = ROOT / "configs" / "districts" / district_code / "promotion_inference.yaml"
+    if not path.is_file():
+        return set()
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return set(data.get("allow_tokens") or [])
+
+
+def _apply_alias(name: str, aliases: dict[str, str]) -> str:
+    return aliases.get(name, name)
+
+
+def _infer_token(primary_name: str) -> str | None:
+    cleaned = re.sub(r"(四川省|四川|成都市|成都)", "", primary_name)
+    for suffix in (
+        "附属实验小学",
+        "附属小学",
+        "实验学校",
+        "实验小学",
+        "外国语学校",
+        "小学",
+        "中学",
+    ):
+        if cleaned.endswith(suffix):
+            cleaned = cleaned[: -len(suffix)]
+            break
+    cleaned = cleaned.strip()
+    return cleaned if len(cleaned) >= 2 else None
+
+
+def filter_inferred_links(
+    links: list[PromotionLink],
+    *,
+    allow_tokens: set[str],
+    nine_year_names: set[str],
+) -> list[PromotionLink]:
+    kept: list[PromotionLink] = []
+    for link in links:
+        if not link.source_excerpt.startswith("品牌词推断"):
+            kept.append(link)
+            continue
+        if link.primary_name in nine_year_names:
+            continue
+        tok = _infer_token(link.primary_name)
+        if tok and tok in allow_tokens:
+            kept.append(link)
+    return kept
 
 
 def load_promotion_links(district_code: str) -> list[PromotionLink]:
@@ -45,6 +104,42 @@ def load_promotion_links(district_code: str) -> list[PromotionLink]:
     return links
 
 
+def build_promotion_links(
+    district_code: str,
+    primary_names: list[str],
+    middle_names: list[str],
+    *,
+    nine_year_names: set[str] | None = None,
+) -> list[PromotionLink]:
+    aliases = load_school_aliases(district_code)
+    allow_tokens = load_promotion_inference(district_code)
+    nine_year = nine_year_names or set()
+
+    links = load_promotion_links(district_code)
+    for row in links:
+        row.primary_name = _apply_alias(row.primary_name, aliases)
+        row.target_names = [_apply_alias(t, aliases) for t in row.target_names]
+
+    inferred = infer_group_promotion_links(primary_names, middle_names)
+    if allow_tokens:
+        inferred = filter_inferred_links(
+            inferred, allow_tokens=allow_tokens, nine_year_names=nine_year
+        )
+    links.extend(inferred)
+
+    for name in nine_year:
+        links.append(
+            PromotionLink(
+                primary_name=name,
+                target_names=[name],
+                promotion_type="一贯制直升",
+                source_excerpt="九年一贯制学校校内直升",
+            )
+        )
+
+    return merge_promotion_links(links)
+
+
 async def import_district_promotion_targets(district_code: str) -> tuple[int, int]:
     async with SessionLocal() as session:
         district_id = (
@@ -61,38 +156,29 @@ async def import_district_promotion_targets(district_code: str) -> tuple[int, in
         if not schools:
             return 0, 0
 
+        aliases = load_school_aliases(district_code)
         primaries = [s for s in schools if s.level in (SchoolLevel.PRIMARY, SchoolLevel.NINE_YEAR)]
         middles = [s for s in schools if s.level in (SchoolLevel.MIDDLE, SchoolLevel.NINE_YEAR)]
         primary_names = [s.name for s in primaries]
         middle_names = [s.name for s in middles]
         name_to_id = {s.name: s.id for s in schools}
 
-        links = load_promotion_links(district_code)
-        links.extend(infer_group_promotion_links(primary_names, middle_names))
-
-        # 九年一贯制：校内直升
+        # 九年一贯制：校内直升（优先于品牌推断）
+        deduped: dict[str, PromotionLink] = {}
         for school in schools:
             if school.level == SchoolLevel.NINE_YEAR:
-                links.append(
-                    PromotionLink(
-                        primary_name=school.name,
-                        target_names=[school.name],
-                        promotion_type="一贯制直升",
-                        source_excerpt="九年一贯制学校校内直升",
-                    )
+                deduped[school.name] = PromotionLink(
+                    primary_name=school.name,
+                    target_names=[school.name],
+                    promotion_type="一贯制直升",
+                    source_excerpt="九年一贯制学校校内直升",
                 )
 
-        # 去重
-        deduped: dict[str, PromotionLink] = {}
-        for link in links:
-            key = link.primary_name
-            if key not in deduped:
-                deduped[key] = link
-            else:
-                existing = deduped[key]
-                for t in link.target_names:
-                    if t not in existing.target_names:
-                        existing.target_names.append(t)
+        nine_year_names = {s.name for s in schools if s.level == SchoolLevel.NINE_YEAR}
+        for link in build_promotion_links(
+            district_code, primary_names, middle_names, nine_year_names=nine_year_names
+        ):
+            deduped[link.primary_name] = link
 
         policy_repo = PolicyRepository(session)
         year = 2026
@@ -165,25 +251,22 @@ async def import_district_promotion_targets(district_code: str) -> tuple[int, in
             )
 
         for primary_name, link in deduped.items():
-            primary_id_name = match_school_name(link.primary_name, primary_names)
+            lookup_primary = _apply_alias(link.primary_name, aliases)
+            primary_id_name = match_school_name(lookup_primary, primary_names)
             if not primary_id_name:
                 skipped += 1
                 continue
 
             resolved_targets: list[str] = []
-            target_ids: list[str] = []
             for target in link.target_names:
-                matched = match_school_name(target, middle_names + primary_names)
-                if matched:
+                lookup_target = _apply_alias(target, aliases)
+                matched = match_school_name(lookup_target, middle_names + primary_names)
+                if matched and matched not in resolved_targets:
                     resolved_targets.append(matched)
-                    target_ids.append(str(name_to_id[matched]))
 
             if not resolved_targets:
                 skipped += 1
                 continue
-
-            if len(resolved_targets) > 2:
-                resolved_targets = resolved_targets[:1]
 
             school_id = name_to_id[primary_id_name]
             target_school_id = name_to_id.get(resolved_targets[0])

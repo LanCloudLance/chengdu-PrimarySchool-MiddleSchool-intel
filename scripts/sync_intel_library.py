@@ -235,20 +235,34 @@ async def sync_district_mapping_sources(
     school_scopes = merge_scope_dicts(school_scopes)
 
     # 镜像 JSON 缓存（兼容旧 import 脚本）
+    # 若本轮无任何成功 scope 且存在错误，保留已有缓存（避免误清空）
     out_dir = ROOT / "configs" / "districts" / district_code
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "mapping_scraped.json"
-    payload = {
-        "scraped_at": date.today().isoformat(),
-        "district_code": district_code,
-        "data_year": cfg.get("data_year", 2026),
-        "school_scopes": school_scopes,
-        "zone_blocks": zone_blocks,
-        "articles": articles,
-        "errors": errors,
-        "intel_synced": True,
-    }
-    out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    existing: dict = {}
+    if out_path.is_file():
+        try:
+            existing = json.loads(out_path.read_text(encoding="utf-8"))
+        except Exception:
+            existing = {}
+
+    if not school_scopes and errors and existing.get("school_scopes"):
+        print(
+            f"{district_code}: keep existing mapping_scraped.json "
+            f"(scopes={len(existing['school_scopes'])}) — this round fetched nothing"
+        )
+    else:
+        payload = {
+            "scraped_at": date.today().isoformat(),
+            "district_code": district_code,
+            "data_year": cfg.get("data_year", 2026),
+            "school_scopes": school_scopes,
+            "zone_blocks": zone_blocks,
+            "articles": articles,
+            "errors": errors,
+            "intel_synced": True,
+        }
+        out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     gov_saved = await sync_gov_intel(session, district_code, district_id)
 

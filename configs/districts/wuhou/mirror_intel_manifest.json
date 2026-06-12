@@ -1,0 +1,670 @@
+{
+  "synced_at": "2026-06-12",
+  "district_code": "wuhou",
+  "mirror_targets": 73,
+  "processed": 73,
+  "synced": 0,
+  "skipped": 73,
+  "errors": [],
+  "entries": [
+    {
+      "school_name": "北京第二外国语学院成都附属中学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5434793.shtm",
+      "content_hash": "8aff44c5c0d9de8062db5fbf5f0314261a140fede9576d3bccfb81ae300538df",
+      "source_title": "北京第二外国语学院成都附属中学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "82b69a54-bd5c-44f6-ba57-8ae5ae0a431d"
+    },
+    {
+      "school_name": "北京第二外国语学院成都附属小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435751.shtm",
+      "content_hash": "9b18967ce2ec837903fff026dd5e3c684eae7a8eab3146b7415b0a90f1ba23ea",
+      "source_title": "北京第二外国语学院成都附属小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "ae266d53-f21c-4c4c-b8e9-133c291272f9"
+    },
+    {
+      "school_name": "四川大学附属中学悦湖学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433289.shtm",
+      "content_hash": "1c043a1965cf7cd7e4411ec2f8e78759bda268f7ba381efa1d8bd4d0012e7894",
+      "source_title": "四川大学附属中学悦湖学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "4742b3a6-6b0d-4730-a205-a111499a5853"
+    },
+    {
+      "school_name": "四川大学附属中学新城分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5434795.shtm",
+      "content_hash": "92103f2ab29c52e8c135d21df78ca790239a0f286a3240639c71c994a51e3f6c",
+      "source_title": "四川大学附属中学新城分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "c868a6b9-1f98-4edd-8d7d-cdad620bcd31"
+    },
+    {
+      "school_name": "四川大学附属中学西区学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432847.shtm",
+      "content_hash": "b698804b1b5d7259197c58a814df06935d2c068a61361f409b918e3829f070e6",
+      "source_title": "四川大学附属中学西区学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "1473e59d-e960-4dd7-89a7-c4e062cb928b"
+    },
+    {
+      "school_name": "四川大学附属实验小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432822.shtm",
+      "content_hash": "a94f729ef13a61a4ea139b55832babe811bcb27772f5db0191d664d4bdacb4bc",
+      "source_title": "四川大学附属实验小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "38391f0c-1be1-4cac-b90e-94a5ba75ada3"
+    },
+    {
+      "school_name": "四川大学附属实验小学分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435749.shtm",
+      "content_hash": "7dfbcb4d5d58c1e8403e168cb4c367f4a6ecc5e5f8bf226216d0590090176930",
+      "source_title": "四川大学附属实验小学分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "3585b882-d369-4670-874c-1b950ed6237f"
+    },
+    {
+      "school_name": "四川大学附属实验小学南区",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435763.shtm",
+      "content_hash": "fd0045211c87088e740c641c4eef4f06b9657e6fc7a9bc6c3c548f8db54633c8",
+      "source_title": "四川大学附属实验小学南区",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "14d5c030-78bf-4357-95eb-784d23c6d42c"
+    },
+    {
+      "school_name": "四川大学附属实验小学明德学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868267.shtm",
+      "content_hash": "d586819486e889afea6b92573f079c1bb4394c32774bad797aca6fed2a4f1ea9",
+      "source_title": "四川大学附属实验小学明德学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "99f586f0-a47f-4f37-92d5-c9ec9153dc2a"
+    },
+    {
+      "school_name": "四川大学附属实验小学明雅学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868304.shtm",
+      "content_hash": "78ffc48a86f7cab0ccccab26f9eede34e52a95267b3f0f6538f9a12cd729a401",
+      "source_title": "四川大学附属实验小学明雅学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "ce871807-a61a-4423-81d2-70ae994ad736"
+    },
+    {
+      "school_name": "四川大学附属实验小学江安河分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432920.shtm",
+      "content_hash": "a84c9e3622086edbfdd012f35ad295331a837ee64bc437f47ca2f62779bcd722",
+      "source_title": "四川大学附属实验小学江安河分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "ee661a93-60e5-433e-a67e-1fbb803ff485"
+    },
+    {
+      "school_name": "四川大学附属实验小学清水河分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435750.shtm",
+      "content_hash": "856817978dece7a7847bb2bd3e8b1a0aee8f8f087cd308bff22ccc1717915c67",
+      "source_title": "四川大学附属实验小学清水河分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "edc433c9-d0c4-4c23-a826-1356b85e237e"
+    },
+    {
+      "school_name": "四川大学附属实验小学西区",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433885.shtm",
+      "content_hash": "c073e211268c3fba04e9ccea1eb6ee0d0cd1b86d9b9c7f3b8a0f0e48db180e2f",
+      "source_title": "四川大学附属实验小学西区",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "d16082d9-0196-4f44-a953-919bb2dfb6e3"
+    },
+    {
+      "school_name": "四川成都七中东方闻道网校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433989.shtm",
+      "content_hash": "a2f25ec25801dfc16c777b0bf019f3529c5c43d2f38823115272d74b0823983f",
+      "source_title": "四川成都七中东方闻道网校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "c7b6812e-1359-4617-b0fe-c62c9e59aac7"
+    },
+    {
+      "school_name": "成都市三河小学校",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433208.shtm",
+      "content_hash": "42c1cdae89069836c35727097b0f546b4fde9b89243467484972a20087144160",
+      "source_title": "成都市三河小学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "7ce170fa-fd75-46f8-ad16-9437638b8a09"
+    },
+    {
+      "school_name": "成都市凉井实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435213.shtm",
+      "content_hash": "5c02ed3135a9d76a9e625082e7cfba20faf50aff2bb77683e35d78c369709ff7",
+      "source_title": "成都市凉井实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "543ebb51-bb00-4af5-bcc5-9220010d3519"
+    },
+    {
+      "school_name": "成都市华兴小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433315.shtm",
+      "content_hash": "922490142805d6a553427659f5b2445eafedb367a520c065dc9facd11864f02a",
+      "source_title": "成都市华兴小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "d66b359b-a430-41ab-81a2-a53f64e0c219"
+    },
+    {
+      "school_name": "成都市华西小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5432999.shtm",
+      "content_hash": "007c28a903ab0a406b8e6e419155ba399f42ce25463464bb00a291857a63e365",
+      "source_title": "成都市华西小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "13cbd890-1b4d-48b9-86cd-b3ccc4363e77"
+    },
+    {
+      "school_name": "成都市太平寺西区小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5432809.shtm",
+      "content_hash": "0343a7c931d054ac381943333d2c8724527fe8f4ce416976e916b622f1fa1722",
+      "source_title": "成都市太平寺西区小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "c6f0fd11-ee18-4ff4-93f4-017ab8189520"
+    },
+    {
+      "school_name": "成都市太平小学校",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433147.shtm",
+      "content_hash": "0e4dd802fd5fa2a029d250137cf28cc3bcf3b4482aff31c5000a7dc8f663fcb9",
+      "source_title": "成都市太平小学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "4d233e4d-95ef-4208-8acd-bd15cbd11a1c"
+    },
+    {
+      "school_name": "成都市新生路小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433886.shtm",
+      "content_hash": "a9e4a7d61de9d78416616873f44a01911de150681adc73fcf9c412cbb26636e8",
+      "source_title": "成都市新生路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "50da61c6-e0c5-45e7-a868-274f4a4da751"
+    },
+    {
+      "school_name": "成都市明远书院学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5436424.shtm",
+      "content_hash": "99908ff0656870c3b46d72e3b429def7f422819014aa5478f5b032e71f08ddfc",
+      "source_title": "成都市明远书院学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "cfde463c-1b45-424a-bc0b-97c19a732856"
+    },
+    {
+      "school_name": "成都市春晖学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433987.shtm",
+      "content_hash": "0b10ec822c2119344b1ca479e4f89205924179b73d0d869f5dc65f8af28d40c3",
+      "source_title": "成都市春晖学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "073a4f1d-3c13-4a83-8a47-6d3c0ea3706f"
+    },
+    {
+      "school_name": "成都市晋阳小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432963.shtm",
+      "content_hash": "084f4ca46da41365e318e513a6fcc967a55ddef4a935858f8f363009bf3db066",
+      "source_title": "成都市晋阳小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "271047c4-008f-491c-a209-e205491fe508"
+    },
+    {
+      "school_name": "成都市望江楼小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5436422.shtm",
+      "content_hash": "fafe842f6d7b1be899e291c03b9e1bc8e94b1d03fb57d10e6816597eb4badf4f",
+      "source_title": "成都市望江楼小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "7c050b85-805a-4d84-80f5-0dd4008258bc"
+    },
+    {
+      "school_name": "成都市机投小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433212.shtm",
+      "content_hash": "5e96ee51cd353b6dd6e2640b80ff1fdba241c918b64b2cb21c6015f61c806452",
+      "source_title": "成都市机投小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "78727067-9a35-49ce-abe8-a7a89918569f"
+    },
+    {
+      "school_name": "成都市桐梓林小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433030.shtm",
+      "content_hash": "a15b9ba295064ebd9a24f8567de2a0e558006a2bc9aaec5aab1be588f85acca6",
+      "source_title": "成都市桐梓林小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "14c98287-b318-4e69-a3ee-3c8bb1a4fb33"
+    },
+    {
+      "school_name": "成都市武侯区丹勋实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435227.shtm",
+      "content_hash": "b1be79dd5f4bbac55e64b13e3b02f5555530406158a548e1d738708a3f21aa31",
+      "source_title": "成都市武侯区丹勋实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "2b4cbc1f-df22-472d-a1ee-49de7505884e"
+    },
+    {
+      "school_name": "成都市武侯区光明实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433979.shtm",
+      "content_hash": "dc216aa378729ec84cf9f83a55e296a446dd567107a092c64da2c60a27408dd0",
+      "source_title": "成都市武侯区光明实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "51357420-695b-4527-92d8-f77ec61d80cf"
+    },
+    {
+      "school_name": "成都市武侯区启明学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5434794.shtm",
+      "content_hash": "c4c263a823cffcb7ce357e8fd02219f5d813db2f5745bb18b49e7b90ee103f57",
+      "source_title": "成都市武侯区启明学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "4623a1cd-d674-4a85-b593-b35bc13f7947"
+    },
+    {
+      "school_name": "成都市武侯区盐外芙蓉学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435212.shtm",
+      "content_hash": "347ca3bab415a4a760a76d0ef32d8d60aa6ca41b4c67a7ac8cf8abfaeece7b9f",
+      "source_title": "成都市武侯区盐外芙蓉学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "28405b2a-66d8-403d-913f-eb96783f98ea"
+    },
+    {
+      "school_name": "成都市武侯区育仁实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433988.shtm",
+      "content_hash": "a257eacc678a15836b894feff8f418880164e54370aa9d874fb68a9882e60cb8",
+      "source_title": "成都市武侯区育仁实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "a732f71f-25e4-43ec-bc7f-2858561db31e"
+    },
+    {
+      "school_name": "成都市武侯区西蜀实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433986.shtm",
+      "content_hash": "1403d8e44b2d5cab4033a251484c3e98b44280781c7050eea9a75abc1c829e75",
+      "source_title": "成都市武侯区西蜀实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "a9fb5d08-8aba-47fc-bdcc-503b4e2e0ede"
+    },
+    {
+      "school_name": "成都市武侯区金辉实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433981.shtm",
+      "content_hash": "7a7d9f65b1de71732fcb0038af711bf3daffe9e3bcdc05e0ceaf134fd6a00af2",
+      "source_title": "成都市武侯区金辉实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "2c632ed4-b2c3-47fe-9d0b-436e6cf55067"
+    },
+    {
+      "school_name": "成都市武侯区领创实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868297.shtm",
+      "content_hash": "1c25608d49653232360a7ec8376c3fdd3b0f78f18662dbb7f68ff9eda2e672af",
+      "source_title": "成都市武侯区领创实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "b6c2aa0b-279c-41b1-820b-b70c5b03e1cf"
+    },
+    {
+      "school_name": "成都市武侯实验中学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433112.shtm",
+      "content_hash": "e51c306833bea133ab406d40629fd065b9daa0ac337f9005ec20790b561e6db7",
+      "source_title": "成都市武侯实验中学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "c64e4d3f-c6f8-4a2c-8561-945ccf865e69"
+    },
+    {
+      "school_name": "成都市武侯实验中学附属小学",
+      "source_url": "http://cd.bendibao.com/wangdian/dian/5432859.shtm",
+      "content_hash": "3062ff31e89f5f4d8c2b63d12efef940374b0b20ef880cc627f6e21c21ade9d2",
+      "source_title": "成都市武侯实验中学附属小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "d8fc782c-1353-4dd7-87de-dda6d526641b"
+    },
+    {
+      "school_name": "成都市武侯实验小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432925.shtm",
+      "content_hash": "674511e284b20e5b2b5d422550bb8bcc6b619cc1d77c5e9eaef547df71f78a2b",
+      "source_title": "成都市武侯实验小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "15a587b8-a169-45a5-9660-a24ca7b75c3e"
+    },
+    {
+      "school_name": "成都市武侯科技园小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433321.shtm",
+      "content_hash": "4acfbd2e9d5ed26d19f096dc94eb42aed87dcfc5aa81d27271266ee6b4a65143",
+      "source_title": "成都市武侯科技园小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "2311d801-2f3a-45c6-9680-d587a48d3fbb"
+    },
+    {
+      "school_name": "成都市武顺街小学",
+      "source_url": "http://cd.bendibao.com/wangdian/dian/5433229.shtm",
+      "content_hash": "bb0e809b7e5f8de5607b16a966e540140600fcec0a028336671db41ff8876086",
+      "source_title": "成都市武顺街小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "7a81a873-ea8e-446d-bca4-e347ee0eb722"
+    },
+    {
+      "school_name": "成都市沙堰小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435214.shtm",
+      "content_hash": "9dcc5068a74d837c9df654824fe5513383e7edee9876a5804729916dc55c2f7a",
+      "source_title": "成都市沙堰小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "ab54b34d-5bc4-4c68-bde8-58269a619130"
+    },
+    {
+      "school_name": "成都市玉林中学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm",
+      "content_hash": "cba4e08506c9bafddceec4c2edae8bc5fc8b4f1e118e924f8f8b385de09a9082",
+      "source_title": "成都市玉林中学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "7636b310-e04f-455e-9d9f-397f1f5c8c0d"
+    },
+    {
+      "school_name": "成都市玉林小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432890.shtm",
+      "content_hash": "0f03470c1e6f63b18088bfd641a13ad5e0d4d7cea861d16fc61bed949102db1c",
+      "source_title": "成都市玉林小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "14138d4a-cd72-4bd4-a88c-4e5c958387ee"
+    },
+    {
+      "school_name": "成都市玉林小学果堰分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868268.shtm",
+      "content_hash": "b30e313447b3a71adfdb7e0518143c0a69e7b4d731288310846e1ebe83f0e11b",
+      "source_title": "成都市玉林小学果堰分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "b85648d7-f436-4614-b17f-8b22cecc136e"
+    },
+    {
+      "school_name": "成都市百草园小学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433192.shtm",
+      "content_hash": "7df89f495377e3abeb1a400a0e6541985091b3aa6ec4248362e897da7dd5e1c6",
+      "source_title": "成都市百草园小学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "edfe5a4b-7142-47e9-a0c9-4681078bb037"
+    },
+    {
+      "school_name": "成都市科华中路小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432949.shtm",
+      "content_hash": "ce4f45a943ec06eccb5a85ef85c19ce2db12de730aeed6da86fb7150588269ca",
+      "source_title": "成都市科华中路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "0864c840-7977-435b-93f7-c09dfb7c8d6b"
+    },
+    {
+      "school_name": "成都市第57实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433984.shtm",
+      "content_hash": "32ed68f03fe189afb7009d1f1ba19d30ffde16537f303361e23af74a2a89c891",
+      "source_title": "成都市第57实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "695de824-70f4-4060-9e10-58ad88f1bf71"
+    },
+    {
+      "school_name": "成都市第十二中学初中部",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435780.shtm",
+      "content_hash": "4094970f5bc569104851bdf93712285c9ace0a3977180904c7ddebf4e0f9ab77",
+      "source_title": "成都市第十二中学初中部",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "8f627b92-3529-461c-8858-3d4aba1e1bf6"
+    },
+    {
+      "school_name": "成都市第十二中学（四川大学附属中学）",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435782.shtm",
+      "content_hash": "324de3f609bfda6a470ab24ef86433b45538049de3118caab30161a9b88c4de4",
+      "source_title": "成都市第十二中学（四川大学附属中学）",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "95c3de72-89ac-4acc-9780-ce7d09736631"
+    },
+    {
+      "school_name": "成都市第四十三中学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435211.shtm",
+      "content_hash": "9c4994676deddcd4b319dc99400198c84b5dd068a513b2ea6e21bd46ae5b0ba3",
+      "source_title": "成都市第四十三中学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "3c2348e0-87dd-4590-875e-278191decc58"
+    },
+    {
+      "school_name": "成都市簇桥小学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432827.shtm",
+      "content_hash": "5d19fd6c06740b3262088baee3c5955e9d6031a902caf80cfd48c2f1ade82d1d",
+      "source_title": "成都市簇桥小学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "4b8f8b36-6326-475d-999d-674010337e7d"
+    },
+    {
+      "school_name": "成都市红专西路小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433121.shtm",
+      "content_hash": "00dada85a7917186a840881442dac6e6fa98f86fe8216902299c59eaf4716c0f",
+      "source_title": "成都市红专西路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "a08421ea-5d36-456c-a769-cc7464bb4539"
+    },
+    {
+      "school_name": "成都市群星美术学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5435228.shtm",
+      "content_hash": "bfeb25a190a35c2207f77378d2379128292425d9554286d0dbc29926a8cf1afb",
+      "source_title": "成都市群星美术学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "721b8c85-40dd-4562-be90-da5569e11870"
+    },
+    {
+      "school_name": "成都市西北中学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433255.shtm",
+      "content_hash": "5c7e8d862aa915bf275325655248a7f3f1cdfb1ecd22f0e84219e8993a8ce229",
+      "source_title": "成都市西北中学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "d5909dab-26f5-488a-85fd-4b9a9a549ba1"
+    },
+    {
+      "school_name": "成都市读者小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5435759.shtm",
+      "content_hash": "d335c9099de46d9d29ddcea5892f77b2a90a8b69a4f79389c9782b2a1dffa5f6",
+      "source_title": "成都市读者小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "42cbecfe-abe4-4ce4-b2c3-89bb5004d82e"
+    },
+    {
+      "school_name": "成都市通江实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433983.shtm",
+      "content_hash": "398a1d254e7718bd0a76530f3acf5e3d7d8646cfdc096bf88dd354c65d4bc1e9",
+      "source_title": "成都市通江实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "fab5cba9-12aa-4555-9afa-b53e63324b3d"
+    },
+    {
+      "school_name": "成都市金兴北路小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433106.shtm",
+      "content_hash": "94fd046e4f194996a94390644a22bb84db138d7db7a2f4208b2ea169fd8bd47a",
+      "source_title": "成都市金兴北路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "f07c4479-c992-4630-9dbb-a85f5b4549d2"
+    },
+    {
+      "school_name": "成都市金花中学",
+      "source_url": "http://cd.bendibao.com/wangdian/dian/5433137.shtm",
+      "content_hash": "26244766dc19d7f101e1d5393ce42b1dee76d52e9a09c3b9dd69eaaf6485fc19",
+      "source_title": "成都市金花中学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "595ca5f5-09fc-4c7f-9be2-f4a6713a7e13"
+    },
+    {
+      "school_name": "成都市金花实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5434563.shtm",
+      "content_hash": "2296d7bc1d37c0b2d682161fa75db6e2b09143154cd0a5e6096dabc9354a0a0c",
+      "source_title": "成都市金花实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "c04adcd1-f195-4ed6-99dc-e1648d16c732"
+    },
+    {
+      "school_name": "成都市锦里小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5433292.shtm",
+      "content_hash": "19f0bd7ecd3376191bb99a64440a340c290eab2f7435caef35041748398f261a",
+      "source_title": "成都市锦里小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "41deb2c7-4107-496e-9d82-d5e8c4550e2b"
+    },
+    {
+      "school_name": "成都市马家河小学",
+      "source_url": "https://m.cd.bendibao.com/wangdian/dian/5432861.shtm",
+      "content_hash": "a77c0d3be38dd1a987399775eac661942a7ea5eca1f454a14ce39a778e05e104",
+      "source_title": "成都市马家河小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "27b0ba0e-9a22-4375-aa0a-bcd1d197e7ae"
+    },
+    {
+      "school_name": "成都市龙江路小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432770.shtm",
+      "content_hash": "74497878ce1415d146f9f496107294ecefdf89f2c9cbfea2543e0fc12b9d7ce1",
+      "source_title": "成都市龙江路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "2454e9fc-e490-4d93-bded-c76a70da8a02"
+    },
+    {
+      "school_name": "成都市龙江路小学中粮祥云分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433326.shtm",
+      "content_hash": "23f0bbe192a7871c8a8d44199252ec2d158fe091d9d6b35b892d85b7ae5d7398",
+      "source_title": "成都市龙江路小学中粮祥云分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "a287f96d-ded9-4cad-85eb-edca0c51a6f2"
+    },
+    {
+      "school_name": "成都市龙江路小学分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5432807.shtm",
+      "content_hash": "5f0b4894a8133f91741e3713ce0d3d587edf72871e668aa571b3e1eb434a82df",
+      "source_title": "成都市龙江路小学分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "43242b2b-bb6f-4058-9057-5487b75b0c43"
+    },
+    {
+      "school_name": "成都市龙江路小学分校南区学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868266.shtm",
+      "content_hash": "6a4a592efb7e3b2607a65f83e0a0ec2f51745f1b212ed91110a2cec80d2c8b52",
+      "source_title": "成都市龙江路小学分校南区学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "e7099722-cdd9-4a9c-a348-fb77ae30b953"
+    },
+    {
+      "school_name": "成都市龙江路小学悦湖学校",
+      "source_url": "http://m.cd.bendibao.com/wangdian/dian/5433092.shtm",
+      "content_hash": "1c8967570fc4be2cbe452889dc0e7fd95882839bc589fdf27c8f313347b52dd4",
+      "source_title": "成都市龙江路小学悦湖学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "b8889fc3-bdd8-4158-bafb-798439a6ad2c"
+    },
+    {
+      "school_name": "成都市龙江路小学武侯新城分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433887.shtm",
+      "content_hash": "823602a90b051a9ba6cd3e9e9d9769d5b746b9e5546eef652802bf555f14d579",
+      "source_title": "成都市龙江路小学武侯新城分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "f4c9aa00-0f4b-4657-a00b-3db3626ca39b"
+    },
+    {
+      "school_name": "成都市龙江路小学武侯新城分校南区学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5436423.shtm",
+      "content_hash": "dfa6b1292c6b4a4af5f4269394a2725a9276e6ec5d2ffa88be7ee2b1b8450ed5",
+      "source_title": "成都市龙江路小学武侯新城分校南区学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "6d8b55a1-8a47-44f0-98d7-0212f8dcfbb6"
+    },
+    {
+      "school_name": "成都市龙江路小学高翔分校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5868269.shtm",
+      "content_hash": "a6d417360f7c8e586806a13a8825cbec2882d30a79948c6a373a4cb52b43feec",
+      "source_title": "成都市龙江路小学高翔分校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "236336a7-af82-422d-ae57-d27e255c84a0"
+    },
+    {
+      "school_name": "成都市龙祥路小学",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433209.shtm",
+      "content_hash": "c85aba7cb98f2ea1b000d0ee00468ba1d6f9e8ccc06d7e74ac518ccd898afc52",
+      "source_title": "成都市龙祥路小学",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "48b47803-b968-4d80-84b7-4edbb8cfc2e9"
+    },
+    {
+      "school_name": "成都石室佳兴外国语学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433985.shtm",
+      "content_hash": "7f487d9c12a2fc63422893dca90f5bfff477f1d16948f3255967c42c037e47c7",
+      "source_title": "成都石室佳兴外国语学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "ba68cf84-9a70-4f43-b281-5f97284b65d0"
+    },
+    {
+      "school_name": "成都石室双楠实验学校",
+      "source_url": "https://cd.bendibao.com/wangdian/dian/5433888.shtm",
+      "content_hash": "ce007a5f432e4b54cbc723ed71542731e049b0368c6863f9b513d3790b67f1a5",
+      "source_title": "成都石室双楠实验学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "817e634e-97ad-4b85-9dc4-208847d7f5f0"
+    },
+    {
+      "school_name": "成都金花光明学校",
+      "source_url": "http://cd.bendibao.com/wangdian/dian/5434562.shtm",
+      "content_hash": "8948f3bf605dce46db4b880c512d0883530ba11eca9bf5bca6a9e8e3de718953",
+      "source_title": "成都金花光明学校",
+      "raw_html_len": 0,
+      "from_inventory": true,
+      "school_id": "fee9acb2-4c05-420f-a72d-45ca99515a43"
+    }
+  ],
+  "skip_db": false,
+  "from_inventory": true
+}

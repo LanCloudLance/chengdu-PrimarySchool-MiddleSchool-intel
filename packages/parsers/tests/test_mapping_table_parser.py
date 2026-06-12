@@ -19,3 +19,20 @@ def test_parse_bendibao_mapping_tables():
     assert "成都市武侯计算机实验小学" in names
     assert "成都市磨子桥小学" in names
     assert "成都市龙江路小学分校" in names
+
+
+JINJIANG_TABLE_HTML = """
+<table>
+<tr><td>小学名称</td><td>划片范围（具体街道名称）</td></tr>
+<tr><td>成都市天涯石小学</td><td>天涯石南街，天涯石东街，书院东街，藩库街</td></tr>
+<tr><td>成都市盐道街小学</td><td>盐道街，指挥街，人民南路二段，滨江西路</td></tr>
+</table>
+"""
+
+
+def test_parse_bendibao_two_column_mapping_tables():
+    scopes = parse_bendibao_mapping_tables(JINJIANG_TABLE_HTML)
+    assert len(scopes) == 2
+    names = {s.school_name for s in scopes}
+    assert "成都市天涯石小学" in names
+    assert "成都市盐道街小学" in names

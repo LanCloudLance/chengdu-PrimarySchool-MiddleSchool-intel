@@ -12,16 +12,29 @@
   hx-trigger="submit, change from:select"
   class="bg-white rounded-lg shadow p-6 mb-6 space-y-4"
 >
-  <div>
-    <label for="q" class="block text-sm font-medium text-gray-700 mb-1">学校名称</label>
-    <input
-      type="text"
-      id="q"
-      name="q"
-      value="{{ q }}"
-      placeholder="搜索学校名称..."
-      class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-    />
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <label for="q" class="block text-sm font-medium text-gray-700 mb-1">学校名称 / 地址</label>
+      <input
+        type="text"
+        id="q"
+        name="q"
+        value="{{ q }}"
+        placeholder="校名、简称或地址..."
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+      />
+    </div>
+    <div>
+      <label for="scope_q" class="block text-sm font-medium text-gray-700 mb-1">划片范围 / 街道</label>
+      <input
+        type="text"
+        id="scope_q"
+        name="scope_q"
+        value="{{ scope_q }}"
+        placeholder="如：玉林东路、洗面桥街..."
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+      />
+    </div>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
     <div>
