@@ -1,7 +1,8 @@
 {
-  "scraped_at": "2026-06-12",
+  "scraped_at": "2026-06-14",
   "district_code": "jinniu",
   "data_year": 2025,
+  "source_url": "https://news.qq.com/rain/a/20250617A04SQH00",
   "school_scopes": [
     {
       "school_name": "成都市五丁小学校",
@@ -534,10 +535,5 @@
       "is_reference": true,
       "scope_source": "cross_reference"
     }
-  ],
-  "zone_blocks": [],
-  "promotion_links": [],
-  "articles": [],
-  "errors": [],
-  "intel_synced": false
+  ]
 }

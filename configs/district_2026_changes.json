@@ -1,0 +1,104 @@
+{
+  "source": "微信公众号-万能的祺爸",
+  "source_url": "https://mp.weixin.qq.com/s/inYRJYqx0Looqp1VY3I0gg",
+  "title": "近70处变化！2026年成都小学划片详细分析来了！",
+  "data_year": 2026,
+  "extracted_at": "2026-06-15",
+  "note": "完整划片范围（full_scopes）在微信链接文章中，因验证码限制无法自动提取。以下为文章正文中明确列出的变化。",
+  "summary": {
+    "total_changes_text": "近70处",
+    "districts_covered": ["jinjiang", "qingyang", "chenghua", "wuhou", "jinniu", "tianfu"],
+    "not_covered": ["gaoxin"],
+    "stats": {
+      "new_schools": 7,
+      "renamed": 5,
+      "scope_adjusted": 31,
+      "removed": 1,
+      "total_explicit": 45
+    }
+  },
+  "linked_articles": [
+    {"district": "jinjiang", "url": "https://mp.weixin.qq.com/s?__biz=MzAwODExNzE0MA==&mid=2653427297&idx=1&sn=a646db2d285685fef9affd696bfcd6d0"},
+    {"district": "qingyang", "url": "https://mp.weixin.qq.com/s?__biz=MzAxMjU4NTk2OQ==&mid=2650365915&idx=1&sn=41f1df092f42a90895d705c760e7d6ef"},
+    {"district": "chenghua", "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe"},
+    {"district": "wuhou", "url": "https://mp.weixin.qq.com/s?__biz=MzA5MDgwMzkxOA==&mid=2650448770&idx=1&sn=b73f376c15ab875060866856565a7409"},
+    {"district": "jinniu", "url": "https://mp.weixin.qq.com/s?__biz=MzI0MTEyMTI2Mg==&mid=2651295562&idx=1&sn=4aa64e2b9ee1ac3648ca78a6527e1bfe"},
+    {"district": "tianfu", "url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee"},
+    {"district": "gaoxin", "url": "https://mp.weixin.qq.com/s?__biz=MzA3ODUwMzIxNA==&mid=2651375410&idx=1&sn=375545bce1f0af37fcecd8c25fb20fe8"}
+  ],
+  "districts": {
+    "jinjiang": {
+      "changes": [
+        {"school_name": "成都师范附属小学三圣分校", "change_type": "removed", "detail": "学校减少（撤并）"},
+        {"school_name": "七中育才学校梅香湖校区小学部", "change_type": "new_school", "detail": "新增学校"},
+        {"school_name": "成都市七中育才附属小学", "change_type": "new_school", "detail": "新增学校"},
+        {"school_name": "七中育才学校白鹭湾校区小学部", "change_type": "new_school", "detail": "新增学校"},
+        {"school_name": "盐道街中学（南区）小学部", "change_type": "renamed", "detail": "原名：盐道街小学锦馨分校", "old_scope": "锦华路三段；祝国寺村；祝国寺东路49号、72号", "new_scope": "锦华路三段（不含379号）；祝国寺村（不含8组未拆迁）；减少祝国寺东路49号、72号；新增桐云路188号"},
+        {"school_name": "七中育才学校学道分校（南区）小学部", "change_type": "renamed", "detail": "原名：成都师范附属小学科技园校区"},
+        {"school_name": "龙王庙正街小学", "change_type": "scope_expand", "detail": "新增大川巷"},
+        {"school_name": "七中育才附属小学锦官驿校区", "change_type": "scope_shrink", "detail": "减少大安正街、大川巷"},
+        {"school_name": "菱窠路小学", "change_type": "scope_expand", "detail": "新增静思东巷66号"}
+      ]
+    },
+    "qingyang": {
+      "changes": [
+        {"school_name": "石室联中132学校", "change_type": "renamed", "detail": "原名：成都市石室联合成飞学校"},
+        {"school_name": "花园（国际）小学清波校区", "change_type": "scope_expand", "detail": "新增清涟支路33号"}
+      ]
+    },
+    "chenghua": {
+      "changes": [
+        {"school_name": "成都市锦城北湖小学校（成都英才北湖学校）", "change_type": "renamed", "detail": "原名：成都市锦城北湖小学校；公办九年一贯制；未设代招范围"},
+        {"school_name": "成都英卓学校", "change_type": "new_school", "detail": "新增学校"},
+        {"school_name": "成华小学", "change_type": "scope_adjust", "detail": "新增二环路东三段19号、万年场下街120号4幢、杉板桥路128号（沙河锦庭）、杉板桥南一路9号/19号、双林路（单号）57号；减少双林路（单号）51号"},
+        {"school_name": "蜀都小学", "change_type": "scope_expand", "detail": "新增民兴巷358号"},
+        {"school_name": "双林小学(馨韵校区)", "change_type": "scope_expand", "detail": "新增民善巷8号（匠宸元启）（在建）、民兴路432号（锦樾序花园）（在建）"},
+        {"school_name": "建设路小学(建业校区)", "change_type": "scope_expand", "detail": "新增建和路2号（恒河广场）"},
+        {"school_name": "建设路小学(枫林校区)", "change_type": "scope_expand", "detail": "新增建设南路285号（华天杉嶺）（在建）"},
+        {"school_name": "石室小学", "change_type": "scope_expand", "detail": "新增双成五路滨河壹号"},
+        {"school_name": "李家沱实验小学校", "change_type": "scope_shrink", "detail": "减少二环路北四段49号"},
+        {"school_name": "列五书池学校", "change_type": "scope_adjust", "detail": "新增东风路北一巷21号、双林二巷65号；减少水碾河路35/37/39号"},
+        {"school_name": "双庆小学", "change_type": "scope_expand", "detail": "新增跳蹬河南路5号"},
+        {"school_name": "成都理工大学附属小学（格物校区）", "change_type": "scope_expand", "detail": "新增长林盘路信悦府（在建）"},
+        {"school_name": "双林小学御风分校", "change_type": "scope_expand", "detail": "新增御风一路51号（龙湖·峯萃）、槐荫路399号（中旅·柏宸澐启）（在建）"},
+        {"school_name": "锦汇东城小学", "change_type": "scope_adjust", "detail": "不再设代招服务范围；新增槐树店路30号、槐树店二路288号（华宸府）（在建）、双店西四路58号（中昕·昕悦府）（在建）"},
+        {"school_name": "四川交响乐团附属小学", "change_type": "scope_shrink", "detail": "减少崔家店路485号"},
+        {"school_name": "蓉城小学(芙蓉校区)", "change_type": "scope_expand", "detail": "新增渠江路200号（人居九林语六期鎏云阁）（在建）、夹金山路88号（绿城·润百合）（在建）"},
+        {"school_name": "双水小学", "change_type": "scope_expand", "detail": "新增荆翠南一街23号（锦城拾云雅园）（在建）"},
+        {"school_name": "北新实验小学", "change_type": "scope_expand", "detail": "新增仁义路321号（城投置地中环·锦上萃）（在建）"},
+        {"school_name": "海滨小学", "change_type": "scope_expand", "detail": "新增荆竹东路238号（云栖·璞璟）（在建）"}
+      ]
+    },
+    "wuhou": {
+      "changes": [
+        {"school_name": "聚福路小学", "change_type": "new_school", "detail": "新增学校（建设名）"},
+        {"school_name": "川大附小明雅学校", "change_type": "scope_expand", "detail": "新增陆和家苑"}
+      ]
+    },
+    "jinniu": {
+      "changes": [
+        {"school_name": "成都市科技中学附属小学校", "change_type": "new_school", "detail": "新增学校"},
+        {"school_name": "石笋街小学", "change_type": "scope_adjust", "detail": "一环路西三段内(108-212号)→(108-214号)；新增石笋巷"},
+        {"school_name": "锦西外国语实验小学", "change_type": "scope_expand", "detail": "新增星月西街"},
+        {"school_name": "行知小学", "change_type": "scope_expand", "detail": "新增金府一街"},
+        {"school_name": "金牛实验中学行知校区", "change_type": "scope_expand", "detail": "新增金府一街"},
+        {"school_name": "北站小学", "change_type": "scope_expand", "detail": "新增北站西支巷"},
+        {"school_name": "金建小学", "change_type": "scope_expand", "detail": "新增川建路(金丰路至泉水路段)、川建南一路、川建南二路、川建巷、汇丰路"},
+        {"school_name": "茶店子小学金樽分校", "change_type": "scope_adjust", "detail": "最新划片（详见链接文章图片）"},
+        {"school_name": "茶店子小学金禧分校", "change_type": "scope_adjust", "detail": "最新划片（详见链接文章图片）"},
+        {"school_name": "铁中府河学校", "change_type": "scope_expand", "detail": "新增西华大道608号、府河苑三路99号"},
+        {"school_name": "成都市实验小学北新校区(成都市北新小学校)", "change_type": "renamed", "detail": "原名：成都北新小学；减少天云路65号"},
+        {"school_name": "人民北路小学天北分校", "change_type": "scope_expand", "detail": "新增天高路636号、天龙北一路365号、天资路226号"}
+      ]
+    },
+    "tianfu": {
+      "changes": [
+        {"school_name": "天府四中鹿溪校区", "change_type": "new_school", "detail": "新增学校"}
+      ]
+    },
+    "gaoxin": {
+      "changes": [],
+      "note": "截至发稿时尚未公布2026年划片范围"
+    }
+  }
+}

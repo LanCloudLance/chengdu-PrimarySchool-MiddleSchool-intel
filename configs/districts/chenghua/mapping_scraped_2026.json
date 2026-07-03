@@ -1,0 +1,359 @@
+{
+  "scraped_at": "2026-06-16",
+  "district_code": "chenghua",
+  "data_year": 2026,
+  "school_scopes": [
+    {
+      "school_name": "成都市双林小学",
+      "enrollment_scope": "双林中横路（双号4号-44号）；双林路（双号22号-136号）；双林南支路；经华北路；水碾河路；双桥路（新华医院以东段）；双桥路南一~五街；双桂路27号；双成五路333/355号；双燕二巷19号；双华一巷58号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市双林小学（馨韵校区）",
+      "enrollment_scope": "仙韵一路66号；仙韵二路6/33/99号；仙韵三路8号；仙韵四路77/99号；仙韵巷66/136/188号；二仙桥北路31号部分；民兴一路555/266号；民兴二路105/139号；民兴三路268号；民兴四路199/299号；人民塘路366号；民善巷8号；民兴路432号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市成华小学校",
+      "enrollment_scope": "新鸿路8/10/363/414/420/430号；新鸿南路；万年场横街；双林北横路；双林北支路；二环路东三段；东秀一/二路；小龙桥路；新鸿北支路；万年场下街；东篱路；万年路；杉板桥路及南一/二/三路；跳蹬河北路；双庆路99号；双林路单号段；积步街以西单号；跳蹬5组；万年巷；双园巷1号；新鸿南支路；小龙桥东巷9号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市蜀都小学校",
+      "enrollment_scope": "八里庄路69号；民兴路81号；民和路65号；仙韵一路451号；仙韵三路258号；二仙桥西北路2/15号；二仙桥西北二路8号；民兴巷355/358号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市建设路小学（建业校区）",
+      "enrollment_scope": "二环路东二段10/22附1/500号；二环路北二段9号；国光路1/133号；建设路（沙河以东段）；建设西街；建设中街11/15号；建设北路三段南侧；建设南路；建设南三路3号；建兴路；建和路2/6号；建业路；建功路168号；建勋路；杉板桥路333号；圣灯路",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市建设路小学(枫林校区)",
+      "enrollment_scope": "圣灯村1-10组；二仙桥西路5/34号；二仙桥东路46/48/60号；圣灯路东侧111/235号；地勘路1/6号；建设北路三段70-496号段；建设南路160/163/285号；圣灯东二路；枫林北路81号；枫林路；杉板桥路601/669号；枫锦路9号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市石室小学",
+      "enrollment_scope": "双成一路188号；双成二路39/98/158号；双成三路15/16/17/18号；双福一二路；双成五路滨河壹号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市石室小学育贤分校",
+      "enrollment_scope": "高车一路13/58/66号；高车四路299/388号；高车东路8号；二环路北四段3/5/7/49号；驷马桥路12/14/19/21/23号；驷马桥一路188号；驷马桥二路77号；驷马桥三路268/269号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市树德小学",
+      "enrollment_scope": "东三环五段万科北街/南街/路；和美东路；和美西路；和美路；万宇路；和韵路；和韵西路；万锦路；和秀路；和丽路；和锦路",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市成华实验小学校",
+      "enrollment_scope": "新风路；新风巷；双建路；桃蹊路段；文德路；文德巷；师友路；桃源街；桃林街；桃华街；桃竹路；二仙桥西一巷；八里庄路段；建设北路三段北侧部分；二仙桥南一路；府青路三段23号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "电子科技大学附属实验小学",
+      "enrollment_scope": "建设北路二段/三段；石油路；府青路一段/二段/三段；踏水桥西街；府青路东五街/东六街；府青东街/巷；欣然一/二街；府华二路；踏水桥北街；一环路东一段；二环路北四段/东一段；怡福路/巷；桃蹊路（新风路以西）；八里庄路部分；香木林路；秀苑东路",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "电子科技大学附属实验小学龙潭分校",
+      "enrollment_scope": "成康路1/40/83号；成宏路1/9号；华冠路3/4/13号；华甸路6/8号；华康路8/12号；宝耳路3/9号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市李家沱实验小学校",
+      "enrollment_scope": "一环路北四段1号；前锋街；泰安街；泰兴路；平安正街；虹波路/巷；华油路/巷；曲水路；三友路；府青路二段（沙河以南）；二环路北四段4号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市龙成小学",
+      "enrollment_scope": "猛追湾街/横街；建设北路一段；建设路（成华公园东门至沙河段以北）；建设巷/中路/支巷；建德路；一环路东一段13号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市培华小学校",
+      "enrollment_scope": "一环路东二段部分；建设路部分；成华大道新鸿路部分；建设南新路；培华西/东路；菽香里；建设南二路；建设南街；红光路5号；亚光路6号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市列五书池学校",
+      "enrollment_scope": "望平街；望平滨河路；布坝子街；玉双路；东风路及北一/二巷；一环路东三段；水碾河北一/二/三街；双林路222-228号；双林二/一巷；双桥路186-274号段；双桥路南六街；双华路3号；双华南路",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市双庆小学校",
+      "enrollment_scope": "长天路全部；竞成路全部；五桂桥北路8/16/26号；多宝寺路24号；长天路东一巷1号；万兴街；东浦路3/5号；跳蹬河南路5/7号；跳蹬河（跳蹬村）1/3组；积步街6/8号；积步东巷；洁美街2/4号；永平路全部；联合村4组；双庆路16/26/45-49号；双成五路66号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都理工大学附属小学（致知校区）",
+      "enrollment_scope": "华净路12号；民旺一路66号；华林三路277号；长林盘村；人民塘村；二仙桥东三路；民兴路888号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都理工大学附属小学（格物校区）",
+      "enrollment_scope": "民兴北一路66号；民兴北二路66/158/111/350/366号；朱家岭一路8号；朱家岭三路66号；民兴南二路102号；长林盘路336号；长林盘二路6/7号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市双林小学御风分校",
+      "enrollment_scope": "迎晖路199/227号；御风一路6/9/35/51号；御风二路9/19/33号；五桂路6/10/153/168/178号；建材路8号；槐庭路88号；槐荫路399号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市锦汇东城小学",
+      "enrollment_scope": "槐树店路6-37号段；槐树店一路300/301/333号；槐树店二路288号；槐树店北三路8/28号；槐树店北四路228号；槐杨路111号；建材路18-66号段；槐柳一路66/88号；槐柳二路21/116号；槐荫路6/199号；双店西四路58号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "四川交响乐团附属小学",
+      "enrollment_scope": "崔家店村；跳蹬河南路2/3/9/11号；崔家店路206-789号段；崔家店南路部分；崔家店北一/二/三路；崔家店横一/二/三街；二仙桥东二路188号；双店西五路26号；槐树店北四路99号；杉板桥南五路199号；双店路111号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市蓉城小学（银杏校区）",
+      "enrollment_scope": "金马河路8号；邛崃山路66/68/633号；云顶山路501/502/533号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市蓉城小学（芙蓉校区）",
+      "enrollment_scope": "锦绣大道4599号；峨眉山路456-555号；青衣江路499号；青城山路118号；龙泉山路111/163号；安宁河路522/538号；大渡河路199-666号段；渠江路200号；夹金山路88号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市杨柳小学校",
+      "enrollment_scope": "东虹路33-66号段；东虹东三路52号；天鹅一路33/98/133号；保和乡杨柳村1-6组；部分胜利村；东升村/天鹅村拆迁安置户",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都英华学校",
+      "enrollment_scope": "杨柳店南路9号；峨眉山路999号；白龙江路299/333号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市站东小学校",
+      "enrollment_scope": "站北路社区；站北西横街；站北东横街；站北东街；站北路以南单号；站北中街；站北北街；八里桥路28-245号段；站北路以北双号；花径路4-189号；福祥街2号；福康街82号；洞子口路819号；水武街；东沙街；升仙湖北路2号；双沙街160号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市双水小学校",
+      "enrollment_scope": "双荆路2/6/8/308号；荆翠西路2/39/59号；荆翠南一/二街；荆竹西路；荆顺东街259号；荆竹坝路/东街；荆顺路129号；双耀二路11/12号；昭觉寺南路139/251/463号；双兴街/双水碾街/双水碾村；双荆北路79号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市锦官城小学",
+      "enrollment_scope": "荆竹南街266号；羊子山路1-88号；羊子山西路69/88/266号；洪山路68/69号；洪山南路58/99号；洪山北路99号；横桥街10/23号；赤虎桥南街1号；升仙湖北路62-88号；红花堰；锦绣安里",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市成华区教育科学研究院附属小学",
+      "enrollment_scope": "海滨湾支路1号/附1号；云龙路2/100/111号；云龙南路19/66号；青龙路290/638号；昭青路28号；昭觉寺横路112号；致祥路34-85号；致强路248/266号；致强环街189-525号；致顺路168-555号；致顺南一街18/19号；致力路566号；致力一路88/99号；致力四路27/30号；致兴路333号；致兴一路301号；致兴二路509/520号；致兴三路398-901号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市北新实验小学",
+      "enrollment_scope": "荆竹中路40/199号；荆翠中路88/252/300号；东昌路55/66号；东丽街138号；东晖路175号；昭文路36/69号；荆泰二路777/799号；仁爱路166号；西林街1号；西林路99/170/199号；西林一街18/29/228号；仁义村3号；西林三街300号；西林四街31-126号；昭觉寺南路50号；昭觉寺横路20/80号；仁义路40/321号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市海滨小学校",
+      "enrollment_scope": "新山社区；海滨社区；成绵高架以北海滨各村组；三环路以南白莲各村组；东林二路1000号；东林三路372号；荆翠东路50号；东裕路130号；东荆路8/988号；荆泰二路74号；东丽街51/58号；龙厢街77-299号；荆竹东路238/288号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市熊猫路小学校",
+      "enrollment_scope": "一里村；狮子村；回龙村；三环路以北白莲各村组；斧头山四巷20/40/85号；斧头山支巷10号；斧头山路30/161/220号；蜀陵路188/315号；熊猫大道13/15号；石岭社区/石岭社区（瑞景新城）；嘉莲路505号；蜀陵南路77/188号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市熊猫路小学校（竹韵校区）",
+      "enrollment_scope": "湖山路33/139号；一里塘西巷55号；一里塘南一路40号；一里塘路150号；一里塘北一路8/23/50号；双石路650号；将军碑东二路88号；白莲小区；熊猫大道11/199/1248附1号；白莲池支路29号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市锦城北湖小学校（成都英才北湖学校）",
+      "enrollment_scope": "湖景四路1/2号；湖秀二路8/9/36/37/66号；湖光路317/333号；湖景五路89/99/101号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市龙潭小学校",
+      "enrollment_scope": "保平村1-9组（部分）；石马村（不含1组）；向龙村6-10组；同仁村6组；火神庙路9/63/65/78号；隆兴路3/4/7/37号；龙潭路1/3/8/9/18号；龙港一路66/99号；龙港二路2/5/6/28/33号；龙树路3/8号；龙港路55号；龙潭寺东/北路；龙井路；龙瑞一路1/5/8号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都大学附属实验小学（卓立校区）",
+      "enrollment_scope": "平丰社区；高洪社区1-4组；院东社区2-6组；丛树社区1-12组（部分）；威灵社区6/8组；丛森路18/33/481号；丛桂路16/29/38号；丛桂三巷27/68号；丛桂一/二巷、丛林路、丛荟路",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都大学附属实验小学（卓逸校区）",
+      "enrollment_scope": "双龙路；华实路2/8附12/11/13号；华盛路55/58/63/67/69号；华裕路9/26号；华翰路33号；高洪社区5-9组；威灵社区3/5/12组；院东社区1组；院山社区6/7组；航天路40号；龙港二路69号；龙港路369号；隆兴南四路67号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都英卓学校",
+      "enrollment_scope": "双院巷17/61号；华月路50号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市成华区华青学校",
+      "enrollment_scope": "桂林东路60/75号；桂林西路88/90/166号；桂林北路260号；桂香四路151号；桂龙东五路46号；桂龙西一路468/360号；和成2-8组；院山村1/2组",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都双语实验学校",
+      "enrollment_scope": "新鸿南一/二巷；一环路东三段64-107号段；一环路东二段以西2-172号；建华南/北巷；双林路以北99-293号及双号266-388号；双林巷；猛追湾东街；猛追湾街（成华公园后门以南）；新鸿二区；双林北支路471号；成华大道新鸿路；猛追湾南街；天祥街/滨河路；祥和里",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都双语实验学校和悦分校",
+      "enrollment_scope": "长融东一/二/三路；和润路77号；和悦路103/189/239号；槐树店路34-54号；和安二路33/38号；东升村7/8/10组；长融街28-31号；槐树店路40号；和友路328-368号；崔家店南路8号；和泰东一路86-99号；长秀路105号；和顺路1号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都万汇学校",
+      "enrollment_scope": "人民塘东一/二路；人民塘西一/二路；人民塘路100号；华林一路199号；二仙桥北路31号部分；东华一/二/三路；民兴路600号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "成都市二仙桥学校",
+      "enrollment_scope": "二仙桥北一/二路；下涧槽路66/166号；二仙桥北路28/31号；二仙桥东路9-21号段；人民塘西二路88号；关家8/9组",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA4ODI0NDA4Mg==&mid=2663391339&idx=1&sn=5cc0865d9eb5a24e7f643f70d206bbbe",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    }
+  ]
+}
