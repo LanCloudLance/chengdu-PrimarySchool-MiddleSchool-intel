@@ -5,7 +5,6 @@ import argparse
 import asyncio
 import json
 import re
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -63,8 +62,24 @@ def _is_valid_scope(scope: str) -> bool:
     return bool(re.search(r"[至界路街道巷大道区社区苑]", scope))
 
 
-def load_scraped(district_code: str) -> dict | None:
-    path = ROOT / "configs" / "districts" / district_code / "mapping_scraped.json"
+def load_scraped(
+    district_code: str, year_filter: int | None = None
+) -> dict | None:
+    """加载划片 JSON。
+
+    year_filter 为 None 或 2025 时，读取 mapping_scraped.json（向后兼容）。
+    year_filter 为 2026 时，必须读取 mapping_scraped_2026.json，
+    避免把 2025 数据误导入为 2026。
+    """
+    base = ROOT / "configs" / "districts" / district_code
+    if year_filter and year_filter >= 2026:
+        path = base / "mapping_scraped_2026.json"
+        if path.is_file():
+            return json.loads(path.read_text(encoding="utf-8"))
+        raise FileNotFoundError(
+            f"missing 2026 mapping file for {district_code}: {path}"
+        )
+    path = base / "mapping_scraped.json"
     if not path.is_file():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
@@ -184,9 +199,11 @@ async def get_or_create_mapping_doc(session, district_code: str, source_url: str
     return doc
 
 
-async def import_district_mapping(district_code: str) -> tuple[int, int]:
+async def import_district_mapping(
+    district_code: str, target_year: int | None = None
+) -> tuple[int, int]:
     framework_year = load_framework_year(district_code)
-    scraped = load_scraped(district_code)
+    scraped = load_scraped(district_code, year_filter=target_year)
     year = scraped.get("data_year", framework_year) if scraped else framework_year
     scopes = scraped.get("school_scopes") or [] if scraped else []
     has_only_reference = False
@@ -197,11 +214,15 @@ async def import_district_mapping(district_code: str) -> tuple[int, int]:
         school_repo = SchoolRepository(session)
         districts = await school_repo.get_district_code_map()
         district_id = districts[district_code]
-        intel_scopes, year, has_only_reference = await load_scopes_from_intel(
+        intel_scopes, intel_year, has_only_reference = await load_scopes_from_intel(
             session, district_id, framework_year=framework_year
         )
-        if intel_scopes:
+        if target_year is not None:
+            # 显式指定年份时使用对应 scraped 文件，不回退到 intel 表。
+            pass
+        elif intel_scopes:
             scopes = intel_scopes
+            year = intel_year
 
     scopes = merge_scope_dicts(scopes + override_rows)
 
@@ -268,14 +289,24 @@ async def import_district_mapping(district_code: str) -> tuple[int, int]:
 
             row_ref = bool(row.get("is_reference"))
             row_year = int(row.get("intel_year") or year)
+            row_source = row.get("scope_source") or ""
             if row.get("mapping_status"):
                 mapping_status = row["mapping_status"]
+            elif row_source == "ocr_image_needs_review":
+                mapping_status = "pending_review"
+            elif row_source == "bendibao_text":
+                mapping_status = "reference"
             elif row_ref:
                 mapping_status = "reference"
             else:
                 mapping_status = "verified"
             if row.get("notes"):
                 notes = row["notes"]
+            elif row_source == "ocr_image_needs_review":
+                notes = (
+                    f"{row_year}年划片范围（来自图片 OCR，待人工复核；"
+                    f"{year}年正式范围以教育局/yjrx 平台为准）"
+                )
             elif row_ref:
                 notes = (
                     f"参考{row_year}年划片（公开转载；{year}年正式范围以教育局/yjrx 平台为准）"
@@ -397,12 +428,20 @@ async def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--district", action="append", dest="districts")
     parser.add_argument("--all-core", action="store_true")
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=None,
+        help="目标数据年份；指定 2026 时读取 mapping_scraped_2026.json",
+    )
     args = parser.parse_args()
 
     targets = CORE_DISTRICTS if args.all_core else (args.districts or ["gaoxin"])
     total_m = total_u = 0
     for code in targets:
-        matched, unmatched = await import_district_mapping(code)
+        matched, unmatched = await import_district_mapping(
+            code, target_year=args.year
+        )
         print(f"imported district_mapping: {matched} matched, {unmatched} unmatched ({code})")
         total_m += matched
         total_u += unmatched

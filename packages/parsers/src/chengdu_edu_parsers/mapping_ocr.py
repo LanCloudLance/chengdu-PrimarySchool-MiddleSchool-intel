@@ -193,7 +193,7 @@ def _resize_image(image: "Image.Image", *, max_width: int = 0) -> "Image.Image":
     return image.resize(new_size, Image.Resampling.LANCZOS)
 
 
-def _ocr_with_timeout(image_bytes: bytes, timeout: int = 30) -> list[tuple]:
+def _ocr_with_timeout(image_bytes: bytes, timeout: int = 60) -> list[tuple]:
     """带超时的 OCR 调用，防止单张图片卡死。"""
     import sys
     
