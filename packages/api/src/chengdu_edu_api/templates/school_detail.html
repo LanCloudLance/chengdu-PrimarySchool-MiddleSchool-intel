@@ -3,8 +3,21 @@
 {% block title %}{{ school.name }} - 成都教育情报{% endblock %}
 
 {% block content %}
-<div class="mb-4">
-  <a href="/" class="text-sm text-blue-600 hover:underline">&larr; 返回搜索</a>
+<div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+  <a href="/?year={{ year }}" class="text-sm text-blue-600 hover:underline">&larr; 返回搜索</a>
+  <form method="get" action="/schools/{{ school.id }}" class="flex items-center gap-2">
+    <label for="year" class="text-sm text-gray-600">划片年份</label>
+    <select
+      id="year"
+      name="year"
+      class="rounded-md border border-gray-300 px-2 py-1 text-sm"
+      onchange="this.form.submit()"
+    >
+      {% for option_year in available_years %}
+      <option value="{{ option_year }}" {% if year == option_year %}selected{% endif %}>{{ option_year }} 年</option>
+      {% endfor %}
+    </select>
+  </form>
 </div>
 
 <div class="bg-white rounded-lg shadow p-6 mb-6">

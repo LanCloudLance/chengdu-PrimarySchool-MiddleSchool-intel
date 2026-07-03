@@ -25,11 +25,23 @@ MAPPING_STATUS_META: dict[str, dict[str, str]] = {
         "label": "参考",
         "badge_class": "bg-blue-100 text-blue-800 border-blue-200",
     },
+    "pending_review": {
+        "label": "待复核",
+        "badge_class": "bg-purple-100 text-purple-800 border-purple-200",
+    },
     "pending_official": {
         "label": "待官方",
         "badge_class": "bg-amber-100 text-amber-800 border-amber-200",
     },
 }
+
+MAPPING_REVIEW_STATUSES = ("pending_review", "pending_official")
+MAPPING_DECISION_STATUSES = (
+    "verified",
+    "reference",
+    "pending_review",
+    "pending_official",
+)
 
 
 def mapping_status_badge(status: str | None) -> dict[str, str] | None:
@@ -59,6 +71,8 @@ def mapping_provenance_lines(fields: dict) -> list[tuple[str, str]]:
 async def batch_district_mapping_summaries(
     session: AsyncSession,
     school_ids: list[UUID],
+    *,
+    year: int | None = None,
 ) -> dict[UUID, dict]:
     if not school_ids:
         return {}
@@ -70,6 +84,8 @@ async def batch_district_mapping_summaries(
         )
         .order_by(EnrollmentPolicy.year.desc())
     )
+    if year is not None:
+        stmt = stmt.where(EnrollmentPolicy.year == year)
     rows = list((await session.execute(stmt)).scalars().all())
     out: dict[UUID, dict] = {}
     for policy in rows:

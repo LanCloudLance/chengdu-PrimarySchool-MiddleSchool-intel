@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}划片复核 - 成都教育情报{% endblock %}
+
+{% block content %}
+<div class="mb-6 flex flex-wrap items-start justify-between gap-3">
+  <div>
+    <h1 class="text-2xl font-bold text-gray-900">划片复核</h1>
+    <p class="text-sm text-gray-500 mt-1">{{ year }} 年 · 共 {{ total }} 条记录</p>
+  </div>
+  <a
+    href="/review/mappings.csv?{{ export_query }}"
+    class="inline-flex items-center px-3 py-2 bg-white border border-gray-300 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50"
+  >
+    导出 CSV
+  </a>
+</div>
+
+<form method="get" action="/review/mappings" class="bg-white rounded-lg shadow p-4 mb-6">
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div>
+      <label for="year" class="block text-sm font-medium text-gray-700 mb-1">年份</label>
+      <input
+        id="year"
+        name="year"
+        type="number"
+        min="2000"
+        max="2100"
+        value="{{ year }}"
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+      >
+    </div>
+    <div>
+      <label for="district" class="block text-sm font-medium text-gray-700 mb-1">区县</label>
+      <select id="district" name="district" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm">
+        <option value="">全部区县</option>
+        {% for d in districts %}
+        <option value="{{ d.code }}" {% if active_district == d.code %}selected{% endif %}>{{ d.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="status" class="block text-sm font-medium text-gray-700 mb-1">状态</label>
+      <select id="status" name="status" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm">
+        {% for value, label in status_options.items() %}
+        <option value="{{ value }}" {% if status == value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="flex items-end">
+      <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700">
+        筛选
+      </button>
+    </div>
+  </div>
+</form>
+
+{% if message == "updated" %}
+<p class="text-sm text-green-800 bg-green-50 border border-green-200 rounded-lg px-4 py-2 mb-6">复核结果已保存。</p>
+{% elif message == "stale" %}
+<p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-6">该记录状态已变化，请刷新后再提交。</p>
+{% elif message == "invalid_decision" %}
+<p class="text-sm text-red-800 bg-red-50 border border-red-200 rounded-lg px-4 py-2 mb-6">复核结论无效。</p>
+{% endif %}
+
+{% if not review_write_enabled %}
+<p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-6">复核写入未开启，当前为只读模式。</p>
+{% endif %}
+
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+  {% for key, count in status_counts.items() %}
+  {% set badge = mapping_status_badge(key) %}
+  <div class="bg-white rounded-lg shadow p-3">
+    <div class="text-xs text-gray-500">
+      {% if badge %}{{ badge.label }}{% else %}未知{% endif %}
+    </div>
+    <div class="text-xl font-semibold text-gray-900 mt-1">{{ count }}</div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if items %}
+<div class="space-y-3">
+  {% for item in items %}
+  <article class="bg-white rounded-lg shadow p-4">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="/schools/{{ item.school.id }}" class="font-semibold text-gray-900 hover:text-blue-600">{{ item.school.name }}</a>
+        <span class="text-xs text-gray-500">{{ item.district.name }}</span>
+        {% if item.badge %}
+        <span class="text-xs px-2 py-0.5 rounded border {{ item.badge.badge_class }}">{{ item.badge.label }}</span>
+        {% endif %}
+      </div>
+      <span class="text-xs text-gray-400">{{ item.policy.year }} 年</span>
+    </div>
+    {% if item.fields.get('enrollment_scope') %}
+    <p class="mt-3 text-sm text-gray-800 whitespace-pre-wrap leading-relaxed">{{ item.fields.enrollment_scope }}</p>
+    {% else %}
+    <p class="mt-3 text-sm text-amber-700">暂无划片文本，需补齐官方口径。</p>
+    {% endif %}
+    {% if item.fields.get('notes') %}
+    <p class="mt-2 text-xs text-gray-500">{{ item.fields.notes }}</p>
+    {% endif %}
+    {% if item.provenance %}
+    <dl class="mt-3 text-xs text-gray-600 space-y-1">
+      {% for label, value in item.provenance %}
+      <div>
+        <dt class="inline font-medium">{{ label }}：</dt>
+        <dd class="inline break-all">
+          {% if label == '来源页面' and value.startswith('http') %}
+          <a href="{{ value }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline">{{ value }}</a>
+          {% else %}
+          {{ value }}
+          {% endif %}
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+    {% if review_write_enabled %}
+    <form method="post" action="/review/mappings/{{ item.policy.id }}/decision" class="mt-4 grid grid-cols-1 md:grid-cols-[180px_1fr_auto] gap-3 items-end border-t border-gray-100 pt-4">
+      <input type="hidden" name="year" value="{{ year }}">
+      <input type="hidden" name="district" value="{{ active_district }}">
+      <input type="hidden" name="status" value="{{ status }}">
+      <input type="hidden" name="current_status" value="{{ item.status }}">
+      <input type="hidden" name="reviewed_by" value="web_review">
+      <div>
+        <label for="decision-{{ item.policy.id }}" class="block text-xs font-medium text-gray-600 mb-1">复核结论</label>
+        <select id="decision-{{ item.policy.id }}" name="review_decision" class="w-full rounded-md border border-gray-300 px-2 py-2 text-sm">
+          {% for decision in decision_statuses %}
+          {% set decision_badge = mapping_status_badge(decision) %}
+          <option value="{{ decision }}" {% if item.status == decision %}selected{% endif %}>
+            {{ decision_badge.label if decision_badge else decision }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="notes-{{ item.policy.id }}" class="block text-xs font-medium text-gray-600 mb-1">复核备注</label>
+        <input
+          id="notes-{{ item.policy.id }}"
+          name="review_notes"
+          value="{{ item.fields.get('review_notes', '') }}"
+          class="w-full rounded-md border border-gray-300 px-2 py-2 text-sm"
+        >
+      </div>
+      {% if review_write_token_required %}
+      <div>
+        <label for="token-{{ item.policy.id }}" class="block text-xs font-medium text-gray-600 mb-1">写入令牌</label>
+        <input
+          id="token-{{ item.policy.id }}"
+          name="review_token"
+          type="password"
+          class="w-full rounded-md border border-gray-300 px-2 py-2 text-sm"
+        >
+      </div>
+      {% endif %}
+      <button type="submit" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700">
+        保存
+      </button>
+    </form>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">当前筛选条件下没有需要展示的划片记录。</p>
+{% endif %}
+{% endblock %}

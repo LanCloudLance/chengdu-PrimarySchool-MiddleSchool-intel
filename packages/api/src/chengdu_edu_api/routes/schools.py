@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import String, cast, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from chengdu_edu_core.enums import PolicyType, RecordType, SchoolLevel, SchoolType
+from chengdu_edu_core.enums import PolicyType, SchoolLevel, SchoolType
 from chengdu_edu_core.search_query import school_fuzzy_filter
 from chengdu_edu_api.dependencies import get_db_session
 from chengdu_edu_api.enrichment import (
@@ -25,14 +25,39 @@ from chengdu_edu_storage.repository import PolicyRepository
 router = APIRouter(tags=["schools"])
 
 
+def _coerce_school_type(value: SchoolType | str | None) -> SchoolType | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, SchoolType):
+        return value
+    try:
+        return SchoolType(value)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail="Invalid school type") from exc
+
+
+def _coerce_school_level(value: SchoolLevel | str | None) -> SchoolLevel | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, SchoolLevel):
+        return value
+    try:
+        return SchoolLevel(value)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail="Invalid school level") from exc
+
+
 def _school_filters(
     *,
     district_code: str | None,
-    school_type: SchoolType | None,
-    level: SchoolLevel | None,
+    school_type: SchoolType | str | None,
+    level: SchoolLevel | str | None,
     q: str | None,
     scope_q: str | None = None,
+    year: int | None = None,
 ):
+    school_type = _coerce_school_type(school_type)
+    level = _coerce_school_level(level)
     stmt = select(School, District.code).join(District, School.district_id == District.id)
     if district_code:
         stmt = stmt.where(District.code == district_code)
@@ -50,6 +75,8 @@ def _school_filters(
             (EnrollmentPolicy.school_id == School.id)
             & (EnrollmentPolicy.policy_type == PolicyType.DISTRICT_MAPPING),
         )
+        if year is not None:
+            stmt = stmt.where(EnrollmentPolicy.year == year)
         scope_filter = school_fuzzy_filter(scope_q, scope_col)
         if scope_filter is not None:
             stmt = stmt.where(scope_filter)
@@ -82,19 +109,30 @@ def _summary_from_row(
 @router.get("/schools", response_model=PaginatedSchools)
 async def search_schools(
     district: str | None = None,
-    type: SchoolType | None = None,
-    level: SchoolLevel | None = None,
+    type: str | None = None,
+    level: str | None = None,
     q: str | None = None,
     scope_q: str | None = Query(
         default=None,
         description="划片范围/街道地址关键词（搜索 district_mapping.enrollment_scope）",
+    ),
+    year: int | None = Query(
+        default=None,
+        ge=2000,
+        le=2100,
+        description="划片年份；为空时使用每所学校最新划片记录",
     ),
     offset: int = Query(default=0, ge=0),
     limit: int = Query(default=20, ge=1, le=100),
     session: AsyncSession = Depends(get_db_session),
 ) -> PaginatedSchools:
     base = _school_filters(
-        district_code=district, school_type=type, level=level, q=q, scope_q=scope_q
+        district_code=district,
+        school_type=type,
+        level=level,
+        q=q,
+        scope_q=scope_q,
+        year=year,
     )
     count_stmt = select(func.count()).select_from(base.subquery())
     total = (await session.execute(count_stmt)).scalar_one()
@@ -102,7 +140,7 @@ async def search_schools(
     stmt = base.order_by(School.name).offset(offset).limit(limit)
     rows = (await session.execute(stmt)).all()
     school_ids = [school.id for school, _dc in rows]
-    mapping_map = await batch_district_mapping_summaries(session, school_ids)
+    mapping_map = await batch_district_mapping_summaries(session, school_ids, year=year)
     items = [
         _summary_from_row(school, district_code, mapping_map.get(school.id))
         for school, district_code in rows
@@ -113,6 +151,7 @@ async def search_schools(
 @router.get("/schools/{school_id}", response_model=SchoolDetailOut)
 async def get_school(
     school_id: UUID,
+    year: int | None = Query(default=None, ge=2000, le=2100),
     session: AsyncSession = Depends(get_db_session),
 ) -> SchoolDetailOut:
     repo = PolicyRepository(session)
@@ -127,8 +166,14 @@ async def get_school(
         session,
         district_id=data.school.district_id,
         school_policies=data.enrollment_policies,
+        year=year,
     )
-    promotion = await build_promotion_policy_outs(session, data.promotion_policies)
+    promotion_policies = (
+        [p for p in data.promotion_policies if p.year == year]
+        if year is not None
+        else data.promotion_policies
+    )
+    promotion = await build_promotion_policy_outs(session, promotion_policies)
 
     return SchoolDetailOut(
         id=data.school.id,

@@ -133,6 +133,8 @@ async def build_enrollment_policy_outs(
 async def list_district_enrollment_policies(
     session: AsyncSession,
     district_id: UUID,
+    *,
+    year: int | None = None,
 ) -> list[EnrollmentPolicy]:
     stmt = (
         select(EnrollmentPolicy)
@@ -142,6 +144,8 @@ async def list_district_enrollment_policies(
         )
         .order_by(EnrollmentPolicy.year.desc())
     )
+    if year is not None:
+        stmt = stmt.where(EnrollmentPolicy.year == year)
     return list((await session.execute(stmt)).scalars().all())
 
 
@@ -150,8 +154,11 @@ async def resolve_school_enrollment_policies(
     *,
     district_id: UUID,
     school_policies: list[EnrollmentPolicy],
+    year: int | None = None,
 ) -> tuple[list[EnrollmentPolicyOut], bool]:
     """本校登记点优先；划片映射单独保留；无本校数据时回退区级 gov_policy。"""
+    if year is not None:
+        school_policies = [p for p in school_policies if p.year == year]
     mapping = [p for p in school_policies if p.policy_type == PolicyType.DISTRICT_MAPPING]
     school_only = [
         p for p in school_policies if p.policy_type != PolicyType.DISTRICT_MAPPING
@@ -161,7 +168,9 @@ async def resolve_school_enrollment_policies(
     mapping_out = await build_enrollment_policy_outs(session, mapping)
 
     if school_out:
-        district_policies = await list_district_enrollment_policies(session, district_id)
+        district_policies = await list_district_enrollment_policies(
+            session, district_id, year=year
+        )
         district_out = await build_enrollment_policy_outs(session, district_policies)
         combined = school_out + mapping_out + [
             p for p in district_out if p.id not in {s.id for s in school_out + mapping_out}
@@ -171,7 +180,9 @@ async def resolve_school_enrollment_policies(
     if mapping_out:
         return mapping_out, False
 
-    district_policies = await list_district_enrollment_policies(session, district_id)
+    district_policies = await list_district_enrollment_policies(
+        session, district_id, year=year
+    )
     if not district_policies:
         return [], False
     return await build_enrollment_policy_outs(session, district_policies), True
