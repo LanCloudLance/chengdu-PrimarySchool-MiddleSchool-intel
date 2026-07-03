@@ -17,7 +17,7 @@ def load_schools_config(path: Path | str | None = None) -> list[dict]:
     if not config_path.is_absolute():
         config_path = ROOT / config_path
     data = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    return data["schools"]
+    return data.get("schools") or []
 
 
 def load_all_school_configs() -> list[dict]:
