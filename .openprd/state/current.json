@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "status": "initialized",
+  "activeEngagement": "active",
+  "prdVersion": 0,
+  "productType": "agent",
+  "templatePack": "agent",
+  "captureMeta": {},
+  "projectRoot": "/Users/wangyuanlong/Desktop/学业研究-Vibecoding/.worktrees/feat-chengdu-edu-intel-mvp",
+  "workspaceRoot": "/Users/wangyuanlong/Desktop/学业研究-Vibecoding/.worktrees/feat-chengdu-edu-intel-mvp/.openprd",
+  "createdAt": "2026-06-14 13:07:02"
+}

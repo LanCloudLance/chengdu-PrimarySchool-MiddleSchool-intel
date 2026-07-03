@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "openprdVersion": "0.1.11",
+  "action": "init",
+  "generatedAt": "2026-06-14 13:07:02",
+  "tools": [
+    "codex"
+  ],
+  "managedFiles": [
+    {
+      "path": ".openprd/harness/command-catalog.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "project",
+      "source": "command-catalog",
+      "bodyChecksum": "843ce7b0a9f941c7",
+      "fileChecksum": "4905ce82fbcb4e3b"
+    },
+    {
+      "path": "AGENTS.md",
+      "scope": "project",
+      "kind": "managed-block",
+      "marker": "OPENPRD:AGENTS",
+      "bodyChecksum": "b24a37fe0b9f45fd"
+    },
+    {
+      "path": ".codex/skills/openprd-router/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-router",
+      "bodyChecksum": "04296f3eed16fe10",
+      "fileChecksum": "b1f6a168c136ac15"
+    },
+    {
+      "path": ".codex/skills/openprd-test-strategy/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-test-strategy",
+      "bodyChecksum": "383ed27fae4ab162",
+      "fileChecksum": "b70ba0fac2428f93"
+    },
+    {
+      "path": ".codex/skills/openprd-requirement-intake/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-requirement-intake",
+      "bodyChecksum": "c75b6611db2fa7c8",
+      "fileChecksum": "bb8a70c664487d3d"
+    },
+    {
+      "path": ".codex/skills/openprd-requirement-intake/references/prd-template-lenses.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-requirement-intake:reference:prd-template-lenses.md",
+      "bodyChecksum": "c2f800af1b7f8bbe",
+      "fileChecksum": "265681b4b26ba119"
+    },
+    {
+      "path": ".codex/skills/openprd-requirement-intake/references/routing-rubric.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-requirement-intake:reference:routing-rubric.md",
+      "bodyChecksum": "c63090448e7d6ce6",
+      "fileChecksum": "dcce80f9cb9ca854"
+    },
+    {
+      "path": ".codex/skills/openprd-requirement-intake/references/startup-validation-lens.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-requirement-intake:reference:startup-validation-lens.md",
+      "bodyChecksum": "4d8702113863f465",
+      "fileChecksum": "a1bc86e22b8268ff"
+    },
+    {
+      "path": ".codex/skills/openprd-frontend-design/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-frontend-design",
+      "bodyChecksum": "341e8b8ac86eb37f",
+      "fileChecksum": "a5f20b8f6f446aa8"
+    },
+    {
+      "path": ".codex/skills/openprd-frontend-design/references/design-asset-contract.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-frontend-design:reference:design-asset-contract.md",
+      "bodyChecksum": "f9fe5859128caa7f",
+      "fileChecksum": "6d6cc6bb6f6c472e"
+    },
+    {
+      "path": ".codex/skills/openprd-frontend-design/references/direction-engine.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-frontend-design:reference:direction-engine.md",
+      "bodyChecksum": "1de9509f88cf1d34",
+      "fileChecksum": "e06b45c8daa83712"
+    },
+    {
+      "path": ".codex/skills/openprd-shared/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-shared",
+      "bodyChecksum": "a733fb998bf12e87",
+      "fileChecksum": "56bd54b78ea97731"
+    },
+    {
+      "path": ".codex/skills/openprd-benchmark-router/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-benchmark-router",
+      "bodyChecksum": "1cbd70dcfc3a1acc",
+      "fileChecksum": "55664c1509cb7862"
+    },
+    {
+      "path": ".codex/skills/openprd-harness/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-harness",
+      "bodyChecksum": "580b7fba33a3f2c1",
+      "fileChecksum": "01dee2716f8e2f48"
+    },
+    {
+      "path": ".codex/skills/openprd-standards/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-standards",
+      "bodyChecksum": "ec7cd9a36608d353",
+      "fileChecksum": "292c468eca444cd3"
+    },
+    {
+      "path": ".codex/skills/openprd-discovery-loop/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-discovery-loop",
+      "bodyChecksum": "66f4a72100e85b0d",
+      "fileChecksum": "0861b77871ab160e"
+    },
+    {
+      "path": ".codex/skills/openprd-learning-review/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-learning-review",
+      "bodyChecksum": "d531ed3e57e57c16",
+      "fileChecksum": "a12a464bc59e1afc"
+    },
+    {
+      "path": ".codex/skills/openprd-quality/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-quality",
+      "bodyChecksum": "f26605d0d8d0c1ee",
+      "fileChecksum": "fcde6275af2b681f"
+    },
+    {
+      "path": ".codex/skills/openprd-diagram-review/SKILL.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "openprd-diagram-review",
+      "bodyChecksum": "9a3699d3706f719a",
+      "fileChecksum": "113cf86cd60756f0"
+    },
+    {
+      "path": ".codex/prompts/openprd-next.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:next",
+      "bodyChecksum": "b2f09eb8cd2ffae7",
+      "fileChecksum": "f6a9c2a7c3df5e3c"
+    },
+    {
+      "path": ".codex/prompts/openprd-standards.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:standards",
+      "bodyChecksum": "ccb25ad5b6964569",
+      "fileChecksum": "5939f10cf9b654ed"
+    },
+    {
+      "path": ".codex/prompts/openprd-grow.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:grow",
+      "bodyChecksum": "94b531278e4bb8a9",
+      "fileChecksum": "41cd60f0558eb26c"
+    },
+    {
+      "path": ".codex/prompts/openprd-change.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:change",
+      "bodyChecksum": "184cb01389536583",
+      "fileChecksum": "f851f2d92ae326d4"
+    },
+    {
+      "path": ".codex/prompts/openprd-discovery.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:discovery",
+      "bodyChecksum": "9c9eda62f0302cf5",
+      "fileChecksum": "df600fad7f44edd4"
+    },
+    {
+      "path": ".codex/prompts/openprd-doctor.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:doctor",
+      "bodyChecksum": "6bb754744962a12e",
+      "fileChecksum": "949aa9c59016b232"
+    },
+    {
+      "path": ".codex/prompts/openprd-verify.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:verify",
+      "bodyChecksum": "b7c2893a4f1a6b9d",
+      "fileChecksum": "7d4238e652d9fa98"
+    },
+    {
+      "path": ".codex/prompts/openprd-visual-prepare.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:visual-prepare",
+      "bodyChecksum": "3568a8eb8184c917",
+      "fileChecksum": "a9cf3cc609163be4"
+    },
+    {
+      "path": ".codex/prompts/openprd-visual-compare.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:visual-compare",
+      "bodyChecksum": "e1aff81a43d37fd8",
+      "fileChecksum": "b88c6190c43aa823"
+    },
+    {
+      "path": ".codex/prompts/openprd-run.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:run",
+      "bodyChecksum": "47d6b75600c42072",
+      "fileChecksum": "2ab7ad85ec039091"
+    },
+    {
+      "path": ".codex/prompts/openprd-loop.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:loop",
+      "bodyChecksum": "ab52608ddd48ae40",
+      "fileChecksum": "244cdef0224fdcbc"
+    },
+    {
+      "path": ".codex/prompts/openprd-repair.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:repair",
+      "bodyChecksum": "154cc5ac898a903c",
+      "fileChecksum": "7cf3c824dcff00e8"
+    },
+    {
+      "path": ".codex/prompts/openprd-onboard.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:onboard",
+      "bodyChecksum": "b51a935469a44a9a",
+      "fileChecksum": "fe733db21e82e089"
+    },
+    {
+      "path": ".codex/prompts/openprd-guard.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:guard",
+      "bodyChecksum": "6d98b37b9a45c763",
+      "fileChecksum": "da267b8892528ea1"
+    },
+    {
+      "path": ".codex/prompts/openprd-fleet.md",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "command:fleet",
+      "bodyChecksum": "595a75af52beb7b4",
+      "fileChecksum": "19351cb50de61fec"
+    },
+    {
+      "path": ".codex/hooks/openprd-hook.mjs",
+      "scope": "project",
+      "kind": "generated-file",
+      "adapter": "codex",
+      "source": "codex-hooks",
+      "bodyChecksum": "4ddf7045e11a0730",
+      "fileChecksum": "0d0162a90273b6da"
+    },
+    {
+      "path": ".codex/config.toml",
+      "scope": "project",
+      "kind": "codex-config",
+      "marker": "OPENPRD:CODEX-HOOKS"
+    },
+    {
+      "path": ".codex/hooks.json",
+      "scope": "project",
+      "kind": "codex-hooks-json",
+      "marker": "openprd-hook.mjs"
+    },
+    {
+      "path": "~/.codex/config.toml",
+      "scope": "user",
+      "kind": "codex-user-config",
+      "marker": "hooks = true"
+    }
+  ],
+  "hooks": {
+    "profile": "lite",
+    "events": [
+      "UserPromptSubmit",
+      "PreToolUse",
+      "Stop"
+    ],
+    "availableProfiles": [
+      "lite",
+      "guarded",
+      "full"
+    ],
+    "state": ".openprd/harness/hook-state.json",
+    "eventsLog": ".openprd/harness/events.jsonl",
+    "driftReport": ".openprd/harness/drift-report.json"
+  },
+  "optionalCapabilities": [
+    {
+      "id": "context7",
+      "name": "Context7",
+      "status": "recommended",
+      "configured": false,
+      "summary": "帮助 Agent 获取最新的第三方技术文档、配置、版本差异、迁移路径和高质量实现信息。",
+      "recommendedFor": "涉及第三方库、框架、API、SDK、MCP、CLI 的最新用法、配置或迁移时尤其有帮助。",
+      "docsUrl": "https://context7.com/docs/resources/all-clients",
+      "repoUrl": "https://github.com/upstash/context7",
+      "serverUrl": "https://mcp.context7.com/mcp",
+      "configuredLocations": [],
+      "checkedLocations": [
+        {
+          "client": "codex",
+          "scope": "project",
+          "path": ".codex/config.toml",
+          "exists": true,
+          "matched": false
+        },
+        {
+          "client": "codex",
+          "scope": "user",
+          "path": "~/.codex/config.toml",
+          "exists": true,
+          "matched": false
+        }
+      ]
+    },
+    {
+      "id": "deepwiki",
+      "name": "DeepWiki",
+      "status": "recommended",
+      "configured": false,
+      "summary": "帮助 Agent 用对话方式理解 GitHub 公开仓库的架构、关键模块、关键流程和实现线索。",
+      "recommendedFor": "需要理解公开 GitHub 仓库整体结构、跨模块设计或关键流程时尤其有帮助。",
+      "docsUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "repoUrl": "https://github.com/CognitionAI/deepwiki",
+      "serverUrl": "https://mcp.deepwiki.com/mcp",
+      "configuredLocations": [],
+      "checkedLocations": [
+        {
+          "client": "codex",
+          "scope": "project",
+          "path": ".codex/config.toml",
+          "exists": true,
+          "matched": false
+        },
+        {
+          "client": "codex",
+          "scope": "user",
+          "path": "~/.codex/config.toml",
+          "exists": true,
+          "matched": false
+        }
+      ]
+    }
+  ]
+}

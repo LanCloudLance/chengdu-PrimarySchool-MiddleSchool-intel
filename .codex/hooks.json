@@ -1,0 +1,36 @@
+{
+  "UserPromptSubmit": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node '/Users/wangyuanlong/Desktop/学业研究-Vibecoding/.worktrees/feat-chengdu-edu-intel-mvp/.codex/hooks/openprd-hook.mjs' UserPromptSubmit",
+          "timeout": 30000
+        }
+      ]
+    }
+  ],
+  "PreToolUse": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node '/Users/wangyuanlong/Desktop/学业研究-Vibecoding/.worktrees/feat-chengdu-edu-intel-mvp/.codex/hooks/openprd-hook.mjs' PreToolUse",
+          "timeout": 30000
+        }
+      ],
+      "matcher": "^(Bash|Read|Write|Edit|MultiEdit|apply_patch|WebSearch|web_search)$"
+    }
+  ],
+  "Stop": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node '/Users/wangyuanlong/Desktop/学业研究-Vibecoding/.worktrees/feat-chengdu-edu-intel-mvp/.codex/hooks/openprd-hook.mjs' Stop",
+          "timeout": 30000
+        }
+      ]
+    }
+  ]
+}

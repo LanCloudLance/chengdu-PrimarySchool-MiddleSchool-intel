@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "docsRoot": "docs/basic",
+  "requiredDocs": [
+    "file-structure.md",
+    "app-flow.md",
+    "prd.md",
+    "frontend-guidelines.md",
+    "backend-structure.md",
+    "tech-stack.md"
+  ],
+  "fileManual": {
+    "enabled": true,
+    "template": "file-manual-template.md",
+    "requiredSections": [
+      "核心功能",
+      "输入",
+      "输出",
+      "定位",
+      "依赖",
+      "维护规则"
+    ],
+    "placement": "file-header",
+    "ignorePaths": []
+  },
+  "folderManual": {
+    "enabled": true,
+    "template": "folder-readme-template.md",
+    "naming": "[module]_[folder]_README.md",
+    "requiredSections": [
+      "核心功能",
+      "输入",
+      "输出",
+      "定位",
+      "依赖",
+      "维护规则"
+    ],
+    "ignorePaths": []
+  },
+  "qualityGates": {
+    "changeValidateRequiresStandards": true,
+    "taskVerifyUsesStandards": true,
+    "discoveryVerifyRequiresStandards": true,
+    "sourceManuals": true
+  },
+  "developmentStandards": {
+    "codeFileLines": {
+      "enabled": true,
+      "okMax": 700,
+      "attentionMax": 1500,
+      "appliesTo": "agent-touched-code-files",
+      "codeFileExtensions": [
+        ".json",
+        ".md"
+      ],
+      "exemptPathSegments": [],
+      "exemptFilePatterns": []
+    }
+  },
+  "growth": {
+    "enabled": true,
+    "reviewRequired": true,
+    "autoApply": {
+      "enabled": true,
+      "minConfidence": 0.8,
+      "safeTypes": [
+        "code-extension"
+      ]
+    },
+    "candidateLimit": 200,
+    "scopes": [
+      "project",
+      "user-local",
+      "openprd-core"
+    ],
+    "supportedCandidateTypes": [
+      "code-extension",
+      "exempt-path-segment",
+      "exempt-file-pattern",
+      "user-preference",
+      "workflow-gotcha",
+      "standards-rule"
+    ]
+  },
+  "externalReferences": {
+    "paths": []
+  },
+  "sourceManual": {
+    "ignorePaths": []
+  }
+}
