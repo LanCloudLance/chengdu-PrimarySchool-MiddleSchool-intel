@@ -1,0 +1,8 @@
+fields:
+  enrollment_scope:
+    selector: "div.content"
+    regex: "招生范围[：:](.+)"
+  registration_time:
+    regex: '报名时间[：:]([\d\-~至 ]+)'
+  contact:
+    regex: '咨询电话[：:]([\d\-]+)'

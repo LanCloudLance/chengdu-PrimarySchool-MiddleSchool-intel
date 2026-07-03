@@ -1,0 +1,316 @@
+{
+  "scraped_at": "2026-06-14",
+  "district_code": "tianfu",
+  "data_year": 2025,
+  "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+  "school_scopes": [
+    {
+      "school_name": "四川天府新区海洋路中学(小学部)",
+      "enrollment_scope": "A学区(华阳片区)：梓州大道以西，沈阳路从梓州大道交叉口至锦江河交叉口段以北，锦江河从沈阳路交叉口至武汉路交叉口段以西，武汉路从锦江河交叉口至剑南大道交叉口段以北，剑南大道以东的四川天府新区辖区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区教师共享中心附属学校(小学部)",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区华阳中学附属学校(小学部)",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区广都学校(小学部)",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第三小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第四小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第五小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第十小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区实验小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区华阳实验小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区华阳实验小学(西区)",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区华阳小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区南湖小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区锦江小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第三中学附属小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区美岸小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区美岸小学(美邻校区)",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区安公小学",
+      "enrollment_scope": "A学区(华阳片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第八中学(小学部)",
+      "enrollment_scope": "C学区：梓州大道从沈阳路交叉口至通州路交叉口段以西，通州路从梓州大道交叉口至广州路交叉口段以西，广州路从通州路交叉口至益州大道交叉口段以北，益州大道从广州路交叉口至武汉路交叉口段以东，武汉路从益州大道交叉口至锦江河交叉口段以北，锦江河从武汉路交叉口至沈阳路交叉口段以东，沈阳路从锦江河交叉口至梓州大道交叉口段以南的区域",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第七小学",
+      "enrollment_scope": "C学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第八小学",
+      "enrollment_scope": "C学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第九小学",
+      "enrollment_scope": "C学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区元音小学",
+      "enrollment_scope": "C学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第三中学(小学部)",
+      "enrollment_scope": "D学区(万安、白沙片区)：万安街道辖区和新兴街道辖区内原白沙街道所辖区域",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第二小学",
+      "enrollment_scope": "D学区(万安、白沙片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第六小学",
+      "enrollment_scope": "D学区(万安、白沙片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区万安小学",
+      "enrollment_scope": "D学区(万安、白沙片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区白沙小学",
+      "enrollment_scope": "D学区(万安、白沙片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区十一学校(小学部)",
+      "enrollment_scope": "E学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区第一小学",
+      "enrollment_scope": "E学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区湖畔路小学",
+      "enrollment_scope": "E学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区桐湾小学",
+      "enrollment_scope": "E学区",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区正兴小学",
+      "enrollment_scope": "F学区(正兴片区)",
+      "enrollment_method": "单校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区科学城小学",
+      "enrollment_scope": "G学区(兴隆片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区科学城小学(西区)",
+      "enrollment_scope": "G学区(兴隆片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区煎茶小学",
+      "enrollment_scope": "H学区(煎茶片区)",
+      "enrollment_method": "单校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区新兴中学附属小学",
+      "enrollment_scope": "K学区(原新兴片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区新兴小学",
+      "enrollment_scope": "K学区(原新兴片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区永兴小学",
+      "enrollment_scope": "L学区(永兴片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区三星小学",
+      "enrollment_scope": "L学区(永兴片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区籍田小学",
+      "enrollment_scope": "M学区(籍田片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区大林小学",
+      "enrollment_scope": "M学区(籍田片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区太平小学",
+      "enrollment_scope": "N学区(太平片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    },
+    {
+      "school_name": "四川天府新区合江小学",
+      "enrollment_scope": "N学区(太平片区)",
+      "enrollment_method": "多校划片",
+      "source_url": "http://cd.bendibao.com/edu/2025328/196216.shtm",
+      "intel_year": 2025
+    }
+  ]
+}

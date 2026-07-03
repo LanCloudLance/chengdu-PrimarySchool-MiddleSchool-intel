@@ -1,0 +1,105 @@
+# 各区划片/对口文章来源（本地宝 mobile 优先，HTML 表用 cd.bendibao 桌面版）
+# data_year：当前情报框架年份（P0 的 2026 yjrx 官方源后续再接入）
+data_year: 2025
+
+districts:
+  gaoxin:
+    mapping_urls:
+      - url: https://m.cd.bendibao.com/edu/198872_2.shtm
+        kind: image_list
+        data_year: 2025
+        is_reference: false
+        notes: 2025高新区小学划片一览（PNG 长图，需 OCR）
+      - url: http://m.cd.bendibao.com/edu/209029.shtm
+        kind: school_scope
+        data_year: 2025
+        notes: 高新区中和片区第一批次各校划片范围
+      - url: http://m.cd.bendibao.com/edu/209025.shtm
+        kind: zone_list
+        data_year: 2025
+        notes: 中和A/B片区范围及学校名单
+    promotion_urls: []
+
+  jinjiang:
+    mapping_urls:
+      - url: http://m.cd.bendibao.com/edu/2025617/198845.shtm
+        kind: school_scope
+        data_year: 2025
+        is_reference: false
+        notes: 2025锦江区小学户籍适龄儿童划片范围（HTML 两列表）
+    promotion_urls:
+      - url: http://m.cd.bendibao.com/edu/2025630/199286.shtm
+        kind: promotion_table
+        data_year: 2025
+        is_reference: false
+        notes: 2025锦江区小学毕业生初中入学划片（PNG）
+
+  qingyang:
+    mapping_urls:
+      - url: http://cd.bendibao.com/edu/2025617/198848.shtm
+        kind: road_name_scope
+        data_year: 2025
+        is_reference: false
+        notes: 2025青羊区划片（道路名称版式）
+    promotion_urls: []
+
+  wuhou:
+    mapping_urls:
+      - url: https://cd.bendibao.com/edu/2024428/182983_8.shtm
+        kind: school_scope
+        data_year: 2024
+        is_reference: true
+        notes: 2024年武侯区小学入学划片一览表（HTML 表格，作基底参考）
+      - url: http://cd.bendibao.com/edu/2025617/198872_7.shtm
+        kind: image_list
+        data_year: 2025
+        is_reference: true
+        notes: 2025年武侯区小学划片一览（正文为 PNG 图片，待 OCR/人工补全）
+      - url: http://m.cd.bendibao.com/edu/2025422/197052.shtm
+        kind: adjustment
+        data_year: 2025
+        is_reference: false
+        notes: 2025年西川悦湖/龙江路悦湖/川大附小明雅划片调整公告
+    promotion_urls:
+      - url: http://m.cd.bendibao.com/edu/2025630/199288.shtm
+        kind: promotion_table
+        data_year: 2025
+        is_reference: false
+        notes: 2025年武侯区小学毕业生初中入学划片（PNG 一览表，OCR）
+      - url: http://m.cd.bendibao.com/edu/202472/185963.shtm
+        kind: promotion_table
+        data_year: 2024
+        is_reference: true
+        notes: 2024年武侯区初中入学划片一览表（PNG，reference）
+
+  chenghua:
+    mapping_urls:
+      - url: http://cd.bendibao.com/edu/2025617/198846.shtm
+        kind: school_scope
+        data_year: 2025
+        is_reference: false
+        notes: 2025成华区小学入学划片（HTML 表）
+    promotion_urls: []
+
+  jinniu:
+    mapping_urls:
+      - url: http://m.cd.bendibao.com/edu/198872_5.shtm
+        kind: image_list
+        data_year: 2025
+        is_reference: false
+        notes: 2025金牛区小学划片一览（PNG 长图，需 OCR；198847 桌面页无正文）
+    promotion_urls:
+      - url: http://m.cd.bendibao.com/edu/2025630/199296.shtm
+        kind: promotion_table
+        data_year: 2025
+        is_reference: false
+        notes: 2025金牛区小升初划片（PNG）
+
+  tianfu:
+    mapping_urls:
+      - url: http://m.cd.bendibao.com/edu/2025328/196216.shtm
+        kind: zone_school_list
+        data_year: 2025
+        is_reference: false
+        notes: 2025天府新区直管区小学学区划分方案
+    promotion_urls: []

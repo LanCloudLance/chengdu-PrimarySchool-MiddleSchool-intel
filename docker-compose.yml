@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: edu
+      POSTGRES_PASSWORD: edu
+      POSTGRES_DB: chengdu_edu
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  api:
+    build:
+      context: .
+      dockerfile: packages/api/Dockerfile
+    ports: ["8000:8000"]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://edu:edu@db:5432/chengdu_edu
+    depends_on: [db]
+    volumes:
+      - "./configs:/app/configs"
+      - "./data/raw:/app/data/raw"
+      - "./scripts:/app/scripts"
+      - "./packages/storage/alembic:/app/packages/storage/alembic"
+      - "./packages/storage/alembic.ini:/app/packages/storage/alembic.ini"
+      - "./packages/core/src/chengdu_edu_core:/app/packages/core/src/chengdu_edu_core"
+      - "./packages/parsers/src/chengdu_edu_parsers:/app/packages/parsers/src/chengdu_edu_parsers"
+      - "./packages/storage/src/chengdu_edu_storage:/app/packages/storage/src/chengdu_edu_storage"
+      - "./packages/api/src/chengdu_edu_api:/app/packages/api/src/chengdu_edu_api"
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: packages/scheduler/Dockerfile
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://edu:edu@db:5432/chengdu_edu
+    depends_on: [db, api]
+    volumes:
+      - "./configs:/app/configs"
+      - "./data/raw:/app/data/raw"
+      - "./packages/storage/alembic:/app/packages/storage/alembic"
+      - "./packages/storage/alembic.ini:/app/packages/storage/alembic.ini"
+      - "./packages/core/src/chengdu_edu_core:/app/packages/core/src/chengdu_edu_core"
+      - "./packages/parsers/src/chengdu_edu_parsers:/app/packages/parsers/src/chengdu_edu_parsers"
+      - "./packages/storage/src/chengdu_edu_storage:/app/packages/storage/src/chengdu_edu_storage"
+
+volumes:
+  pgdata:

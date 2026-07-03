@@ -1,0 +1,34 @@
+# 7 区学校主数据（2026）
+# 来源：各区 2026 年 4 月登记点公告 / 招生政策公开信息；官网 URL 经 verify_data.py 校验。
+# 登记点学校 ≠ 划片就读学校，划片以 6 月 15 日 yjrx 平台公布为准。
+data_year: 2026
+default_verification_source: https://yjrx.cdeduypt.cn/
+
+schools:
+  # ── 锦江区 ──
+  # 完整清单见 configs/districts/jinjiang/schools.yaml（28 所）
+  # 已删除旧名称记录，防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。
+
+  # ── 青羊区 ──
+  # 完整清单见 configs/districts/qingyang/schools.yaml（36 所）
+  # 已删除旧名称记录，防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。
+
+  # ── 武侯区 ──
+  # 完整清单见 configs/districts/wuhou/schools.yaml（101 所）
+
+  # ── 成华区 ──
+  # 完整清单见 configs/districts/chenghua/schools.yaml（41 所）
+  # 已删除旧名称记录，防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。
+
+  # ── 金牛区 ──
+  # 完整清单见 configs/districts/jinniu/schools.yaml（63 所，2025）
+  # 已删除旧名称记录（人民北路小学/茶店子小学/回民小学/沙河源小学/七中万达/二十中/锦西外国语），
+  # 防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。
+
+  # ── 高新区 ──
+  # 完整清单见 configs/districts/gaoxin/schools.yaml（43 所）
+  # 已删除旧名称记录，防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。
+
+  # ── 天府新区 ──
+  # 完整清单见 configs/districts/tianfu/schools.yaml（41 所）
+  # 已删除旧名称记录，防止 import_schools.py 与区域配置冲突导致 DB 多出孤儿学校。

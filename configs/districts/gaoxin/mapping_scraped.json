@@ -1,0 +1,391 @@
+{
+  "scraped_at": "2026-06-12",
+  "district_code": "gaoxin",
+  "data_year": 2025,
+  "school_scopes": [
+    {
+      "school_name": "成都玉林中学附属小学",
+      "enrollment_scope": "肖家河街道办事处所辖永丰社区、兴蓉社区、正街社区以及二环路外的檀香山。",
+      "source_excerpt": "成都玉林中学附属小学: 肖家河街道办事处所辖永丰社区、兴蓉社区、正街社区以及二环路外的檀香山。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区芳草小学",
+      "enrollment_scope": "一环路南三段以南，二环路南三段以北，玉林北路—玉林中路—玉林南路以西，永丰路—衣冠庙以东。",
+      "source_excerpt": "成都高新区芳草小学: 一环路南三段以南，二环路南三段以北，玉林北路—玉林中路—玉林南路以西，永丰路—衣冠庙以东。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "四川省成都高新区实验小学",
+      "enrollment_scope": "元华一巷6号；元通二巷1号、2号、6号、8号、9号、10号、11号，紫荆东路9号、47号、55号、56号、57号、96号；神仙树北路9号、6号、11号；神仙树南路8号、9号、11号、39号、51号、53号、55号；紫丁巷1号、3号、5号、7号；紫竹北街27号、65号、92号；紫荆南路21号、23号、52号、54号、56号；二环路南三段18号、38号、138号；创业路5号、7号、9号、49号、51号、53号、57号；元通一巷、二巷、元通一巷7号；紫竹西街78号；紫荆巷56号；紫竹南一街2号、4号、5号、8号、23号；紫荆北路3号、8号、16号、38号、58号、86号、174号；新光路8号、60号、62号、68号、70号；火车南站西路34号、44号；紫竹西街28号；紫竹南二街；紫竹中街2号；紫荆西路6号、49号、58号、78号；紫薇东路1号、10号、11号、73号、116号；神仙树西路2号、3号、6号、39号；紫瑞北街3号、7号、100号；紫瑞大道188号、218号、272号；创瑞街3号；丽都路700号、757号。",
+      "source_excerpt": "四川省成都高新区实验小学: 元华一巷6号；元通二巷1号、2号、6号、8号、9号、10号、11号，紫荆东路9号、47号、55号、56号、57号、96号；神仙树北路9号、6号、11号；神仙树南路8号、9号、11号、39号、51号、53号、55号；紫丁巷1号、3号、5号、7号；紫竹北街27号、65号、92号；紫荆南路21号、23号、52号、54号、56号；二环路南三段18号、38号、138号；创业路5号、7号、9号、49号、51号、53号、57号；元通一巷、二巷、元通一巷7号；紫竹西街78号；紫荆巷56号；紫竹南一街2号、4号、5号、8号、23号；紫荆北路3号、8号、16号、38号、58号、86号、174号；新光路8号、60号、62号、68号、70号；火车南站西路34号、44号；紫竹西街28号；紫竹南二街；紫竹中街2号；紫荆西路6号、49号、58号、78号；紫薇东路1号、10号、11号、73号、116号；神仙树西路2号、3号、6号、39号；紫瑞北街3号、7号、100号；紫瑞大道188号、218号、272号；创瑞街3号；丽都路700号、757号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区新光小学",
+      "enrollment_scope": "新光社区、新北社区、新盛社区：东南至成昆铁路和神仙树南路，南至三环路，西与武侯区为界，北至铁路环线。",
+      "source_excerpt": "成都高新区新光小学: 新光社区、新北社区、新盛社区：东南至成昆铁路和神仙树南路，南至三环路，西与武侯区为界，北至铁路环线。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区庆安小学",
+      "enrollment_scope": "东北至三环路、东南至成都机场高速，西与武侯区交界：成都高新区南三环五段188号；成都高新区新雅街4号；成都高新区新雅正街2号；成都高新区新雅横街1号；成都高新区新雅横街3号；成都高新区新雅中街9号；成都高新区新雅中街12号；成都高新区新雅中街32号；成都高新区新雅中街41号；成都高新区新雅中街52号；成都高新区新雅中街69号。",
+      "source_excerpt": "成都高新区庆安小学: 东北至三环路、东南至成都机场高速，西与武侯区交界：成都高新区南三环五段188号；成都高新区新雅街4号；成都高新区新雅正街2号；成都高新区新雅横街1号；成都高新区新雅横街3号；成都高新区新雅中街9号；成都高新区新雅中街12号；成都高新区新雅中街32号；成都高新区新雅中街41号；成都高新区新雅中街52号；成都高新区新雅中街69号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都市天府实验学校北区分校",
+      "enrollment_scope": "东至成昆铁路，南至绕城路，西至机场高速及双流区，北至三环路：亿佳苑(仁和东街21号)、新南一期(仁和街39号)、聚智苑(仁和街148号)、新南二期(仁和街181号)、115号苑(仁和街115号)、新南一期(新园大道296号)、新南小区A区(新园大道26号)、雄飞新园紫郡(新园大道8号)、新南小区B区(新园南二路8号)、国防家苑(府城大道西段799号)、新成国际(新康南二路5号 ) 。",
+      "source_excerpt": "成都市天府实验学校北区分校: 东至成昆铁路，南至绕城路，西至机场高速及双流区，北至三环路：亿佳苑(仁和东街21号)、新南一期(仁和街39号)、聚智苑(仁和街148号)、新南二期(仁和街181号)、115号苑(仁和街115号)、新南一期(新园大道296号)、新南小区A区(新园大道26号)、雄飞新园紫郡(新园大道8号)、新南小区B区(新园南二路8号)、国防家苑(府城大道西段799号)、新成国际(新康南二路5号 ) 。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都市石室天府中学附属小学",
+      "enrollment_scope": "成昆铁路以东，府城大道以南，天府大道以西，交子大道以北和成昆铁路以东，交子大道以南，剑南大道以西，锦城大道以北。",
+      "source_excerpt": "成都市石室天府中学附属小学: 成昆铁路以东，府城大道以南，天府大道以西，交子大道以北和成昆铁路以东，交子大道以南，剑南大道以西，锦城大道以北。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区锦城小学",
+      "enrollment_scope": "东至天府大道，南至府城大道，西至成昆铁路，北至三环路。包括雍翠路222号、雍翠路221号、博雅街88号、雍萃路83号、雍翠路303号、博雅街33号、荟锦路33号、和盛西街88号、昆和路55号、和盛东街77号、府城大道中段188号、高新区天益街78号、天益街38号。",
+      "source_excerpt": "成都高新区锦城小学: 东至天府大道，南至府城大道，西至成昆铁路，北至三环路。包括雍翠路222号、雍翠路221号、博雅街88号、雍萃路83号、雍翠路303号、博雅街33号、荟锦路33号、和盛西街88号、昆和路55号、和盛东街77号、府城大道中段188号、高新区天益街78号、天益街38号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都市泡桐树小学(天府校区)",
+      "enrollment_scope": "北至交子大道，西至剑南大道、南至绕城高速、东至天府大道：锦尚西二路89号、锦悦西路56号(锦悦西二路56号)、锦悦西路196号(锦悦西二路196号)、锦城大道1081号(民丰大道西段717号)、锦城大道1261号(民丰大道西段899号)、锦城大道1000号、锦城大道1288号、锦城大道666号、锦城大道850号、锦城大道817号、交子大道199号、万象南路199号、万象南路188号、成汉南路366号、益州大道北段777号、益州大道北段555号、蜀锦路88号、交子大道33号。",
+      "source_excerpt": "成都市泡桐树小学(天府校区): 北至交子大道，西至剑南大道、南至绕城高速、东至天府大道：锦尚西二路89号、锦悦西路56号(锦悦西二路56号)、锦悦西路196号(锦悦西二路196号)、锦城大道1081号(民丰大道西段717号)、锦城大道1261号(民丰大道西段899号)、锦城大道1000号、锦城大道1288号、锦城大道666号、锦城大道850号、锦城大道817号、交子大道199号、万象南路199号、万象南路188号、成汉南路366号、益州大道北段777号、益州大道北段555号、蜀锦路88号、交子大道33号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区芳草小学(南区 )",
+      "enrollment_scope": "东至天府大道北段，南至三环路四段，西、北至成昆铁路一线。具体街道：广和一街、广和二街、都会路，盛和一路、盛和二路、盛和三路，诚通路，泰和一街、泰和二街，益州大道北段7号、北段388号、北三段366号。",
+      "source_excerpt": "成都高新区芳草小学(南区 ): 东至天府大道北段，南至三环路四段，西、北至成昆铁路一线。具体街道：广和一街、广和二街、都会路，盛和一路、盛和二路、盛和三路，诚通路，泰和一街、泰和二街，益州大道北段7号、北段388号、北三段366号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区锦晖小学成都高新区锦晖小学(金融城分校)",
+      "enrollment_scope": "北至三环路、西至天府大道、南至绕城高速、东与锦江区交界：天长路6、59号，天久南巷8(南尚国际)、169号，天顺路66、126、222、288号，天环街719、680号，天泰路47、287号，濯锦路9、28、164号，科华南路316、1366号，锦泰路28号，名都路678号，府城大道东段9号，府城大道东段17号，锦城大道108号，天府大道999号、天府大道北段869号、天府大道1199号、环岛路1200号",
+      "source_excerpt": "成都高新区锦晖小学成都高新区锦晖小学(金融城分校): 北至三环路、西至天府大道、南至绕城高速、东与锦江区交界：天长路6、59号，天久南巷8(南尚国际)、169号，天顺路66、126、222、288号，天环街719、680号，天泰路47、287号，濯锦路9、28、164号，科华南路316、1366号，锦泰路28号，名都路678号，府城大道东段9号，府城大道东段17号，锦城大道108号，天府大道999号、天府大道北段869号、天府大道1199号、环岛路1200号",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都七中初中附属小学",
+      "enrollment_scope": "北与武侯区为界，南至三环路、西至科华南路，东与锦江区交界：桂溪路176号、191号、200号、223号、318号、336号；桂溪东路123号；顺锦路340号、272号、266号；金桂路89号、107号、208号、233号、238号；三瓦窑街198号、202号、208号、347号。",
+      "source_excerpt": "成都七中初中附属小学: 北与武侯区为界，南至三环路、西至科华南路，东与锦江区交界：桂溪路176号、191号、200号、223号、318号、336号；桂溪东路123号；顺锦路340号、272号、266号；金桂路89号、107号、208号、233号、238号；三瓦窑街198号、202号、208号、347号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新七初天和学校",
+      "enrollment_scope": "东至科华南路，南至三环路，西至天府大道，北与武侯区为界。",
+      "source_excerpt": "成都高新七初天和学校: 东至科华南路，南至三环路，西至天府大道，北与武侯区为界。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都蒙彼利埃小学",
+      "enrollment_scope": "盛安街18号、天府一街688号、盛安街186号、天府一街899号、天府一街888号、天府一街616号、盛邦街366号、盛安街77号、盛邦街333号。",
+      "source_excerpt": "成都蒙彼利埃小学: 盛安街18号、天府一街688号、盛安街186号、天府一街899号、天府一街888号、天府一街616号、盛邦街366号、盛安街77号、盛邦街333号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区益州小学",
+      "enrollment_scope": "剑南大道以东，盛治街—肖家河—盛邦街—益州大道—天府一街连线以南，天府大道以西，天府二街以北：盛邦街19号、盛华北路299号、天府二街966号、盛治街429号、天府二街766号、盛华北路516号、盛治街221号、盛华北路288号、吉瑞五路277号、天府二街368号、古庆一路288号、天府二街266号、天府二街138号、古瑞四路301号、古庆四路340号、古庆三路333号、吉瑞四路399号、古瑞三路99号、古瑞一路520号、天府一街369号、吉庆一路388号、古庆二路333号、益州大道中段699号、益州大道中段599号、吉瑞一路200号、天府大道中段500号、吉庆四路188号、盛治街55号、益州大道中段999号、吉瑞一路123号。",
+      "source_excerpt": "成都高新区益州小学: 剑南大道以东，盛治街—肖家河—盛邦街—益州大道—天府一街连线以南，天府大道以西，天府二街以北：盛邦街19号、盛华北路299号、天府二街966号、盛治街429号、天府二街766号、盛华北路516号、盛治街221号、盛华北路288号、吉瑞五路277号、天府二街368号、古庆一路288号、天府二街266号、天府二街138号、古瑞四路301号、古庆四路340号、古庆三路333号、吉瑞四路399号、古瑞三路99号、古瑞一路520号、天府一街369号、吉庆一路388号、古庆二路333号、益州大道中段699号、益州大道中段599号、吉瑞一路200号、天府大道中段500号、吉庆四路188号、盛治街55号、益州大道中段999号、吉瑞一路123号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区公园小学",
+      "enrollment_scope": "北至天府二街、南与天府新区交界、东至天府大道、西至剑南大道。",
+      "source_excerpt": "成都高新区公园小学: 北至天府二街、南与天府新区交界、东至天府大道、西至剑南大道。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都市教育科学研究院附属学校(东区)",
+      "enrollment_scope": "东至剑南大道，南至天府五街，西至南华路，北至天府三街。",
+      "source_excerpt": "成都市教育科学研究院附属学校(东区): 东至剑南大道，南至天府五街，西至南华路，北至天府三街。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都市教育科学研究院附属学校(西区)",
+      "enrollment_scope": "东至南华路，南至双流区，西至双流区，北至天府二街：祥华路36号、祥华路33号、南华路1033号、康华路1188号、南华路1489号、康华路999号、同源街777号、同源街666号、天府四街1999号、天府四街1869号、康华路505号、乐华路56号",
+      "source_excerpt": "成都市教育科学研究院附属学校(西区): 东至南华路，南至双流区，西至双流区，北至天府二街：祥华路36号、祥华路33号、南华路1033号、康华路1188号、南华路1489号、康华路999号、同源街777号、同源街666号、天府四街1999号、天府四街1869号、康华路505号、乐华路56号",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都墨池书院小学",
+      "enrollment_scope": "盛邦街—富华北路—天府一街连线以南，天府三街以北，南华路以东，剑南大道以西：富华北路357号、荣华北路299号、剑南大道中段716号、荣华北路69号、盛安街666号、盛治街600号、天府二街1033号、荣华南路398号、天府三街1166号、南华路1616号、盛邦街899号、南华路1500号、南华巷277号、盛治街777号、富华南路1800号。",
+      "source_excerpt": "成都墨池书院小学: 盛邦街—富华北路—天府一街连线以南，天府三街以北，南华路以东，剑南大道以西：富华北路357号、荣华北路299号、剑南大道中段716号、荣华北路69号、盛安街666号、盛治街600号、天府二街1033号、荣华南路398号、天府三街1166号、南华路1616号、盛邦街899号、南华路1500号、南华巷277号、盛治街777号、富华南路1800号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都霍森斯小学",
+      "enrollment_scope": "成都高新区天府一街1339号；成都高新区天府一街1333号；成都高新区天府一街1366号；成都高新区天府一街1566号。",
+      "source_excerpt": "成都霍森斯小学: 成都高新区天府一街1339号；成都高新区天府一街1333号；成都高新区天府一街1366号；成都高新区天府一街1566号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新中学天府一街分校",
+      "enrollment_scope": "大源北二街36号，大源北二街48号，大源北一街25号，大源南二街145号，大源南二街152号，大源南二街178号，大源南二街48号，大源南二街5号，大源南一街120号，大源南一街44号，盛邦街886号，灯塔小区。",
+      "source_excerpt": "成都高新中学天府一街分校: 大源北二街36号，大源北二街48号，大源北一街25号，大源南二街145号，大源南二街152号，大源南二街178号，大源南二街48号，大源南二街5号，大源南一街120号，大源南一街44号，盛邦街886号，灯塔小区。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区中和小学",
+      "enrollment_scope": "中胜路、双化街以北，成都绕城路(四环路)以南，中和新上街、仁和路及中柏大道以西，科华南路以东。",
+      "source_excerpt": "成都高新区中和小学: 中胜路、双化街以北，成都绕城路(四环路)以南，中和新上街、仁和路及中柏大道以西，科华南路以东。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区朝阳小学",
+      "enrollment_scope": "康和西三衔以北，成都绕城(四环路)以南，锦江区以西，中和新上街、仁和路及中柏大道以东。",
+      "source_excerpt": "成都高新区朝阳小学: 康和西三衔以北，成都绕城(四环路)以南，锦江区以西，中和新上街、仁和路及中柏大道以东。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "四川省成都市中和中学润和分校",
+      "enrollment_scope": "双化街一中胜路以南，仁和路—润和路以西，古龙路以北，梓州大道以东。",
+      "source_excerpt": "四川省成都市中和中学润和分校: 双化街一中胜路以南，仁和路—润和路以西，古龙路以北，梓州大道以东。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区康和小学",
+      "enrollment_scope": "中胜路一康和西三街以南，仁和路—润和路以东，古龙路以北，东至天府新区交界。",
+      "source_excerpt": "成都高新区康和小学: 中胜路一康和西三街以南，仁和路—润和路以东，古龙路以北，东至天府新区交界。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区菁蓉小学",
+      "enrollment_scope": "天府大道以东，绕城高速路以南，梓州大道(科华南路)以西、老成仁路(锦韵路)以北的闭合部分。",
+      "source_excerpt": "成都高新区菁蓉小学: 天府大道以东，绕城高速路以南，梓州大道(科华南路)以西、老成仁路(锦韵路)以北的闭合部分。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区西芯小学",
+      "enrollment_scope": "中海社区汇川街、蓝岸街、碧林街、美墅街、绿茵街、阳光街。",
+      "source_excerpt": "成都高新区西芯小学: 中海社区汇川街、蓝岸街、碧林街、美墅街、绿茵街、阳光街。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新顺江学校",
+      "enrollment_scope": "东与青羊区、中海国际社区为界，南与温江区、郫都区为界，西与天润路为界，北至成灌高速(西芯大道)(不含新希望皇冠国际小区)。",
+      "source_excerpt": "成都高新顺江学校: 东与青羊区、中海国际社区为界，南与温江区、郫都区为界，西与天润路为界，北至成灌高速(西芯大道)(不含新希望皇冠国际小区)。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新新科学校",
+      "enrollment_scope": "岷江小区、西汇锦苑、西汇兴苑、金色海伦、龙城高新天地、金辉悦府、西藏卫生厅千休所。",
+      "source_excerpt": "成都高新新科学校: 岷江小区、西汇锦苑、西汇兴苑、金色海伦、龙城高新天地、金辉悦府、西藏卫生厅千休所。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区天辰路小学",
+      "enrollment_scope": "保利香槟国际、晨风社区城中村、新希望皇冠国际小区。",
+      "source_excerpt": "成都高新区天辰路小学: 保利香槟国际、晨风社区城中村、新希望皇冠国际小区。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区尚阳小学",
+      "enrollment_scope": "尚锦路以东，河滨南路以西，红光大道以南，西区大道以北；天宇路101-104号、201-203号。",
+      "source_excerpt": "成都高新区尚阳小学: 尚锦路以东，河滨南路以西，红光大道以南，西区大道以北；天宇路101-104号、201-203号。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新滨河学校",
+      "enrollment_scope": "恒大帝景；檬梓街；独柏街；科新路101—103、107—108、201—210、301—307、401—408;西区大道201—209、303—305、306、307—308、402、405—407。",
+      "source_excerpt": "成都高新滨河学校: 恒大帝景；檬梓街；独柏街；科新路101—103、107—108、201—210、301—307、401—408;西区大道201—209、303—305、306、307—308、402、405—407。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "电子科大实验中学附属小学电子科大实验中学附属小学西园分校",
+      "enrollment_scope": "天润路、天源路、天盛路、天映路、天欣路、天骄路、天全路、合作路、合瑞路、合信路、科新南路。东与天涧路为界，南、西与郫县为界，北至成灌高速。",
+      "source_excerpt": "电子科大实验中学附属小学电子科大实验中学附属小学西园分校: 天润路、天源路、天盛路、天映路、天欣路、天骄路、天全路、合作路、合瑞路、合信路、科新南路。东与天涧路为界，南、西与郫县为界，北至成灌高速。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都高新区行知小学",
+      "enrollment_scope": "中和A片区：锦韵路—吉龙路以南，会龙大道—新通大道以北，天府大道以东，锦江区、夭府新区界以西。",
+      "source_excerpt": "成都高新区行知小学: 中和A片区：锦韵路—吉龙路以南，会龙大道—新通大道以北，天府大道以东，锦江区、夭府新区界以西。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都师范银都紫藤小学(北区)",
+      "enrollment_scope": "中和B片区：会龙大道—新通大道以南，天府新区界以北，天府大道以东，天府新区界以西。",
+      "source_excerpt": "成都师范银都紫藤小学(北区): 中和B片区：会龙大道—新通大道以南，天府新区界以北，天府大道以东，天府新区界以西。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "四川省教育科学研究院附属实验小学（成都高新区梓州小学）",
+      "enrollment_scope": "中和A片区：锦韵路—吉龙路以南，会龙大道—新通大道以北，天府大道—锦韵路以东，锦江区、天府新区界以西。第一批次录取学校。",
+      "source_url": "http://cd.bendibao.com/edu/2026527/209025.shtm",
+      "source_excerpt": "2026年成都高新区中和A片区第一批次录取学校",
+      "intel_year": 2026,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都师范银都紫菀小学",
+      "enrollment_scope": "中和A片区：锦韵路—吉龙路以南，会龙大道—新通大道以北，天府大道—锦韵路以东，锦江区、天府新区界以西。第一批次录取学校（原成都高新区行知小学划片范围）。",
+      "source_url": "http://cd.bendibao.com/edu/2026527/209025.shtm",
+      "source_excerpt": "2026年成都高新区中和A片区第一批次录取学校",
+      "intel_year": 2026,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都师范银都紫藤北区小学",
+      "enrollment_scope": "中和B片区：会龙大道—新通大道以南，天府新区界以北，天府大道以东，天府新区界以西。第一批次录取学校。",
+      "source_url": "http://cd.bendibao.com/edu/2026527/209025.shtm",
+      "source_excerpt": "2026年成都高新区中和B片区第一批次录取学校",
+      "intel_year": 2026,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都师范银都紫藤南区小学",
+      "enrollment_scope": "中和B片区：会龙大道—新通大道以南，天府新区界以北，天府大道以东，天府新区界以西。第一批次录取学校。",
+      "source_url": "http://cd.bendibao.com/edu/2026527/209025.shtm",
+      "source_excerpt": "2026年成都高新区中和B片区第一批次录取学校",
+      "intel_year": 2026,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都泡桐树小学（天府校区）",
+      "enrollment_scope": "北至交子大道，西至剑南大道、南至绕城高速、东至天府大道。",
+      "source_url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "source_excerpt": "2024年成都高新区小一入学划片范围",
+      "intel_year": 2024,
+      "is_reference": true,
+      "scope_source": "html_table"
+    },
+    {
+      "school_name": "成都金苹果公学",
+      "enrollment_scope": "民办小学，面向成都市户籍适龄儿童招生，通过成都市义务教育招生入学服务平台网上报名，电脑随机录取。",
+      "source_url": "http://cd.bendibao.com/edu/2026424/207407_2.shtm",
+      "source_excerpt": "2026年成都高新区公办小学登记点名单",
+      "intel_year": 2026,
+      "is_reference": true,
+      "scope_source": "policy_doc"
+    }
+  ],
+  "zone_blocks": [],
+  "promotion_links": [],
+  "articles": [
+    {
+      "url": "http://www.100hsl.com/zhongkao/wz_5825.html",
+      "kind": "school_scope",
+      "scopes": 35,
+      "zones": 0,
+      "promotions": 0,
+      "data_year": 2024,
+      "is_reference": true
+    }
+  ],
+  "errors": [],
+  "intel_synced": false
+}

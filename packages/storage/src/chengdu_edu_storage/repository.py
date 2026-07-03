@@ -1,0 +1,333 @@
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from uuid import UUID
+
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from chengdu_edu_core.diff import compute_field_changes
+from chengdu_edu_core.enums import PolicyType, RecordType, SchoolLevel, SchoolType
+from chengdu_edu_core.search_query import school_fuzzy_filter
+from chengdu_edu_core.models import FieldChange as FieldChangeDTO
+from chengdu_edu_core.models import RawDocument as RawDocumentDTO
+from chengdu_edu_storage.orm import (
+    DataSource,
+    District,
+    EnrollmentPolicy,
+    FieldChange,
+    JobRun,
+    PromotionPolicy,
+    RawDocument,
+    RecordVersion,
+    School,
+)
+
+
+@dataclass
+class SchoolWithPolicies:
+    school: School
+    enrollment_policies: list[EnrollmentPolicy]
+    promotion_policies: list[PromotionPolicy]
+
+
+class PolicyRepository:
+    def __init__(self, session: AsyncSession):
+        self.session = session
+
+    async def get_source(self, source_id: UUID) -> DataSource | None:
+        return await self.session.get(DataSource, source_id)
+
+    async def list_active_sources(self) -> list[DataSource]:
+        stmt = select(DataSource).where(DataSource.is_active.is_(True))
+        result = await self.session.execute(stmt)
+        return list(result.scalars().all())
+
+    async def upsert_enrollment(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID | None,
+        policy_type: PolicyType,
+        year: int,
+        fields: dict,
+        source_doc_id: UUID,
+        confidence: float,
+        existing_id: UUID | None = None,
+    ) -> UUID:
+        """Insert or update an enrollment policy, tracking version history on change.
+
+        Commits the session on every write path (MVP behavior); callers should not
+        expect to roll back partial work within the same transaction after upsert.
+        """
+        if existing_id:
+            policy = await self.session.get(EnrollmentPolicy, existing_id)
+            if policy is None:
+                raise ValueError(f"Enrollment policy not found: {existing_id}")
+            old_fields = dict(policy.fields)
+            if old_fields == fields:
+                return existing_id
+            changes = compute_field_changes(old_fields, fields)
+            policy.fields = fields
+            policy.current_version += 1
+            policy.source_doc_id = source_doc_id
+            policy.confidence = confidence
+            self._add_version(
+                RecordType.ENROLLMENT,
+                policy.id,
+                policy.current_version,
+                fields,
+                source_doc_id,
+            )
+            for change in changes:
+                self._add_field_change(
+                    RecordType.ENROLLMENT,
+                    policy.id,
+                    policy.current_version - 1,
+                    policy.current_version,
+                    change,
+                )
+        else:
+            policy = EnrollmentPolicy(
+                district_id=district_id,
+                school_id=school_id,
+                policy_type=policy_type,
+                year=year,
+                fields=fields,
+                source_doc_id=source_doc_id,
+                confidence=confidence,
+                current_version=1,
+            )
+            self.session.add(policy)
+            await self.session.flush()
+            self._add_version(RecordType.ENROLLMENT, policy.id, 1, fields, source_doc_id)
+        await self.session.commit()
+        return policy.id
+
+    async def find_promotion_id(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID,
+        year: int,
+    ) -> UUID | None:
+        stmt = select(PromotionPolicy.id).where(
+            PromotionPolicy.district_id == district_id,
+            PromotionPolicy.school_id == school_id,
+            PromotionPolicy.year == year,
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def upsert_promotion(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID,
+        year: int,
+        fields: dict,
+        source_doc_id: UUID,
+        target_school_id: UUID | None = None,
+        existing_id: UUID | None = None,
+    ) -> UUID:
+        if existing_id:
+            policy = await self.session.get(PromotionPolicy, existing_id)
+            if policy is None:
+                raise ValueError(f"Promotion policy not found: {existing_id}")
+            old_fields = dict(policy.fields)
+            old_target = policy.target_school_id
+            target_changed = (
+                target_school_id is not None and target_school_id != old_target
+            ) or (target_school_id is None and old_target is not None)
+            if old_fields == fields and not target_changed:
+                return existing_id
+            changes = compute_field_changes(old_fields, fields)
+            policy.fields = fields
+            policy.current_version += 1
+            policy.source_doc_id = source_doc_id
+            if target_school_id is not None:
+                policy.target_school_id = target_school_id
+            elif target_changed:
+                policy.target_school_id = None
+            self._add_version(
+                RecordType.PROMOTION,
+                policy.id,
+                policy.current_version,
+                fields,
+                source_doc_id,
+            )
+            for change in changes:
+                self._add_field_change(
+                    RecordType.PROMOTION,
+                    policy.id,
+                    policy.current_version - 1,
+                    policy.current_version,
+                    change,
+                )
+        else:
+            policy = PromotionPolicy(
+                district_id=district_id,
+                school_id=school_id,
+                target_school_id=target_school_id,
+                year=year,
+                fields=fields,
+                source_doc_id=source_doc_id,
+                current_version=1,
+            )
+            self.session.add(policy)
+            await self.session.flush()
+            self._add_version(RecordType.PROMOTION, policy.id, 1, fields, source_doc_id)
+        await self.session.commit()
+        return policy.id
+
+    async def get_latest_hash(self, source_id: UUID) -> str | None:
+        stmt = (
+            select(RawDocument.content_hash)
+            .where(RawDocument.source_id == source_id)
+            .order_by(RawDocument.fetched_at.desc())
+            .limit(1)
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def save_raw_document(self, raw: RawDocumentDTO) -> UUID:
+        doc = RawDocument(
+            source_id=raw.source_id,
+            content_hash=raw.content_hash,
+            raw_content=raw.raw_content,
+            raw_file_path=raw.raw_file_path,
+            fetched_at=raw.fetched_at,
+            http_status=raw.http_status,
+        )
+        self.session.add(doc)
+        await self.session.commit()
+        return doc.id
+
+    async def save_job_run(self, run: JobRun) -> JobRun:
+        self.session.add(run)
+        await self.session.commit()
+        await self.session.refresh(run)
+        return run
+
+    async def find_enrollment_id(
+        self,
+        *,
+        district_id: UUID,
+        school_id: UUID | None,
+        policy_type: PolicyType,
+        year: int,
+    ) -> UUID | None:
+        stmt = select(EnrollmentPolicy.id).where(
+            EnrollmentPolicy.district_id == district_id,
+            EnrollmentPolicy.school_id == school_id,
+            EnrollmentPolicy.policy_type == policy_type,
+            EnrollmentPolicy.year == year,
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def get_field_changes(
+        self, record_type: RecordType, record_id: UUID
+    ) -> list[FieldChange]:
+        stmt = (
+            select(FieldChange)
+            .where(
+                FieldChange.record_type == record_type,
+                FieldChange.record_id == record_id,
+            )
+            .order_by(FieldChange.detected_at)
+        )
+        result = await self.session.execute(stmt)
+        return list(result.scalars().all())
+
+    async def search_schools(
+        self,
+        *,
+        district_code: str | None = None,
+        school_type: SchoolType | None = None,
+        level: SchoolLevel | None = None,
+        q: str | None = None,
+        offset: int = 0,
+        limit: int = 20,
+    ) -> list[School]:
+        stmt = select(School).join(District)
+        if district_code:
+            stmt = stmt.where(District.code == district_code)
+        if school_type:
+            stmt = stmt.where(School.type == school_type)
+        if level:
+            stmt = stmt.where(School.level == level)
+        fuzzy = school_fuzzy_filter(q, School.name, School.short_name, School.address)
+        if fuzzy is not None:
+            stmt = stmt.where(fuzzy)
+        stmt = stmt.order_by(School.name).offset(offset).limit(limit)
+        result = await self.session.execute(stmt)
+        return list(result.scalars().all())
+
+    async def get_school_with_policies(
+        self, school_id: UUID
+    ) -> SchoolWithPolicies | None:
+        stmt = (
+            select(School, EnrollmentPolicy, PromotionPolicy)
+            .outerjoin(EnrollmentPolicy, EnrollmentPolicy.school_id == School.id)
+            .outerjoin(PromotionPolicy, PromotionPolicy.school_id == School.id)
+            .where(School.id == school_id)
+        )
+        result = await self.session.execute(stmt)
+        rows = result.all()
+        if not rows:
+            return None
+
+        school = rows[0][0]
+        enrollment_by_id: dict[UUID, EnrollmentPolicy] = {}
+        promotion_by_id: dict[UUID, PromotionPolicy] = {}
+        for _, enrollment, promotion in rows:
+            if enrollment is not None:
+                enrollment_by_id[enrollment.id] = enrollment
+            if promotion is not None:
+                promotion_by_id[promotion.id] = promotion
+
+        return SchoolWithPolicies(
+            school=school,
+            enrollment_policies=list(enrollment_by_id.values()),
+            promotion_policies=list(promotion_by_id.values()),
+        )
+
+    def _add_version(
+        self,
+        record_type: RecordType,
+        record_id: UUID,
+        version: int,
+        fields_snapshot: dict,
+        source_doc_id: UUID | None,
+    ) -> None:
+        self.session.add(
+            RecordVersion(
+                record_type=record_type,
+                record_id=record_id,
+                version=version,
+                fields_snapshot=fields_snapshot,
+                source_doc_id=source_doc_id,
+                created_at=datetime.now(timezone.utc),
+            )
+        )
+
+    def _add_field_change(
+        self,
+        record_type: RecordType,
+        record_id: UUID,
+        from_version: int,
+        to_version: int,
+        change: FieldChangeDTO,
+    ) -> None:
+        self.session.add(
+            FieldChange(
+                record_type=record_type,
+                record_id=record_id,
+                from_version=from_version,
+                to_version=to_version,
+                field_path=change.field_path,
+                old_value=change.old_value or None,
+                new_value=change.new_value or None,
+                detected_at=datetime.now(timezone.utc),
+            )
+        )

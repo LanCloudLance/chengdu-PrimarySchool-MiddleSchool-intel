@@ -1,0 +1,54 @@
+---
+description: 成都学区情报项目 — 每项任务完成后必须跑验收（W1/W2 + pytest）
+alwaysApply: true
+---
+
+# 任务完成必跑验证
+
+本规则适用于 `chengdu-edu-intel` 样板区（武侯 wuhou）及按 SKILL 复制到其他区的迭代。
+
+## 何时执行
+
+在以下**任一**情况视为「一项任务完成」，**必须**跑验收后再向用户汇报完成：
+
+- W1–W4 路线图子项（W1.1、W1.4、W2.2 等）
+- 修改划片/对口管线、配置、解析器、import 脚本
+- 回填 `docs/PROJECT_PROGRESS.md` 之前
+
+不得在未跑验证的情况下声称 PASS / 完成。
+
+## 统一命令（首选）
+
+```bash
+cd <项目根>
+.venv/bin/python scripts/verify_wuhou_all.py
+```
+
+Docker 可用时补 DB 核对：
+
+```bash
+.venv/bin/python scripts/verify_wuhou_all.py --db
+```
+
+## 分阶段最低验收
+
+| 阶段 | 脚本 | 通过标准 |
+|------|------|----------|
+| W1 划片 | `verify_wuhou_mapping.py` | unmatched=0；pending≤3；pending_yaml done |
+| W2 对口 | `verify_wuhou_promotion.py` | 公办小学对口覆盖 ≥60%；scraped promotion_links >0 |
+| W3 门户 | `verify_wuhou_portal.py` | scope_q API；模板含徽章/来源链/免责声明 |
+| 全项目 | `pytest -q` | 全绿 |
+
+## 任务类型 → 额外步骤
+
+| 改动类型 | 完成前额外跑 |
+|----------|----------------|
+| 划片源/OCR/overrides | `sync_intel_library` 或保留 scraped 后 **W1** |
+| promotion_urls/OCR | `scrape_district_mapping --promotion-only` 后 **W2** |
+| 仅文档 | 仍跑 `verify_wuhou_all.py`（防回归） |
+
+## 失败时
+
+1. 修复根因，不要跳过验收
+2. 重新跑 `verify_wuhou_all.py` 直到全 PASS
+3. 在 `PROJECT_PROGRESS.md` 更新记录中粘贴实际跑过的命令

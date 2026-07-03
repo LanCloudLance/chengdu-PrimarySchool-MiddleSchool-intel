@@ -10,6 +10,29 @@
 
 **Spec reference:** `docs/superpowers/specs/2026-06-05-chengdu-edu-intel-design.md`
 
+**Revision (2026-06-05):** 14 → 15 tasks. Added **Task 10** (school master data). District seed moved to **Task 9**; P0 source seed split to **Task 13**.
+
+---
+
+## Implementation Roadmap (15 Tasks)
+
+| Task | 内容 | 状态 |
+|------|------|------|
+| 1 | 项目脚手架 | ✅ |
+| 2 | 领域模型 + 字段 diff | ✅ |
+| 3 | ORM + Alembic 迁移 | ✅ |
+| 4 | Storage Repository 版本追踪 | 待做 |
+| 5–7 | HttpCollector、RuleParser、LLMParser | 待做 |
+| 8–9 | Pipeline + Scheduler；**9 末 seed 7 区** | 待做 |
+| **10** | **学校主数据（YAML + 导入脚本）** | 待做 |
+| 11 | FastAPI API | 待做 |
+| 12 | HTMX 查询 Web | 待做 |
+| 13 | Seed P0 政府数据源 | 待做 |
+| 14 | Docker Compose | 待做 |
+| 15 | 端到端验收 | 待做 |
+
+**关键依赖：** Task 10（学校清单）必须在按校搜索（Task 11–12）和 P1 校级采集之前完成；P0 政府政策采集（Task 5–9, 13）不依赖学校清单。
+
 ---
 
 ## File Structure (created by this plan)
@@ -20,7 +43,8 @@ pyproject.toml                          # workspace root, shared dev deps
 docker-compose.yml
 configs/
   districts.yaml
-  sources.yaml
+  schools.yaml                          # 学校主数据（人工维护，Task 10）
+  sources.yaml                          # P0/P1 数据源（P1 依赖 schools）
   schedules.yaml
   source_rules/jinjiang_gov.yaml        # example rule file
 packages/
@@ -96,7 +120,9 @@ packages/
       app.css
 packages/api/src/chengdu_edu_api/routes/pages.py  # HTMX page routes (served by api)
 scripts/
-  seed_districts.py                       # load 7 districts + P0 sources
+  seed_districts.py                     # Task 9：仅写入 7 个 districts
+  import_schools.py                     # Task 10：从 schools.yaml 导入 schools
+  seed_p0_sources.py                    # Task 13：注册 P0 政府数据源
 data/raw/                               # downloaded PDFs (gitignored)
 ```
 
@@ -1016,16 +1042,170 @@ class SchedulerRunner:
 Run: `SCHEDULER_ENABLED=false uv run python -m chengdu_edu_scheduler.runner --trigger source <id>`
 Expected: job_runs row created in DB
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 3: Commit scheduler**
 
 ```bash
 git add packages/scheduler/
 git commit -m "feat(scheduler): add APScheduler runner and manual trigger"
 ```
 
+- [ ] **Step 4: Create `configs/districts.yaml` and `scripts/seed_districts.py`（仅 7 区）**
+
+`configs/districts.yaml`:
+
+```yaml
+districts:
+  - { name: 锦江区, code: jinjiang, level: core }
+  - { name: 青羊区, code: qingyang, level: core }
+  - { name: 武侯区, code: wuhou, level: core }
+  - { name: 成华区, code: chenghua, level: core }
+  - { name: 金牛区, code: jinniu, level: core }
+  - { name: 高新区, code: gaoxin, level: core }
+  - { name: 天府新区, code: tianfu, level: core }
+```
+
+`scripts/seed_districts.py` — 只 upsert `districts`，幂等（按 `code` 去重）：
+
+```python
+async def main():
+    async with SessionLocal() as session:
+        for d in load_yaml("configs/districts.yaml")["districts"]:
+            existing = await session.execute(
+                select(District).where(District.code == d["code"])
+            )
+            if existing.scalar_one_or_none() is None:
+                session.add(District(name=d["name"], code=d["code"], level=d["level"]))
+        await session.commit()
+```
+
+- [ ] **Step 5: Run district seed**
+
+Run: `uv run python scripts/seed_districts.py`
+Expected: 7 rows in `districts`
+
+- [ ] **Step 6: Commit seed**
+
+```bash
+git add configs/districts.yaml scripts/seed_districts.py
+git commit -m "feat: add district seed script for 7 core districts"
+```
+
 ---
 
-### Task 10: FastAPI Query Endpoints
+### Task 10: School Master Data — Inventory & Import
+
+**目的：** 建立 MVP 7 区学校清单，写入 `schools` 表，为 P1 采集和家长按校搜索提供目标。详见 spec §5.6。
+
+**Files:**
+- Create: `configs/schools.yaml`（按区维护，先以锦江区为样板）
+- Create: `packages/storage/src/chengdu_edu_storage/school_repository.py`
+- Create: `scripts/import_schools.py`
+- Test: `packages/storage/tests/test_import_schools.py`
+
+- [ ] **Step 1: Write failing import test**
+
+```python
+@pytest.mark.asyncio
+async def test_import_schools_from_yaml(db_session, seeded_districts):
+    repo = SchoolRepository(db_session)
+    count = await import_schools_from_yaml("configs/schools.yaml", repo)
+    assert count >= 1
+    schools = await repo.search(district_code="jinjiang")
+    assert any("小学" in s.name for s in schools)
+```
+
+- [ ] **Step 2: Run test — expect FAIL**
+
+Run: `uv run pytest packages/storage/tests/test_import_schools.py -v`
+
+- [ ] **Step 3: Create `configs/schools.yaml` 样板（锦江区 2–3 所示例校）**
+
+```yaml
+schools:
+  - name: 成都市盐道街小学
+    short_name: 盐道街小学
+    district_code: jinjiang
+    type: public
+    level: primary
+    address: "成都市锦江区..."
+    source_urls:
+      website: "https://example.com"
+      enrollment: "https://example.com/zhaosheng"
+    notes: "MVP 样板条目，实施时替换为真实 URL"
+```
+
+- [ ] **Step 4: Implement `SchoolRepository`**
+
+```python
+class SchoolRepository:
+    async def upsert_school(self, *, name, district_id, type, level, short_name=None,
+                            address=None, source_urls=None) -> UUID:
+        # 按 district_id + name 幂等 upsert
+        ...
+
+    async def search(self, *, district_code=None, q=None, offset=0, limit=20) -> list[School]:
+        ...
+```
+
+- [ ] **Step 5: Implement `scripts/import_schools.py`**
+
+```python
+async def import_schools_from_yaml(path: str, repo: SchoolRepository) -> int:
+    data = load_yaml(path)
+    districts = await repo.get_district_code_map()
+    count = 0
+    for row in data["schools"]:
+        district_id = districts[row["district_code"]]
+        await repo.upsert_school(
+            name=row["name"],
+            district_id=district_id,
+            type=row["type"],
+            level=row["level"],
+            short_name=row.get("short_name"),
+            address=row.get("address"),
+            source_urls=row.get("source_urls", {}),
+        )
+        count += 1
+    return count
+```
+
+- [ ] **Step 6: （可选）有 `enrollment` URL 的校写入 P1 `data_sources`**
+
+在 `import_schools.py` 末尾，对 `source_urls.enrollment` 非空的校：
+
+```python
+DataSource(
+    name=f"{school.name}-招生页",
+    source_type=SourceType.SCHOOL_WEBSITE,
+    url=row["source_urls"]["enrollment"],
+    parser_strategy=ParserStrategy.RULE if row["type"] == "public" else ParserStrategy.LLM,
+    schedule="0 0 * * 1",
+    district_id=district_id,
+    school_id=school.id,
+    is_active=True,
+)
+```
+
+MVP 可先导入学校、P1 源注册作为后续增量（spec §5.6.4 步骤 3 可选）。
+
+- [ ] **Step 7: Run tests — PASS**
+
+Run: `uv run pytest packages/storage/tests/test_import_schools.py -v`
+
+- [ ] **Step 8: 人工扩充清单**
+
+按 7 区逐步补充 `configs/schools.yaml`（公办为主 + 代表性民办）。MVP 不要求 100% 覆盖，但每区至少若干条可搜索学校。
+
+- [ ] **Step 9: Commit**
+
+```bash
+git add configs/schools.yaml packages/storage/ scripts/import_schools.py
+git commit -m "feat: add school master data import from YAML"
+```
+
+---
+
+### Task 11: FastAPI Query Endpoints
 
 **Files:**
 - Create: `packages/api/src/chengdu_edu_api/main.py`, routes, schemas
@@ -1086,7 +1266,7 @@ git commit -m "feat(api): add query and admin REST endpoints"
 
 ---
 
-### Task 11: HTMX Query Web Pages
+### Task 12: HTMX Query Web Pages
 
 **Files:**
 - Create: `packages/api/src/chengdu_edu_api/routes/pages.py`
@@ -1133,21 +1313,41 @@ git commit -m "feat(web): add HTMX query pages for search, detail, and gov polic
 
 ---
 
-### Task 12: Seed Script for 7 Districts and P0 Sources
+### Task 13: Seed P0 Government Data Sources
 
 **Files:**
-- Create: `scripts/seed_districts.py`
+- Create: `configs/sources.yaml`（仅 P0 政府源，7 区教育局）
+- Create: `scripts/seed_p0_sources.py`
 
-- [ ] **Step 1: Implement seed script**
+**说明：** 7 区 `districts` 已在 Task 9 seed；学校主数据在 Task 10。本 Task 只注册 P0 政府/policy 数据源。
+
+- [ ] **Step 1: Create `configs/sources.yaml` P0 条目**
+
+```yaml
+sources:
+  - name: 锦江区教育局-招生政策
+    source_type: gov_website
+    url: https://www.cdjx.gov.cn/   # 实施时替换为真实政策页
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: jinjiang
+    rule_file: source_rules/jinjiang_gov.yaml
+    is_active: true
+  # ... 其余 6 区类似
+```
+
+- [ ] **Step 2: Implement `scripts/seed_p0_sources.py`**
 
 ```python
 async def main():
     async with SessionLocal() as session:
-        for d in load_yaml("configs/districts.yaml")["districts"]:
-            session.add(District(name=d["name"], code=d["code"], level=d["level"]))
-        await session.commit()
         districts = {d.code: d.id for d in (await session.execute(select(District))).scalars()}
         for s in load_yaml("configs/sources.yaml")["sources"]:
+            existing = await session.execute(
+                select(DataSource).where(DataSource.name == s["name"])
+            )
+            if existing.scalar_one_or_none() is not None:
+                continue
             session.add(DataSource(
                 name=s["name"],
                 source_type=s["source_type"],
@@ -1159,26 +1359,24 @@ async def main():
                 metadata_={"rule_file": s.get("rule_file")},
             ))
         await session.commit()
-
-if __name__ == "__main__":
-    asyncio.run(main())
 ```
 
-- [ ] **Step 2: Run seed against local DB**
+- [ ] **Step 3: Run seed + optional P0 trigger**
 
-Run: `uv run python scripts/seed_districts.py`
-Expected: 7 districts + N sources inserted
+Run: `uv run python scripts/seed_p0_sources.py`
+Run: `uv run python -m chengdu_edu_scheduler.runner --trigger all`（或 API `POST /api/jobs/trigger`）
+Expected: P0 sources registered; job_runs logged
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add scripts/
-git commit -m "feat: add seed script for districts and P0 data sources"
+git add configs/sources.yaml scripts/seed_p0_sources.py
+git commit -m "feat: add P0 government data source seed script"
 ```
 
 ---
 
-### Task 13: Docker Compose
+### Task 14: Docker Compose
 
 **Files:**
 - Create: `docker-compose.yml`, Dockerfiles for api and scheduler
@@ -1239,6 +1437,8 @@ cp .env.example .env
 docker compose up -d db
 uv run alembic -c packages/storage/alembic.ini upgrade head
 uv run python scripts/seed_districts.py
+uv run python scripts/import_schools.py
+uv run python scripts/seed_p0_sources.py
 docker compose up api scheduler
 curl http://localhost:8000/api/districts
 curl -X POST http://localhost:8000/api/jobs/trigger -H 'Content-Type: application/json' -d '{"scope":"all"}'
@@ -1255,7 +1455,7 @@ git commit -m "feat: add Docker Compose for local full-stack deployment"
 
 ---
 
-### Task 14: End-to-End Verification Checklist
+### Task 15: End-to-End Verification Checklist
 
 - [ ] **Step 1: Run full test suite**
 
@@ -1267,6 +1467,7 @@ Expected: all unit/integration tests PASS
 | 标准 | 验证命令 |
 |------|----------|
 | 7 区覆盖 | `curl /api/districts` → 7 rows |
+| 学校可搜索 | `curl /api/schools?q=实验` → 有结果（Task 10 导入后） |
 | 来源可追溯 | `curl /api/policies/enrollment/{id}` → `source.url` present |
 | 调度可配置 | edit `configs/schedules.yaml`, restart scheduler |
 | 变更历史 | upsert with changed fields → `curl .../changes` returns diff |
@@ -1295,14 +1496,15 @@ git commit -m "chore: complete MVP verification for chengdu-edu-intel"
 | §5 Rule + LLM parsers | Task 6, 7 |
 | §5.4 Schedules | Task 8, 9, configs |
 | §5.5 Error handling | Task 5 (retry), Task 8 (pipeline try/except) |
-| §6 API query + admin | Task 10 |
-| §7 Web 3 pages | Task 11 |
-| §8 Docker Compose | Task 13 |
-| §9 Tests | Tasks 2–7, 10, 14 |
-| §10 MVP scope | Tasks 1–13; P2 WeChat deferred |
+| **§5.6 School master data** | **Task 9 (districts seed), Task 10** |
+| §6 API query + admin | Task 11 |
+| §7 Web 3 pages | Task 12 |
+| §8 Docker Compose | Task 14 |
+| §9 Tests | Tasks 2–7, 10, 11, 15 |
+| §10 MVP scope | Tasks 1–14; P2 WeChat deferred |
 | §11 Risks | confidence flag Task 7; retry Task 5; no overwrite on fail Task 8 |
 
-**Gap:** P1 school-level sources require manual URL research per school — Task 12 seeds P0 gov sources only; school URLs added incrementally post-MVP bootstrap. Documented as follow-up in seed script README comment.
+**Note:** P1 school-level `data_sources` can be registered incrementally in Task 10 Step 6 or after school YAML expansion. P0 gov sources in Task 13 do not require school list.
 
 ### Placeholder Scan
 
@@ -1320,8 +1522,10 @@ No TBD/TODO/vague steps found.
 
 1. Tasks 1–4 (foundation + storage) — **must be sequential**
 2. Tasks 5–7 (collectors + parsers) — **parallelizable**
-3. Tasks 8–9 (pipeline + scheduler) — after 5–7
-4. Tasks 10–11 (API + web) — after 4
-5. Tasks 12–14 (seed + docker + verify) — last
+3. Tasks 8–9 (pipeline + scheduler + **district seed**) — after 5–7
+4. **Task 10 (school master data)** — after 4, 9; **before API/Web and P1**
+5. Tasks 11–12 (API + web) — after 10
+6. Task 13 (P0 source seed + first P0 run) — after 8–9; can parallel with 10–12 for dev
+7. Tasks 14–15 (docker + verify) — last
 
-Estimated MVP timeline: **4–6 weeks** at moderate pace; Tasks 1–4 in week 1, 5–9 in weeks 2–3, 10–14 in weeks 4–5, buffer for real URL research and rule tuning in week 6.
+Estimated MVP timeline: **4–6 weeks** at moderate pace; Tasks 1–4 in week 1, 5–9 in weeks 2–3, **10 (school list research + import)** in week 3–4, 11–15 in weeks 4–6.

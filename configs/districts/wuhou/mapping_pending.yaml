@@ -1,0 +1,68 @@
+# 武侯区划片 pending 工作清单（W1）
+# 更新方式：每校补全后改 status: done，并写入 mapping_overrides.yaml 或 school_aliases.yaml
+data_year: 2025
+updated_at: 2026-06-07
+summary:
+  total: 10
+  done: 10
+schools:
+  - name: 四川大学附属实验小学西区
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 2024表片号8为「附小分校」；西区同址大华街4号，copy_scope_from 附小分校
+    next_action: done_via_override_copy_fenxiao
+  - name: 成都市三河小学校
+    status: done
+    in_2024_table: false
+    in_ocr_2025: false
+    notes: 2024 表由太平寺西区「三河村辖区代招」覆盖；独立校名未单列
+    next_action: done_via_override_taipingxisi
+  - name: 成都市华兴小学
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 2024表片号27「北二外成都附小北区学校」；inventory 仍用旧校名，alias 映射
+    next_action: done_via_alias_beiwai_north  # 表内「北区学校」→ inventory 华兴
+  - name: 成都市太平小学校
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 2023停招；划片由明远书院承接，override 写入2024片号20范围
+    next_action: done_via_override_mingyuan_scope
+  - name: 成都市新生路小学
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 已更名四川音乐学院附属实验小学；2024表片号有独立行，alias 映射
+    next_action: done_via_override_copy_music_academy
+  - name: 成都市洗面桥小学
+    status: done
+    in_2024_table: false
+    in_ocr_2025: false
+    notes: 洗面桥街片区在弟维片号1内；copy_scope_from 弟维
+    next_action: done_via_override_copy_diwei
+  - name: 成都市百草园小学校
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 2024表片号28「北二外成都附小」；inventory 仍用旧校名，alias 映射
+    next_action: done_via_override_copy_beiwai_main
+  - name: 成都市红专西路小学
+    status: done
+    in_2024_table: false
+    in_ocr_2025: false
+    notes: 与弟维同址黉门街25号；copy_scope_from 弟维
+    next_action: done_via_override_alias_diwei
+  - name: 成都市金兴北路小学
+    status: done
+    in_2024_table: false
+    in_ocr_2025: false
+    notes: 2024表无独立行；援引2022教育局调整公告划片
+    next_action: done_via_override_2022_adjustment
+  - name: 成都市龙江路小学武侯新城分校南区学校
+    status: done
+    in_2024_table: true
+    in_ocr_2025: false
+    notes: 一校两区；划片与武侯新城分校本部（片号36）一致
+    next_action: done_via_override_copy_xincheng

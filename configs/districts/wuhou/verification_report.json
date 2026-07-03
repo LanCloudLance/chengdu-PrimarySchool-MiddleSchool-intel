@@ -1,0 +1,174 @@
+{
+  "verified_at": "2026-06-06",
+  "schools_total": 93,
+  "with_website": 10,
+  "websites_ok": 10,
+  "verified_via_primary": 0,
+  "verified_via_alternate": 8,
+  "verified_via_mirror_only": 2,
+  "schools_verified": 93,
+  "school_checks": {
+    "成都石室佳兴外国语学校": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433985.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 87050,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "四川大学附属中学新城分校": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5434795.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 90377,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "成都市玉林中学": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 71379,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "北京第二外国语学院成都附属小学": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5435751.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 93403,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "四川大学附属实验小学明德学校": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5868267.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 88780,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "四川大学附属实验小学西区": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433885.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 89145,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "成都市武侯科技园小学": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433321.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 67000,
+      "attempt": 1,
+      "via": "mirror_only"
+    },
+    "成都市玉林小学果堰分校": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5868268.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 88763,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "成都市红专西路小学": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433121.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 66817,
+      "attempt": 1,
+      "via": "mirror_only"
+    },
+    "成都市龙祥路小学": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433209.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 89048,
+      "attempt": 1,
+      "via": "alternate"
+    }
+  },
+  "url_checks": {
+    "https://cd.bendibao.com/wangdian/dian/5433985.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433985.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 87050,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5434795.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5434795.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 90377,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 71379,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5435751.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5435751.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 93403,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5868267.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5868267.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 88780,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5433885.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433885.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 89145,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://m.cd.bendibao.com/wangdian/dian/5433321.shtm": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433321.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 67000,
+      "attempt": 1,
+      "via": "mirror_only"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5868268.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5868268.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 88763,
+      "attempt": 1,
+      "via": "alternate"
+    },
+    "https://m.cd.bendibao.com/wangdian/dian/5433121.shtm": {
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433121.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 66817,
+      "attempt": 1,
+      "via": "mirror_only"
+    },
+    "https://cd.bendibao.com/wangdian/dian/5433209.shtm": {
+      "url": "https://cd.bendibao.com/wangdian/dian/5433209.shtm",
+      "http_status": 200,
+      "ok": true,
+      "content_length": 89048,
+      "attempt": 1,
+      "via": "alternate"
+    }
+  }
+}

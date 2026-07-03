@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}学校搜索 - 成都教育情报{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold text-gray-900 mb-6">学校搜索</h1>
+
+<form
+  hx-get="/"
+  hx-target="#results"
+  hx-swap="innerHTML"
+  hx-trigger="submit, change from:select"
+  class="bg-white rounded-lg shadow p-6 mb-6 space-y-4"
+>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div>
+      <label for="year" class="block text-sm font-medium text-gray-700 mb-1">划片年份</label>
+      <select
+        id="year"
+        name="year"
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+      >
+        {% for option_year in mapping_year_options %}
+        <option value="{{ option_year }}" {% if year == option_year %}selected{% endif %}>{{ option_year }} 年</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="q" class="block text-sm font-medium text-gray-700 mb-1">学校名称</label>
+      <select
+        id="q"
+        name="q"
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+      >
+        <option value="">全部学校</option>
+        {% set ns = namespace(current_district='') %}
+        {% for school in all_school_names %}
+          {% if school.district_name != ns.current_district %}
+            {% if ns.current_district != '' %}</optgroup>{% endif %}
+            <optgroup label="{{ school.district_name }}">
+            {% set ns.current_district = school.district_name %}
+          {% endif %}
+          <option value="{{ school.name }}" {% if q == school.name %}selected{% endif %}>{{ school.name }}</option>
+        {% endfor %}
+        {% if ns.current_district != '' %}</optgroup>{% endif %}
+      </select>
+    </div>
+    <div>
+      <label for="scope_q" class="block text-sm font-medium text-gray-700 mb-1">划片范围 / 街道</label>
+      <select
+        id="scope_q"
+        name="scope_q"
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+      >
+        <option value="">全部片区</option>
+        {% for scope in all_scopes %}
+        <option value="{{ scope }}" {% if scope_q == scope %}selected{% endif %}>{{ scope }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div>
+      <label for="district" class="block text-sm font-medium text-gray-700 mb-1">区县</label>
+      <select
+        id="district"
+        name="district"
+        class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+      >
+        <option value="">全部区县</option>
+        {% for d in districts %}
+        <option value="{{ d.code }}" {% if district == d.code %}selected{% endif %}>{{ d.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="type" class="block text-sm font-medium text-gray-700 mb-1">办学性质</label>
+      <select id="type" name="type" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm">
+        <option value="">全部</option>
+        {% for value, label in school_type_labels.items() %}
+        <option value="{{ value.value }}" {% if type == value.value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="level" class="block text-sm font-medium text-gray-700 mb-1">学段</label>
+      <select id="level" name="level" class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm">
+        <option value="">全部</option>
+        {% for value, label in school_level_labels.items() %}
+        <option value="{{ value.value }}" {% if level == value.value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700"
+  >
+    搜索
+  </button>
+</form>
+
+<div id="results">
+  {% include "school_results.html" %}
+</div>
+{% endblock %}

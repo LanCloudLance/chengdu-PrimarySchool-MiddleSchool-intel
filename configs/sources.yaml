@@ -1,0 +1,103 @@
+# P0 政府招生政策数据源（2026）
+data_year: 2026
+
+sources:
+  - name: 锦江区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/2026331/206681.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: jinjiang
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207388.shtm
+    fallback_url: https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026年锦江区小一入学、小升初政策（本地宝转载）"
+
+  - name: 青羊区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/2026331/206680.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: qingyang
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207407_3.shtm
+    fallback_url: https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026年青羊区义务教育阶段入学工作实施细则"
+
+  - name: 武侯区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/2026417/207074.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: wuhou
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207407_5.shtm
+    fallback_url: https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026年武侯区幼升小、小升初政策"
+
+  - name: 成华区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/2026424/207397.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: chenghua
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207397.shtm
+    fallback_url: https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026成华区户籍适龄儿童小学入学指南（含登记点一览）"
+
+  - name: 金牛区教育局-招生政策
+    source_type: gov_website
+    url: https://daydaynews.cc/zh-hans/education/4285520.html
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: jinniu
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207409.shtm
+    data_year: 2026
+    is_active: true
+    notes: "2026金牛区义务教育招生入学工作实施细则（全文转载，登记点见金牛教育/本地宝）"
+
+  - name: 高新区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/202641/206690.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: gaoxin
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207407_2.shtm
+    fallback_url: https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026年成都高新区小一、小升初入学政策"
+
+  - name: 天府新区教育局-招生政策
+    source_type: gov_website
+    url: http://cd.bendibao.com/edu/2026331/206657.shtm
+    parser_strategy: rule
+    schedule: "0 0 1 * *"
+    district_code: tianfu
+    rule_file: source_rules/_gov_policy_common.yaml
+    registration_url: http://cd.bendibao.com/edu/2026424/207407_4.shtm
+    fallback_url: https://news.chengdu.cn/2026/0331/69cb82823a56c94052c6e9c4.shtml
+    data_year: 2026
+    is_active: true
+    notes: "2026年天府新区义务教育招生入学工作和日程安排"
+
+  - name: 成都市-招生入学服务平台
+    source_type: gov_website
+    url: https://yjrx.cdeduypt.cn/
+    parser_strategy: llm
+    schedule: "0 0 1 * *"
+    district_code: jinjiang
+    data_year: 2026
+    is_active: false
+    notes: "全市统一报名入口，暂禁用自动采集；供人工查阅"

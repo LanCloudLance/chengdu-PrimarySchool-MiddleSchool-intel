@@ -1,0 +1,721 @@
+{
+  "audited_at": "2026-06-06",
+  "inventory": {
+    "total": 93,
+    "listed": 0,
+    "enriched": 0,
+    "verified": 93
+  },
+  "verified_via": {
+    "mirror_only": 34,
+    "primary": 20,
+    "alternate": 39
+  },
+  "live_checked": 93,
+  "live_ok": 28,
+  "live_failed": 65,
+  "failed": [
+    {
+      "name": "成都市凉井实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5435213.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5435213.shtm"
+    },
+    {
+      "name": "成都市春晖学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433987.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433987.shtm"
+    },
+    {
+      "name": "成都市武侯区盐外芙蓉学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435212.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5435212.shtm"
+    },
+    {
+      "name": "成都市武侯区育仁实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433988.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433988.shtm"
+    },
+    {
+      "name": "成都市武侯区西蜀实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433986.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433986.shtm"
+    },
+    {
+      "name": "成都市武侯区金辉实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433981.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433981.shtm"
+    },
+    {
+      "name": "成都市武侯区领创实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5868297.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5868297.shtm"
+    },
+    {
+      "name": "成都市第57实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433984.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433984.shtm"
+    },
+    {
+      "name": "北京第二外国语学院成都附属中学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435201.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435201.shtm"
+    },
+    {
+      "name": "四川大学附属中学悦湖学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433289.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433289.shtm"
+    },
+    {
+      "name": "四川大学附属中学新城分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5434795.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5434795.shtm"
+    },
+    {
+      "name": "四川大学附属中学西区学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/32132.html",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/32132.html"
+    },
+    {
+      "name": "成都市武侯实验中学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433112.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433112.shtm"
+    },
+    {
+      "name": "成都市玉林中学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433548.shtm"
+    },
+    {
+      "name": "成都市第十二中学初中部",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435782.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435782.shtm"
+    },
+    {
+      "name": "成都市第十二中学（四川大学附属中学）",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435782.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435782.shtm"
+    },
+    {
+      "name": "成都市第四十三中学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433090.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433090.shtm"
+    },
+    {
+      "name": "成都市西北中学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433090.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433090.shtm"
+    },
+    {
+      "name": "成都石室双楠实验学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433888.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433888.shtm"
+    },
+    {
+      "name": "成都市武侯区丹勋实验学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435227.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435227.shtm"
+    },
+    {
+      "name": "成都市群星美术学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://cd.bendibao.com/wangdian/dian/5435228.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/5435228.shtm"
+    },
+    {
+      "name": "成都市通江实验学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433983.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433983.shtm"
+    },
+    {
+      "name": "北京第二外国语学院成都附属小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435200.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435200.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432822.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5432822.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435749.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435749.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学南区",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435763.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435763.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学明德学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432822.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5432822.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学明雅学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5868304.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5868304.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学江安河分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://cd.bendibao.com/wangdian/dian/93715.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/93715.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学清水河分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435750.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435750.shtm"
+    },
+    {
+      "name": "四川大学附属实验小学西区",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://cd.bendibao.com/wangdian/dian/93715.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/93715.shtm"
+    },
+    {
+      "name": "成都市三河小学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433208.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433208.shtm"
+    },
+    {
+      "name": "成都市华兴小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433315.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433315.shtm"
+    },
+    {
+      "name": "成都市华西小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432999.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432999.shtm"
+    },
+    {
+      "name": "成都市太平寺西区小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432809.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432809.shtm"
+    },
+    {
+      "name": "成都市太平小学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433147.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433147.shtm"
+    },
+    {
+      "name": "成都市新生路小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433886.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433886.shtm"
+    },
+    {
+      "name": "成都市明远书院学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5436424.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5436424.shtm"
+    },
+    {
+      "name": "成都市晋阳小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432963.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432963.shtm"
+    },
+    {
+      "name": "成都市望江楼小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://cd.bendibao.com/wangdian/dian/93715.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/93715.shtm"
+    },
+    {
+      "name": "成都市机投小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433212.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433212.shtm"
+    },
+    {
+      "name": "成都市桐梓林小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://m.cd.bendibao.com/edu/xiaoxuelist/wuhouqu/gongban/"
+    },
+    {
+      "name": "成都市武侯实验中学附属小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432859.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432859.shtm"
+    },
+    {
+      "name": "成都市武侯科技园小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433321.shtm",
+      "live_ok": false,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433321.shtm"
+    },
+    {
+      "name": "成都市武顺街小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433229.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433229.shtm"
+    },
+    {
+      "name": "成都市沙堰小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5435214.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5435214.shtm"
+    },
+    {
+      "name": "成都市玉林小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432830.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5432830.shtm"
+    },
+    {
+      "name": "成都市玉林小学果堰分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5868268.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5868268.shtm"
+    },
+    {
+      "name": "成都市百草园小学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433192.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433192.shtm"
+    },
+    {
+      "name": "成都市科华中路小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/93670.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/93670.shtm"
+    },
+    {
+      "name": "成都市簇桥小学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "http://cd.bendibao.com/wangdian/dian/5432827.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432827.shtm"
+    },
+    {
+      "name": "成都市红专西路小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433121.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433121.shtm"
+    },
+    {
+      "name": "成都市行知实验小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433092.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433092.shtm"
+    },
+    {
+      "name": "成都市读者小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5435759.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5435759.shtm"
+    },
+    {
+      "name": "成都市金兴北路小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433106.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433106.shtm"
+    },
+    {
+      "name": "成都市锦里小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433292.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5433292.shtm"
+    },
+    {
+      "name": "成都市马家河小学",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5432861.shtm",
+      "live_ok": false,
+      "http_status": 502,
+      "error": null,
+      "url_used": "http://cd.bendibao.com/wangdian/dian/5432861.shtm"
+    },
+    {
+      "name": "成都市龙江路小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432806.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5432806.shtm"
+    },
+    {
+      "name": "成都市龙江路小学中粮祥云分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433326.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433326.shtm"
+    },
+    {
+      "name": "成都市龙江路小学分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5432807.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5432807.shtm"
+    },
+    {
+      "name": "成都市龙江路小学分校南区学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/93684.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/93684.shtm"
+    },
+    {
+      "name": "成都市龙江路小学武侯新城分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433887.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://cd.bendibao.com/wangdian/dian/5433887.shtm"
+    },
+    {
+      "name": "成都市龙江路小学武侯新城分校南区学校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5436423.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5436423.shtm"
+    },
+    {
+      "name": "成都市龙江路小学高翔分校",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5868269.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5868269.shtm"
+    },
+    {
+      "name": "成都市龙祥路小学",
+      "inventory_status": "verified",
+      "verification_via": "alternate",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433209.shtm",
+      "live_ok": false,
+      "http_status": null,
+      "error": "",
+      "url_used": "https://m.cd.bendibao.com/wangdian/dian/5433209.shtm"
+    }
+  ],
+  "samples_ok": [
+    {
+      "name": "四川成都七中东方闻道网校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://cd.bendibao.com/wangdian/dian/5433989.shtm",
+      "live_ok": true,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/5433989.shtm"
+    },
+    {
+      "name": "成都市武侯区光明实验学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5433979.shtm",
+      "live_ok": true,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/5433979.shtm"
+    },
+    {
+      "name": "成都市武侯区启明学校",
+      "inventory_status": "verified",
+      "verification_via": "mirror_only",
+      "url": "https://m.cd.bendibao.com/wangdian/dian/5434794.shtm",
+      "live_ok": true,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cd.bendibao.com/wangdian/dian/5434794.shtm"
+    },
+    {
+      "name": "成都市武侯区西川实验学校",
+      "inventory_status": "verified",
+      "verification_via": "primary",
+      "url": "http://www.cdxczx.net/",
+      "live_ok": true,
+      "http_status": 200,
+      "error": null,
+      "url_used": "http://www.cdxczx.net/"
+    },
+    {
+      "name": "成都市武侯区领川外国语学校",
+      "inventory_status": "verified",
+      "verification_via": "primary",
+      "url": "https://cdciedu.com/school/16/90.html",
+      "live_ok": true,
+      "http_status": 200,
+      "error": null,
+      "url_used": "https://cdciedu.com/school/16/90.html"
+    }
+  ]
+}

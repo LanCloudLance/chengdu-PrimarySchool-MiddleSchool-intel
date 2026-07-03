@@ -1,0 +1,36 @@
+{% if schools %}
+<p class="text-sm text-gray-500 mb-3">共 {{ total }} 所学校</p>
+<ul class="divide-y divide-gray-200 bg-white rounded-lg shadow">
+  {% for school, district_code in schools %}
+  <li class="px-4 py-3 hover:bg-gray-50">
+    <a href="/schools/{{ school.id }}?year={{ year }}" class="block">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center flex-wrap gap-2">
+          <span class="font-medium text-gray-900">{{ school.name }}</span>
+          {% if school.short_name %}
+          <span class="text-sm text-gray-500">{{ school.short_name }}</span>
+          {% endif %}
+          {% set mf = mapping_summaries.get(school.id) or {} %}
+          {% if mf.get('mapping_status') %}
+          {% set badge = mapping_status_badge(mf.get('mapping_status')) %}
+          {% if badge %}
+          <span class="text-xs px-2 py-0.5 rounded border {{ badge.badge_class }}">{{ badge.label }}</span>
+          {% endif %}
+          {% endif %}
+        </div>
+        <span class="text-xs text-gray-400 shrink-0">{{ district_code }}</span>
+      </div>
+      <div class="mt-1 text-sm text-gray-500">
+        {{ school_type_labels.get(school.type, school.type) }}
+        · {{ school_level_labels.get(school.level, school.level) }}
+        {% if school.address %} · {{ school.address }}{% endif %}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% elif q or scope_q or district or type or level %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">未找到匹配的学校，请调整搜索条件。</p>
+{% else %}
+<p class="text-sm text-gray-500 bg-white rounded-lg shadow p-6">输入关键词或选择筛选条件开始搜索。</p>
+{% endif %}

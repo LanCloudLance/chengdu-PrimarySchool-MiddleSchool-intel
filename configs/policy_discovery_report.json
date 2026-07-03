@@ -1,0 +1,83 @@
+{
+  "discovered_at": "2026-06-06",
+  "updated": 1,
+  "results": [
+    {
+      "name": "锦江区教育局-招生政策",
+      "district_code": "jinjiang",
+      "primary_url": "http://cd.bendibao.com/edu/2026331/206681.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_score": 14,
+      "updated": false,
+      "status": "fallback_kept"
+    },
+    {
+      "name": "青羊区教育局-招生政策",
+      "district_code": "qingyang",
+      "primary_url": "http://cd.bendibao.com/edu/2026331/206680.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_score": 14,
+      "updated": false,
+      "status": "fallback_kept"
+    },
+    {
+      "name": "武侯区教育局-招生政策",
+      "district_code": "wuhou",
+      "primary_url": "http://cd.bendibao.com/edu/2026417/207074.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_score": 14,
+      "updated": false,
+      "status": "fallback_kept"
+    },
+    {
+      "name": "成华区教育局-招生政策",
+      "district_code": "chenghua",
+      "primary_url": "http://cd.bendibao.com/edu/2026424/207397.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_score": 14,
+      "updated": false,
+      "status": "fallback_kept"
+    },
+    {
+      "name": "金牛区教育局-招生政策",
+      "district_code": "jinniu",
+      "primary_url": "https://daydaynews.cc/zh-hans/education/4285520.html",
+      "primary_ok": true,
+      "previous_fallback": null,
+      "discovered_fallback": "https://daydaynews.cc/zh-hans/education/4285520.html",
+      "discovered_score": 30,
+      "updated": true,
+      "status": "fallback_set"
+    },
+    {
+      "name": "高新区教育局-招生政策",
+      "district_code": "gaoxin",
+      "primary_url": "http://cd.bendibao.com/edu/202641/206690.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0312/69b28243f34d440475d454d6.shtml",
+      "discovered_score": 14,
+      "updated": false,
+      "status": "fallback_kept"
+    },
+    {
+      "name": "天府新区教育局-招生政策",
+      "district_code": "tianfu",
+      "primary_url": "http://cd.bendibao.com/edu/2026331/206657.shtm",
+      "primary_ok": true,
+      "previous_fallback": "https://news.chengdu.cn/2026/0331/69cb82823a56c94052c6e9c4.shtml",
+      "discovered_fallback": "https://news.chengdu.cn/2026/0331/69cb82823a56c94052c6e9c4.shtml",
+      "discovered_score": 20,
+      "updated": false,
+      "status": "fallback_kept"
+    }
+  ]
+}

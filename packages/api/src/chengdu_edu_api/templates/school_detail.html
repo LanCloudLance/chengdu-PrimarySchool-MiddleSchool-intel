@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block title %}{{ school.name }} - 成都教育情报{% endblock %}
+
+{% block content %}
+<div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+  <a href="/?year={{ year }}" class="text-sm text-blue-600 hover:underline">&larr; 返回搜索</a>
+  <form method="get" action="/schools/{{ school.id }}" class="flex items-center gap-2">
+    <label for="year" class="text-sm text-gray-600">划片年份</label>
+    <select
+      id="year"
+      name="year"
+      class="rounded-md border border-gray-300 px-2 py-1 text-sm"
+      onchange="this.form.submit()"
+    >
+      {% for option_year in available_years %}
+      <option value="{{ option_year }}" {% if year == option_year %}selected{% endif %}>{{ option_year }} 年</option>
+      {% endfor %}
+    </select>
+  </form>
+</div>
+
+<div class="bg-white rounded-lg shadow p-6 mb-6">
+  <h1 class="text-2xl font-bold text-gray-900">{{ school.name }}</h1>
+  {% if school.short_name %}
+  <p class="text-gray-500 mt-1">{{ school.short_name }}</p>
+  {% endif %}
+  <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+    <div>
+      <dt class="text-gray-500">区县</dt>
+      <dd class="font-medium">{{ district.name if district else "—" }}</dd>
+    </div>
+    <div>
+      <dt class="text-gray-500">办学性质</dt>
+      <dd class="font-medium">{{ school_type_labels.get(school.type, school.type) }}</dd>
+    </div>
+    <div>
+      <dt class="text-gray-500">学段</dt>
+      <dd class="font-medium">{{ school_level_labels.get(school.level, school.level) }}</dd>
+    </div>
+    <div>
+      <dt class="text-gray-500">地址</dt>
+      <dd class="font-medium">{{ school.address or "—" }}</dd>
+    </div>
+  </dl>
+  {% if school.source_urls %}
+  <div class="mt-4">
+    <h3 class="text-sm font-medium text-gray-700 mb-2">数据来源</h3>
+    <ul class="space-y-1">
+      {% for key, url in school.source_urls.items() %}
+      <li>
+        <a href="{{ url }}" target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline">
+          {{ key }} &rarr;
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+
+{% if mapping_policy %}
+<section class="mb-6">
+  <div class="bg-white rounded-lg shadow p-4 border-l-4 border-blue-500">
+    <div class="flex flex-wrap items-center gap-2 mb-2">
+      <h2 class="text-lg font-semibold text-gray-900">划片范围</h2>
+      {% if mapping_badge %}
+      <span class="text-xs px-2 py-0.5 rounded border {{ mapping_badge.badge_class }}">{{ mapping_badge.label }}</span>
+      {% endif %}
+      <span class="text-xs text-gray-500">{{ mapping_policy.year }} 年框架</span>
+    </div>
+    {% if mapping_provenance %}
+    <dl class="text-xs text-gray-600 mb-3 space-y-1">
+      {% for label, value in mapping_provenance %}
+      <div>
+        <dt class="inline font-medium">{{ label }}：</dt>
+        <dd class="inline break-all">
+          {% if label == '来源页面' and value.startswith('http') %}
+          <a href="{{ value }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline">{{ value }}</a>
+          {% else %}
+          {{ value }}
+          {% endif %}
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+    {% if mapping_policy.fields.get('enrollment_scope') %}
+    <p class="text-sm text-gray-800 whitespace-pre-wrap leading-relaxed">{{ mapping_policy.fields.enrollment_scope }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="mb-6">
+  <h2 class="text-lg font-semibold text-gray-900 mb-3">招生政策</h2>
+  {% if enrollment_is_district %}
+  <p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-3">
+    以下为<strong>{{ district.name if district else "本区" }}统一招生政策</strong>（区县级）。本校登记点信息见下方卡片（如有）。
+  </p>
+  {% endif %}
+  {% if enrollment_policies %}
+  <div class="space-y-3">
+    {% for policy in enrollment_policies %}
+    {% if not mapping_policy or policy.id != mapping_policy.id %}
+    <div class="bg-white rounded-lg shadow p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-medium">{{ policy.year }} 年 · {{ policy_type_labels.get(policy.policy_type, policy.policy_type) }}</span>
+        {% if policy.has_recent_changes %}
+        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">近期有变更</span>
+        {% endif %}
+      </div>
+      {% if policy.fields %}
+      <dl class="text-sm space-y-1">
+        {% for key, value in policy.fields.items() %}
+        <div><dt class="inline text-gray-500">{{ field_labels.get(key, key) }}:</dt> <dd class="inline">{{ value or "—" }}</dd></div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+      {% if policy.source.url %}
+      <a href="{{ policy.source.url }}" target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline mt-2 inline-block">
+        查看来源 &rarr;
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-sm text-gray-500 bg-white rounded-lg shadow p-4">暂无招生政策数据。</p>
+  {% endif %}
+</section>
+
+<section class="mb-6">
+  <h2 class="text-lg font-semibold text-gray-900 mb-3">升学政策</h2>
+  {% if promotion_policies %}
+  <div class="space-y-3">
+    {% for policy in promotion_policies %}
+    <div class="bg-white rounded-lg shadow p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-medium">{{ policy.year }} 年 · 小升初/升学</span>
+        {% if policy.has_recent_changes %}
+        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">近期有变更</span>
+        {% endif %}
+      </div>
+      {% if policy.fields %}
+      <dl class="text-sm space-y-1">
+        {% for key, value in policy.fields.items() %}
+        <div><dt class="inline text-gray-500">{{ field_labels.get(key, key) }}:</dt> <dd class="inline">{{ value or "—" }}</dd></div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+      {% if policy.source.url %}
+      <a href="{{ policy.source.url }}" target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline mt-2 inline-block">
+        查看来源 &rarr;
+      </a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-sm text-gray-500 bg-white rounded-lg shadow p-4">暂无升学政策数据。</p>
+  {% endif %}
+</section>
+
+<section>
+  <h2 class="text-lg font-semibold text-gray-900 mb-3">变更历史</h2>
+  {% if changes %}
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <table class="min-w-full text-sm">
+      <thead class="bg-gray-50 text-left text-gray-500">
+        <tr>
+          <th class="px-4 py-2">字段</th>
+          <th class="px-4 py-2">旧值</th>
+          <th class="px-4 py-2">新值</th>
+          <th class="px-4 py-2">检测时间</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        {% for change in changes %}
+        <tr>
+          <td class="px-4 py-2 font-mono text-xs">{{ change.field_path }}</td>
+          <td class="px-4 py-2 text-gray-500">{{ change.old_value or "—" }}</td>
+          <td class="px-4 py-2">{{ change.new_value or "—" }}</td>
+          <td class="px-4 py-2 text-gray-500">{{ change.detected_at.strftime("%Y-%m-%d %H:%M") }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="text-sm text-gray-500 bg-white rounded-lg shadow p-4">暂无变更记录。</p>
+  {% endif %}
+</section>
+{% endblock %}

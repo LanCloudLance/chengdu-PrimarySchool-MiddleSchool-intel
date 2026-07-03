@@ -1,0 +1,143 @@
+{
+  "scraped_at": "2026-06-16",
+  "district_code": "tianfu",
+  "data_year": 2026,
+  "school_scopes": [
+    {
+      "school_name": "华阳学区-华阳北片区",
+      "enrollment_scope": "牧华路以北：海洋路中学（小学部）、华阳中学附属学校（小学部）、广都学校（小学部）、锦江小学、第三中学附属小学、华阳实验小学、华阳实验小学（西区）、南湖小学、美岸小学校、美岸小学校（美邻校区）、第四小学、第五小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "华阳学区-锦江生态带片区",
+      "enrollment_scope": "牧华路以南、沈阳路以北：实验中学（小学部）、第十小学校、第三小学、华阳小学、实验小学校",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "华阳学区-云龙湾片区",
+      "enrollment_scope": "沈阳路以南：教师共享中心附属学校（小学部）、云龙路小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "中央商务学区-麓东片区",
+      "enrollment_scope": "天府大道以东、武汉路以北：第八中学（小学部）、第九小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "中央商务学区-麓西片区",
+      "enrollment_scope": "天府大道以西、武汉路以北：第八小学校、麓湖小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "中央商务学区-天东片区",
+      "enrollment_scope": "天府大道以东、武汉路以南：元音小学校",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "中央商务学区-天西片区",
+      "enrollment_scope": "天府大道以西、武汉路以南：第七小学校",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "万安学区-万安北片区",
+      "enrollment_scope": "第三中学（小学部）、第二小学校、第六小学校、万安小学、白沙小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "万安学区-法务岛片区",
+      "enrollment_scope": "香山小学校",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "科学城学区",
+      "enrollment_scope": "第十一学校（小学部）、第一小学、湖畔路小学、桐湾小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "正兴学区",
+      "enrollment_scope": "正兴小学、云龙路小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "兴隆学区",
+      "enrollment_scope": "科学城小学、科学城小学（西区）",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "煎茶学区",
+      "enrollment_scope": "煎茶小学（第四中学校鹿溪校区南区）",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "新兴学区",
+      "enrollment_scope": "新兴中学附属小学、新兴小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "永兴学区",
+      "enrollment_scope": "永兴小学、三星小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "籍田学区",
+      "enrollment_scope": "籍田小学、大林小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    },
+    {
+      "school_name": "太平学区",
+      "enrollment_scope": "太平小学、合江小学",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzA3NjI1MjM5NQ==&mid=2697216604&idx=3&sn=4e86e8a79d7812d3706b1420016514ee",
+      "intel_year": 2026,
+      "is_reference": false,
+      "scope_source": "wechat_official"
+    }
+  ]
+}
